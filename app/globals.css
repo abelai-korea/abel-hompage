@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #4338CA;
+  --color-primary-light: #6528F7;
+  --color-dark: #0F172A;
+  --color-text: #454F5E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  color: var(--color-text);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+/* WordPress 콘텐츠 스타일 (칼럼 상세 페이지) */
+.wp-content h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+.wp-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+.wp-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.85;
+  color: #374151;
+}
+
+.wp-content ul, .wp-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.wp-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.wp-content strong {
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.wp-content a {
+  color: #4338CA;
+  text-decoration: underline;
+}
+
+.wp-content a:hover {
+  color: #6528F7;
+}
+
+.wp-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.wp-content table td, .wp-content table th {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.wp-content table th {
+  background: #f8fafc;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.wp-content blockquote {
+  border-left: 4px solid #4338CA;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: #f8f8ff;
+  border-radius: 0 8px 8px 0;
+  color: #374151;
+}
+
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
 }

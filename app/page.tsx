@@ -1,65 +1,345 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import ChatAnimation from '@/components/ChatAnimation';
+import ContactForm from '@/components/ContactForm';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'ABEL | AI 마케팅 에이전시 — GEO·AEO 구조 설계',
+  description:
+    'SEO를 넘어 GEO·AEO까지. 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 구조를 설계하는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
+  alternates: { canonical: 'https://abel-ai.com/' },
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* ─── HERO ─────────────────────────────────────────────── */}
+      <section className="pt-32 pb-20 bg-white text-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-6">
+            HOSPITAL AEO STRATEGY
+          </p>
+
+          {/* 채팅 애니메이션 */}
+          <div className="mb-10">
+            <ChatAnimation />
+          </div>
+
+          {/* 헤드라인 */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 leading-tight mb-6">
+            귀하의 병원은<br />
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}>
+              AI가 추천하는 병원인가요?
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+            네이버 상위 노출에 매달려도, ChatGPT에 우리 병원이 안 나오는 진짜 이유<br />
+            이제 AI 답변 엔진이 가장 먼저 인용하는 &lsquo;정답 병원&rsquo;으로 권위를 독점하십시오.
+          </p>
+
+          <Link
+            href="#contact"
+            className="inline-block px-8 py-4 rounded-full text-white font-black text-base transition-opacity hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
+          >
+            아벨 GEO 정밀 진단 신청하기 (유료·지역별 쿼터제)
+          </Link>
+        </div>
+      </section>
+
+      {/* ─── 병원 탐색 방식의 변화 ────────────────────────────── */}
+      <section id="problem" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-4 text-center">
+            THE SHIFT
+          </p>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 text-center mb-4">
+            이제 병원은<br />네이버 안에서만 경쟁하지 않습니다
+          </h2>
+          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">
+            환자들은 검색 결과만 보는 것이 아니라,<br />
+            AI 답변, 지도, 후기, 블로그, 유튜브까지 함께 참고합니다.
+          </p>
+
+          {/* 이전 vs 지금 */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+              <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">이전</p>
+              <div className="text-gray-700 font-medium space-y-2">
+                <p className="flex items-center gap-2">
+                  <span className="text-gray-400">①</span> 네이버 검색
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-gray-400">②</span> 홈페이지 방문
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-gray-400">③</span> 상담
+                </p>
+              </div>
+            </div>
+            <div className="rounded-2xl p-8 text-white" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #4338CA 100%)' }}>
+              <p className="text-xs font-black text-indigo-300 uppercase tracking-widest mb-4">지금</p>
+              <div className="space-y-2 font-medium">
+                <p>검색 + AI 질문 + 지도</p>
+                <p>후기 + 비교 콘텐츠</p>
+                <p className="text-indigo-300 text-sm mt-3">병원이 보이는 채널이 많아질수록<br />홈페이지 구조의 중요성도 함께 커집니다</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 3가지 변화 */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                num: '1',
+                title: '검색에서 질문으로',
+                desc: '환자들은 이제 짧은 키워드보다 "어디가 좋나요?" "어떤 차이가 있나요?"처럼 질문합니다.',
+              },
+              {
+                num: '2',
+                title: '클릭 전에 비교가 시작됩니다',
+                desc: '환자들은 홈페이지에 들어오기 전부터 AI 요약과 후기, 지도 정보로 이미 후보를 추립니다.',
+              },
+              {
+                num: '3',
+                title: '먼저 보이는 병원이 유리합니다',
+                desc: 'AI가 이해하기 쉬운 구조를 먼저 만든 병원이 추천과 비교의 출발점이 될 가능성이 커집니다.',
+              },
+            ].map((item) => (
+              <div key={item.num} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-sm mb-4"
+                  style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
+                >
+                  {item.num}
+                </div>
+                <h3 className="font-black text-slate-950 mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHY NOW ──────────────────────────────────────────── */}
+      <section id="why-now" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-4 text-center">WHY NOW</p>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 text-center mb-4">
+            왜 지금 GEO,AEO를 선점해야 할까요?
+          </h2>
+          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+            고객의 질문 방식과 AI의 답변 방식이 동시에 바뀌고 있습니다.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                num: '1',
+                title: '질문이 길어졌습니다',
+                desc: '환자들은 이제 "치과 추천"처럼 짧게 검색하지 않습니다. "강남에서 임플란트 잘하는 치과 추천해줘"처럼 더 길고 구체적으로 질문합니다.',
+              },
+              {
+                num: '2',
+                title: 'AI는 관련 질문까지 함께 봅니다',
+                desc: 'AI는 질문 하나만 보는 것이 아니라, 치료법, 비교 포인트, 병원 선택 기준 같은 연관 질문까지 함께 탐색하며 답을 만듭니다.',
+              },
+              {
+                num: '3',
+                title: '클릭 전에 이미 비교가 시작됩니다',
+                desc: '고객은 홈페이지에 들어오기 전에 AI 답변, 지도, 후기, 리뷰를 먼저 봅니다. 먼저 보이는 병원이 더 유리해질 수 있습니다.',
+              },
+            ].map((item) => (
+              <div key={item.num} className="group">
+                <div className="text-5xl font-black text-indigo-100 mb-4">{item.num}.</div>
+                <h3 className="text-xl font-black text-slate-950 mb-3">{item.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <p className="text-lg font-bold text-slate-700 bg-indigo-50 inline-block px-8 py-4 rounded-2xl">
+              먼저 구조를 잡은 병원이 AI 답변 안에서 더 유리한 출발점을 만들 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHY HOMEPAGE FIRST ───────────────────────────────── */}
+      <section id="homepage-first" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-4 text-center">
+            WHY HOMEPAGE FIRST
+          </p>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 text-center mb-4">
+            GEO,AEO는 왜 홈페이지부터 시작할까요?
+          </h2>
+          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+            홈페이지는 AI가 병원을 이해하는 가장 중요한 기준점입니다.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 현재 대부분의 병원 */}
+            <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm">
+              <h3 className="text-lg font-black text-slate-950 mb-6 flex items-center gap-2">
+                <span className="text-2xl">😔</span> 지금 대부분의 병원 홈페이지
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  '병원 소개는 있지만 질문에 대한 답이 부족합니다',
+                  '진료 항목은 있지만 비교 설명이 약합니다',
+                  '후기와 사례가 흩어져 있어 AI가 읽기 어렵습니다',
+                  'FAQ와 핵심 정보 구조가 부족해 인용 기회가 줄어듭니다',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
+                    <span className="text-red-400 flex-shrink-0 mt-0.5">✕</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* GEO/AEO 구조를 먼저 잡으면 */}
+            <div className="rounded-3xl p-10 text-white" style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #4338CA 100%)' }}>
+              <h3 className="text-lg font-black mb-6 flex items-center gap-2">
+                <span className="text-2xl">✨</span> GEO,AEO 구조를 먼저 잡으면
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  '질문에 바로 답하는 병원으로 보일 수 있습니다',
+                  'AI가 인용하기 쉬운 설명 구조를 만듭니다',
+                  '후기와 사례가 신뢰 자산이 됩니다',
+                  '비교와 추천 질문에서 더 유리해질 수 있습니다',
+                  '환자 선택 직전 질문에 미리 답할 준비를 하게 됩니다',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-indigo-100">
+                    <span className="text-indigo-300 flex-shrink-0 mt-0.5">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-lg font-bold text-slate-700 mt-12">
+            광고보다 먼저 필요한 것은,<br />
+            병원을 AI가 이해할 수 있게 정리하는 일입니다.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ─── WHAT ABEL DOES ───────────────────────────────────── */}
+      <section id="what-abel" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-4 text-center">
+            WHAT ABEL DOES
+          </p>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 text-center mb-4">
+            아벨은 무엇을 정리하나요?
+          </h2>
+          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+            아벨은 병원과 브랜드가 AI 안에서 더 잘 이해되도록 구조를 설계합니다.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                num: '1',
+                title: '홈페이지 구조',
+                desc: '메인 메시지, 핵심 포지션, 카테고리 흐름, 비교 구조를 정리합니다.',
+              },
+              {
+                num: '2',
+                title: '질문형 콘텐츠',
+                desc: '환자가 실제로 묻는 질문을 증상형, 추천형, 비교형으로 나눠 설계합니다.',
+              },
+              {
+                num: '3',
+                title: 'FAQ·사례·신뢰 구조',
+                desc: '후기, 사례, 선택 기준, 자주 묻는 질문을 하나의 설명 구조로 묶습니다.',
+              },
+            ].map((item) => (
+              <div key={item.num} className="border-t-4 border-indigo-600 pt-6">
+                <p className="text-sm font-black text-indigo-600 mb-2">{item.num}.</p>
+                <h3 className="text-xl font-black text-slate-950 mb-3">{item.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 시장 공백 */}
+          <div className="bg-slate-950 rounded-3xl p-10 text-white">
+            <p className="text-xs font-black tracking-widest uppercase text-indigo-400 mb-4">
+              MARKET GAP
+            </p>
+            <h3 className="text-2xl font-black mb-4">
+              현재 시장 공백: 경쟁사들은 아직 구조를 제대로 못 잡았습니다
+            </h3>
+            <p className="text-slate-300 mb-6">
+              많은 병원이 아직도 SEO 중심 사고에 머물러 있습니다.<br />
+              GEO,AEO는 지금 선점 가치가 큰 영역입니다.
+            </p>
+            <Link
+              href="#contact"
+              className="inline-block px-8 py-4 rounded-full text-white font-black transition-opacity hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
+            >
+              지금 선점 신청하기 →
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ─── CONTACT ──────────────────────────────────────────── */}
+      <section id="contact" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-[40px] border border-indigo-100 shadow-2xl overflow-hidden grid lg:grid-cols-2">
+            {/* 왼쪽: 소개 */}
+            <div className="p-12 lg:p-20 bg-zinc-900 text-white flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-black text-sm uppercase tracking-wider block mb-4">
+                  ABEL GEO REGISTRATION
+                </span>
+                <h2 className="text-4xl font-black text-white mb-8 leading-tight">
+                  아벨의 GEO 진단 신청서
+                </h2>
+                <p className="text-lg text-zinc-300 mb-6 font-bold leading-relaxed">
+                  아벨의 GEO 정밀 진단은 AI 전문가가 원장님의 홈페이지 크롤링 환경, E-E-A-T 신호 등{' '}
+                  <span className="text-indigo-400">17개 항목을 전수 분석하는 서비스</span>입니다.
+                </p>
+                <div className="p-6 bg-white/5 border border-white/10 rounded-2xl space-y-3 text-sm text-zinc-400 font-medium">
+                  <div className="flex gap-2">
+                    <span className="text-red-400 font-bold">🚨 권역별 쿼터제:</span>
+                    <span>상권 보호를 위해 각 구(시)별 진료과당 딱 1개 병원만 계약합니다.</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="text-zinc-300 font-bold">🚫 신청 사양:</span>
+                    <span>단순 가격 비교 목적이거나 AI 트렌드를 불신하는 분들은 반려됩니다.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4 pt-8 border-t border-white/10 mt-8">
+                <div className="flex items-center gap-4 text-zinc-400">
+                  <span className="text-white font-bold">주식회사 아벨(ABEL)</span>
+                </div>
+                <div className="flex items-center gap-4 text-zinc-400">
+                  <a href="mailto:abelai.korea@gmail.com" className="hover:text-white transition-colors">
+                    abelai.korea@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 오른쪽: 폼 */}
+            <div className="p-12 lg:p-20 flex flex-col justify-center">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
