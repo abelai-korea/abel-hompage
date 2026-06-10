@@ -7,14 +7,9 @@
   --color-text: #454F5E;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
