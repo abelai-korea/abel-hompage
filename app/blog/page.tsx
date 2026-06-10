@@ -83,9 +83,9 @@ export default async function BlogPage({ searchParams }: Props) {
                         href={`/${slug}`}
                         className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
                       >
-                        {/* 썸네일 */}
+                        {/* 썸네일 (1:1) */}
                         {thumbnail ? (
-                          <div className="relative w-full h-44 overflow-hidden bg-gray-100">
+                          <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                             <Image
                               src={thumbnail}
                               alt={post.title.rendered}
@@ -96,7 +96,7 @@ export default async function BlogPage({ searchParams }: Props) {
                           </div>
                         ) : (
                           <div
-                            className="w-full h-44 flex items-center justify-center text-white text-4xl font-black"
+                            className="w-full aspect-square flex items-center justify-center text-white text-4xl font-black"
                             style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #4338CA 100%)' }}
                           >
                             A
