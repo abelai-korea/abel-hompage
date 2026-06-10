@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPosts, getCategories, formatDate, stripHtml } from '@/lib/wordpress';
 
 export const metadata: Metadata = {
@@ -26,35 +27,35 @@ export default async function BlogPage({ searchParams }: Props) {
   const blogCategories = categories.filter((c) => c.count > 0);
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-slate-950">
+    <div className="pt-24 pb-20 min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* 헤더 */}
         <div className="mb-12 pt-8">
-          <p className="text-xs font-black tracking-widest uppercase text-indigo-400 mb-3">
+          <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-3">
             ABEL INSIGHT
           </p>
-          <h1 className="text-4xl font-black text-white mb-4">최신 인사이트</h1>
-          <p className="text-slate-400">
+          <h1 className="text-4xl font-black text-slate-950 mb-4">최신 인사이트</h1>
+          <p className="text-gray-500">
             AI 마케팅, GEO·AEO 전략에 관한 최신 칼럼 {total}편
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10">
           {/* 사이드바: 카테고리 */}
-          <aside className="lg:w-56 flex-shrink-0">
-            <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">카테고리</p>
+          <aside className="lg:w-52 flex-shrink-0">
+            <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">카테고리</p>
             <nav className="flex flex-col gap-1">
               <Link
                 href="/blog"
-                className="px-4 py-2.5 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                className="px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 transition-colors"
               >
-                블로그 홈
+                전체 보기
               </Link>
               {blogCategories.map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/blog?blog_cat=${cat.slug}`}
-                  className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-400 hover:bg-slate-800 hover:text-white transition-colors"
+                  className="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-500 hover:bg-indigo-50 hover:text-indigo-700 transition-colors"
                 >
                   {cat.name}
                 </Link>
@@ -65,7 +66,7 @@ export default async function BlogPage({ searchParams }: Props) {
           {/* 포스트 그리드 */}
           <div className="flex-1">
             {posts.length === 0 ? (
-              <p className="text-slate-400">아직 칼럼이 없습니다.</p>
+              <p className="text-gray-400">아직 칼럼이 없습니다.</p>
             ) : (
               <>
                 <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -74,28 +75,51 @@ export default async function BlogPage({ searchParams }: Props) {
                     const date = formatDate(post.date);
                     const excerpt = stripHtml(post.excerpt.rendered).slice(0, 80);
                     const slug = new URL(post.link).pathname.replace(/\//g, '');
+                    const thumbnail = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+
                     return (
                       <Link
                         key={post.id}
                         href={`/${slug}`}
-                        className="group block bg-slate-800 rounded-2xl overflow-hidden hover:bg-slate-700 transition-colors"
+                        className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
                       >
-                        <div className="p-6">
+                        {/* 썸네일 */}
+                        {thumbnail ? (
+                          <div className="relative w-full h-44 overflow-hidden bg-gray-100">
+                            <Image
+                              src={thumbnail}
+                              alt={post.title.rendered}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                            />
+                          </div>
+                        ) : (
+                          <div
+                            className="w-full h-44 flex items-center justify-center text-white text-4xl font-black"
+                            style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #4338CA 100%)' }}
+                          >
+                            A
+                          </div>
+                        )}
+
+                        {/* 콘텐츠 */}
+                        <div className="p-5">
                           {category && (
-                            <span className="text-xs font-black text-indigo-400 uppercase tracking-widest mb-3 block">
+                            <span className="text-xs font-black text-indigo-600 uppercase tracking-widest mb-2 block">
                               {category.name}
                             </span>
                           )}
                           <h2
-                            className="font-black text-white text-base leading-snug mb-3 group-hover:text-indigo-300 transition-colors"
+                            className="font-black text-slate-900 text-base leading-snug mb-2 group-hover:text-indigo-700 transition-colors"
                             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                           />
                           {excerpt && (
-                            <p className="text-slate-400 text-sm leading-relaxed mb-4">{excerpt}…</p>
+                            <p className="text-gray-500 text-sm leading-relaxed mb-3 line-clamp-2">{excerpt}…</p>
                           )}
-                          <div className="flex items-center justify-between text-xs text-slate-500">
+                          <div className="flex items-center justify-between text-xs text-gray-400">
                             <span>{date}</span>
-                            <span className="text-indigo-400 group-hover:translate-x-1 transition-transform">→</span>
+                            <span className="text-indigo-500 group-hover:translate-x-1 transition-transform font-bold">→</span>
                           </div>
                         </div>
                       </Link>
@@ -113,7 +137,7 @@ export default async function BlogPage({ searchParams }: Props) {
                         className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-colors ${
                           page === currentPage
                             ? 'bg-indigo-600 text-white'
-                            : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
+                            : 'bg-white text-gray-500 border border-gray-200 hover:bg-indigo-50 hover:text-indigo-700'
                         }`}
                       >
                         {page}
