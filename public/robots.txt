@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+User-agent: Yeti
+Allow: /
+
 Sitemap: https://abel-ai.com/sitemap.xml
 
 #DaumWebMasterTool:758bc30a83add8864a87b9ebd2e07822533c4351ecd53232e2cf358fc4142d49:Z1sDHiFp/naRimWdsgS5Tg==
