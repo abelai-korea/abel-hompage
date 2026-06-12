@@ -5,15 +5,21 @@ export const revalidate = 3600;
 function toPlainText(html: string): string {
   return html
     .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
     .replace(/&hellip;/g, '...')
+    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '–')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
+    .replace(/&#8230;/g, '...')
     .replace(/&#8220;/g, '"')
     .replace(/&#8221;/g, '"')
     .replace(/&#8216;/g, "'")
     .replace(/&#8217;/g, "'")
+    .replace(/&#\d+;/g, '')
+    .replace(/\]\]>/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -43,9 +49,9 @@ export async function GET() {
       return `  <item>
     <title>${title}</title>
     <link>${url}</link>
-    <description>${description}</description>
+    <description><![CDATA[${toPlainText(post.excerpt?.rendered ?? '').slice(0, 200)}]]></description>
     <pubDate>${pubDate}</pubDate>
-    <guid isPermaLink="true">${url}</guid>
+    <guid>${url}</guid>
   </item>`;
     })
     .join('\n');
