@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    other: {
+      "naver-site-verification": "819560ce6e4e2924f24deb7d7786f3f2a03cca36",
+    },
+  },
 };
 
 export default function RootLayout({
