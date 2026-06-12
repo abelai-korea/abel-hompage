@@ -71,6 +71,27 @@ export async function getCategories(): Promise<WPCategory[]> {
   return res.json();
 }
 
+export interface WPPage {
+  id: number;
+  slug: string;
+  title: { rendered: string };
+  content: { rendered: string };
+  yoast_head?: string;
+  yoast_head_json?: {
+    title?: string;
+    description?: string;
+  };
+}
+
+export async function getPageBySlug(slug: string): Promise<WPPage | null> {
+  const res = await fetch(`${WP_API}/pages?slug=${slug}`, {
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) return null;
+  const pages: WPPage[] = await res.json();
+  return pages[0] ?? null;
+}
+
 export function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
   return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;

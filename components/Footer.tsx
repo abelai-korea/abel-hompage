@@ -2,7 +2,26 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white">
+    <>
+      {/* FAQ 배너 — 푸터 바로 위 */}
+      <section className="bg-indigo-50 border-t border-indigo-100">
+        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-xs font-black text-indigo-500 uppercase tracking-widest mb-1">ABEL FAQ</p>
+            <h2 className="text-xl font-black text-slate-900">자주 묻는 질문 300개 이상 수록</h2>
+            <p className="text-sm text-gray-500 mt-1">GEO·AEO·SEO에 대한 궁금증을 한 번에 확인하세요.</p>
+          </div>
+          <Link
+            href="/geo-aeo-faq"
+            className="flex-shrink-0 px-8 py-3.5 rounded-full text-sm font-black text-white transition-opacity hover:opacity-90 whitespace-nowrap"
+            style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
+          >
+            자주 묻는 질문 보기 →
+          </Link>
+        </div>
+      </section>
+
+      <footer className="bg-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* 로고 & 회사 소개 */}
@@ -62,5 +81,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

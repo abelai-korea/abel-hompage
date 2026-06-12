@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
@@ -9,14 +10,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-black text-slate-950 text-xl tracking-tight">
-          <span
-            className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-black"
-            style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
-          >
-            A
-          </span>
-          ABEL
+        <Link href="/">
+          <Image src="/logo.png" alt="ABEL" width={100} height={36} priority />
         </Link>
 
         {/* 데스크탑 메뉴 */}
@@ -26,6 +21,12 @@ export default function Header() {
             className="text-sm font-semibold text-gray-600 hover:text-indigo-700 transition-colors"
           >
             AI 검색최적화
+          </Link>
+          <Link
+            href="/geo-aeo-faq"
+            className="text-sm font-semibold text-gray-600 hover:text-indigo-700 transition-colors"
+          >
+            FAQ
           </Link>
           <Link
             href="/blog"
@@ -63,6 +64,13 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           >
             AI 검색최적화
+          </Link>
+          <Link
+            href="/geo-aeo-faq"
+            className="text-sm font-semibold text-gray-700"
+            onClick={() => setMenuOpen(false)}
+          >
+            FAQ
           </Link>
           <Link
             href="/blog"
