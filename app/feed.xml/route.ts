@@ -38,11 +38,14 @@ export async function GET() {
       const description = xmlEscape(
         toPlainText(post.excerpt?.rendered ?? '').slice(0, 200),
       );
+      const pubDate = new Date(post.date).toUTCString();
 
       return `  <item>
     <title>${title}</title>
     <link>${url}</link>
     <description>${description}</description>
+    <pubDate>${pubDate}</pubDate>
+    <guid isPermaLink="true">${url}</guid>
   </item>`;
     })
     .join('\n');
@@ -53,6 +56,8 @@ export async function GET() {
   <title>ABEL | AI 마케팅 에이전시 칼럼</title>
   <link>${BASE}</link>
   <description>GEO, AEO, SEO 관련 최신 칼럼</description>
+  <language>ko</language>
+  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
 </channel>
 </rss>`;
