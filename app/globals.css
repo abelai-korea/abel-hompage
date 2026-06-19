@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #4338CA;
-  --color-primary-light: #6528F7;
-  --color-dark: #0F172A;
-  --color-text: #454F5E;
+  --color-primary: #7c3aed;
+  --color-primary-light: #a855f7;
+  --color-dark: #0f0f0f;
+  --color-text: #404040;
 }
 
 html {
@@ -13,34 +13,37 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), 'Inter', sans-serif;
-  color: var(--color-text);
+  font-family: var(--font-inter), var(--font-noto-kr), 'Noto Sans KR', sans-serif;
+  color: #404040;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-family: var(--font-space-grotesk), var(--font-noto-kr), 'Noto Sans KR', sans-serif;
+  /* color는 각 섹션에서 Tailwind 클래스로 명시 — 다크 섹션 상속 보장 */
 }
 
-/* WordPress 콘텐츠 스타일 (칼럼 상세 페이지) */
+/* WordPress 콘텐츠 스타일 — 블로그 상세 페이지 */
 .wp-content h2 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #0f172a;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.4;
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-family: var(--font-space-grotesk), var(--font-noto-kr), sans-serif;
 }
 
 .wp-content h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0F172A;
+  color: #0f172a;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-family: var(--font-space-grotesk), var(--font-noto-kr), sans-serif;
 }
 
 .wp-content p {
@@ -61,16 +64,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .wp-content strong {
   font-weight: 700;
-  color: #0F172A;
+  color: #0f172a;
 }
 
 .wp-content a {
-  color: #4338CA;
+  color: #7c3aed;
   text-decoration: underline;
 }
 
 .wp-content a:hover {
-  color: #6528F7;
+  color: #a855f7;
 }
 
 .wp-content table {
@@ -88,14 +91,14 @@ h1, h2, h3, h4, h5, h6 {
 .wp-content table th {
   background: #f8fafc;
   font-weight: 700;
-  color: #0F172A;
+  color: #0f172a;
 }
 
 .wp-content blockquote {
-  border-left: 4px solid #4338CA;
+  border-left: 4px solid #7c3aed;
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  background: #f8f8ff;
+  background: #f5f3ff;
   border-radius: 0 8px 8px 0;
   color: #374151;
 }
