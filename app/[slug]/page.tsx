@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getPosts, formatDate, stripHtml, demoteContentH1 } from '@/lib/wordpress';
+import ArticleSidenav from '@/components/ArticleSidenav';
 
 export const revalidate = 3600;
 
@@ -53,6 +54,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-white">
+      <ArticleSidenav />
       <article className="max-w-3xl mx-auto px-6 pt-10">
         {/* 카테고리 & 날짜 */}
         <div className="flex items-center gap-3 mb-6">
