@@ -27,6 +27,7 @@ const notoSansKR = Noto_Sans_KR({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abel-ai.com"),
   title: {
     default: "ABEL | AI 마케팅 에이전시 — GEO·AEO 구조 설계",
     template: "%s | ABEL",
@@ -39,6 +40,14 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: "https://abel-ai.com",
     siteName: "ABEL AI",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1536,
+        height: 1024,
+        alt: "ABEL | AI 마케팅 에이전시",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -54,6 +63,29 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://abel-ai.com/#organization",
+      name: "ABEL",
+      url: "https://abel-ai.com",
+      logo: "https://abel-ai.com/logo.png",
+      description:
+        "SEO를 넘어 GEO·AEO까지. 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 구조를 설계하는 AI 마케팅 에이전시.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://abel-ai.com/#website",
+      name: "ABEL",
+      url: "https://abel-ai.com",
+      publisher: { "@id": "https://abel-ai.com/#organization" },
+      inLanguage: "ko-KR",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -62,6 +94,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${inter.variable} ${spaceGrotesk.variable} ${notoSansKR.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

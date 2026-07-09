@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getPosts, formatDate } from '@/lib/wordpress';
+import { getPostBySlug, getPosts, formatDate, stripHtml, demoteContentH1 } from '@/lib/wordpress';
 
 export const revalidate = 3600;
 
@@ -23,14 +23,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const yoast = post.yoast_head_json;
   const ogImage = yoast?.og_image?.[0]?.url;
+  const description =
+    yoast?.description || stripHtml(post.excerpt.rendered).slice(0, 150);
 
   return {
     title: yoast?.title ?? `${post.title.rendered} | ABEL`,
-    description: yoast?.description,
+    description,
     alternates: { canonical: `https://abel-ai.com/${slug}/` },
-    openGraph: ogImage
-      ? { images: [{ url: ogImage }] }
-      : undefined,
+    openGraph: {
+      type: 'article',
+      locale: 'ko_KR',
+      siteName: 'ABEL AI',
+      url: `https://abel-ai.com/${slug}/`,
+      title: yoast?.title ?? `${post.title.rendered} | ABEL`,
+      description,
+      images: [{ url: ogImage ?? '/logo.png' }],
+    },
   };
 }
 
@@ -68,7 +76,7 @@ export default async function PostPage({ params }: Props) {
         {/* 본문 */}
         <div
           className="wp-content"
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          dangerouslySetInnerHTML={{ __html: demoteContentH1(post.content.rendered) }}
         />
 
         {/* JSON-LD 스키마 (Yoast SEO에서 자동 생성) */}

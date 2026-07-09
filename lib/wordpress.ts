@@ -100,3 +100,9 @@ export function formatDate(dateStr: string): string {
 export function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, '').trim();
 }
+
+// post.content.rendered에 제목을 반복하는 <h1>이 포함된 경우가 있어(WP 원고 이슈),
+// 페이지의 실제 h1(post.title.rendered)과 중복되지 않도록 h2로 낮춘다.
+export function demoteContentH1(html: string): string {
+  return html.replace(/<(\/?)h1(\s[^>]*)?>/gi, '<$1h2$2>');
+}
