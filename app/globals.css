@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 칼럼 좌측 플로팅 목차 네비게이터 */
 .ap-sidenav { position: fixed; left: 40px; top: 50%; transform: translateY(-50%); z-index: 40; width: 14px; height: min(46vh, 320px); display: none; }
-@media (min-width: 1301px) { .ap-sidenav { display: block; } }
+@media (min-width: 1180px) { .ap-sidenav { display: block; } }
 .ap-sidenav-rail { position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: #e2e4f0; border-radius: 2px; }
 .ap-sidenav-progress { position: absolute; left: 6px; top: 0; width: 2px; background: #f5c842; border-radius: 2px; transition: height .25s ease; }
 .ap-sidenav-dot { position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: #fff; border: 2px solid #c7cae0; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease; text-decoration: none !important; }
