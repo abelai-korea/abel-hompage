@@ -52,8 +52,6 @@ export default function ArticleSidenav() {
 
   if (items.length < 3) return null;
 
-  const pct = (i: number) => (items.length > 1 ? (i / (items.length - 1)) * 100 : 0);
-
   const handleClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     const target = document.querySelector<HTMLElement>(href);
@@ -64,19 +62,16 @@ export default function ArticleSidenav() {
 
   return (
     <nav className="ap-sidenav" aria-label="글 목차 네비게이션">
-      <div className="ap-sidenav-rail" />
-      <div className="ap-sidenav-progress" style={{ height: `${pct(activeIdx)}%` }} />
-      {items.map((item, i) => (
-        <a
-          key={item.href}
-          href={item.href}
-          className={`ap-sidenav-dot${i === activeIdx ? ' is-active' : ''}`}
-          style={{ top: `${pct(i)}%` }}
-          onClick={(e) => handleClick(e, item.href)}
-        >
-          <span className="ap-sidenav-tip">{item.label}</span>
-        </a>
-      ))}
+      <p className="ap-sidenav-title">목차</p>
+      <ul>
+        {items.map((item, i) => (
+          <li key={item.href} className={i === activeIdx ? 'is-active' : ''}>
+            <a href={item.href} onClick={(e) => handleClick(e, item.href)}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
