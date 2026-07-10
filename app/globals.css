@@ -123,10 +123,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 칼럼 좌측 목차 네비게이터 — 본문 옆 사이드바, 전체 항목 펼침형 */
-.ap-sidenav-title { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #94a3b8; margin: 0 0 14px; }
+.ap-sidenav-title { font-size: 15px; font-weight: 800; letter-spacing: .02em; color: #1a1145; margin: 0 0 14px; }
 .ap-sidenav ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid #e2e4f0; }
 .ap-sidenav li { margin: 0; }
-.ap-sidenav li a { display: block; padding: 7px 0 7px 16px; margin-left: -2px; border-left: 2px solid transparent; font-size: 13px; line-height: 1.5; color: #64748b; text-decoration: none !important; transition: color .15s ease, border-color .15s ease; }
+.ap-sidenav li a { display: block; padding: 7px 0 1px 16px; margin-left: -2px; border-left: 2px solid transparent; font-size: 13px; line-height: 1.5; color: #64748b; text-decoration: none !important; transition: color .15s ease, border-color .15s ease; }
 .ap-sidenav li a:hover { color: #1a1145; }
 .ap-sidenav li.is-active a { color: #1a1145; font-weight: 700; border-left-color: #f5c842; }
+.ap-sidenav-sub { margin: 0; padding: 0 0 10px 16px; font-size: 11px; line-height: 1.5; color: #94a3b8; font-style: italic; }
+.ap-sidenav li.is-active .ap-sidenav-sub { color: #6b6b8a; }
 .wp-content .ap-section, .wp-content #faq { scroll-margin-top: 110px; }

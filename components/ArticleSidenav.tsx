@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 interface TocItem {
   href: string;
   label: string;
+  sub: string;
 }
 
 export default function ArticleSidenav() {
@@ -26,7 +27,8 @@ export default function ArticleSidenav() {
       const target = document.querySelector<HTMLElement>(href);
       if (!target) return;
       targets.push(target);
-      collected.push({ href, label: a.textContent || '' });
+      const sub = target.querySelector<HTMLElement>('.ap-sub');
+      collected.push({ href, label: a.textContent || '', sub: sub?.textContent || '' });
     });
     if (targets.length < 3) return;
 
@@ -69,6 +71,7 @@ export default function ArticleSidenav() {
             <a href={item.href} onClick={(e) => handleClick(e, item.href)}>
               {item.label}
             </a>
+            {item.sub && <p className="ap-sidenav-sub">{item.sub}</p>}
           </li>
         ))}
       </ul>
