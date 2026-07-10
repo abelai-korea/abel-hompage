@@ -37,6 +37,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-space-grotesk), var(--font-noto-kr), sans-serif;
 }
 
+/* demoteContentH1()이 원고 내 .ap-hero h1을 h2로 낮추면서 인라인 <style>의
+   ".ap-hero h1{color:#fff}" 태그 셀렉터가 더 이상 안 걸려 위 .wp-content h2의
+   어두운 색으로 깔림(보라 배경에 저대비) — 데모션과 무관하게 항상 흰색 유지 */
+.wp-content .ap-hero h2 {
+  color: #ffffff !important;
+}
+
+.wp-content .ap-hero h2 em {
+  color: #f5c842;
+  font-style: normal;
+}
+
 .wp-content h3 {
   font-size: 1.2rem;
   font-weight: 700;
