@@ -71,7 +71,7 @@ export default function HomePage() {
                 className="inline-block px-8 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 hover:scale-[1.02]"
                 style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
               >
-                아벨 GEO 정밀 진단 신청하기 (유료·지역별 쿼터제)
+                아벨 GEO 정밀 진단 신청하기 (지역별 쿼터제)
               </Link>
 
               {/* 스탯 행 */}
