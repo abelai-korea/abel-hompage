@@ -25,14 +25,14 @@ export default function FaqPagination({ currentPage, totalPages }: Props) {
   return (
     <nav className="flex items-center justify-center gap-2 mt-10 flex-wrap">
       {currentPage > 1 && (
-        <Link href={`/geo-aeo-faq?page=${currentPage - 1}`} scroll={true} className={`${btnBase} ${inactive}`}>
+        <Link href={`/seo-geo-faq?page=${currentPage - 1}`} scroll={true} className={`${btnBase} ${inactive}`}>
           ← 이전
         </Link>
       )}
 
       {pages[0] > 1 && (
         <>
-          <Link href="/geo-aeo-faq?page=1" scroll={true} className={`${btnBase} ${inactive}`}>1</Link>
+          <Link href="/seo-geo-faq?page=1" scroll={true} className={`${btnBase} ${inactive}`}>1</Link>
           {pages[0] > 2 && <span className="text-gray-400 px-1">…</span>}
         </>
       )}
@@ -40,7 +40,7 @@ export default function FaqPagination({ currentPage, totalPages }: Props) {
       {pages.map((p) => (
         <Link
           key={p}
-          href={`/geo-aeo-faq?page=${p}`}
+          href={`/seo-geo-faq?page=${p}`}
           scroll={true}
           className={`${btnBase} ${p === currentPage ? active : inactive}`}
         >
@@ -53,14 +53,14 @@ export default function FaqPagination({ currentPage, totalPages }: Props) {
           {pages[pages.length - 1] < totalPages - 1 && (
             <span className="text-gray-400 px-1">…</span>
           )}
-          <Link href={`/geo-aeo-faq?page=${totalPages}`} scroll={true} className={`${btnBase} ${inactive}`}>
+          <Link href={`/seo-geo-faq?page=${totalPages}`} scroll={true} className={`${btnBase} ${inactive}`}>
             {totalPages}
           </Link>
         </>
       )}
 
       {currentPage < totalPages && (
-        <Link href={`/geo-aeo-faq?page=${currentPage + 1}`} scroll={true} className={`${btnBase} ${inactive}`}>
+        <Link href={`/seo-geo-faq?page=${currentPage + 1}`} scroll={true} className={`${btnBase} ${inactive}`}>
           다음 →
         </Link>
       )}

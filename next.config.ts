@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/geo-aeo-faq',
+        destination: '/seo-geo-faq',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

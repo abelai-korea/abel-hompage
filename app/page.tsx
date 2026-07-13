@@ -4,9 +4,9 @@ import ChatAnimation from '@/components/ChatAnimation';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'ABEL | AI 마케팅 에이전시 — GEO·AEO 구조 설계',
+  title: 'ABEL | AI 마케팅 에이전시 — SEO·GEO 구조 설계',
   description:
-    'SEO를 넘어 GEO·AEO까지. 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 구조를 설계하는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
+    'SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
   alternates: { canonical: 'https://abel-ai.com/' },
 };
 
@@ -48,16 +48,16 @@ export default function HomePage() {
                 className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
                 style={{ color: 'rgba(255,255,255,0.65)' }}
               >
-                HOSPITAL AEO STRATEGY
+                HOSPITAL SEO·GEO STRATEGY
               </p>
 
               <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-black text-white leading-[1.1] mb-6">
-                귀하의 병원은<br />
+                AI가 추천하는 병원을 만드는<br />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
                 >
-                  AI가 추천하는<br />병원인가요?
+                  SEO·GEO AI 마케팅 에이전시
                 </span>
               </h1>
 
@@ -181,7 +181,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center text-violet-600">WHY NOW</p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
-            왜 지금 GEO,AEO를 선점해야 할까요?
+            왜 지금 SEO,GEO를 선점해야 할까요?
           </h2>
           <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
             고객의 질문 방식과 AI의 답변 방식이 동시에 바뀌고 있습니다.
@@ -228,7 +228,7 @@ export default function HomePage() {
             WHY HOMEPAGE FIRST
           </p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
-            GEO,AEO는 왜 홈페이지부터 시작할까요?
+            SEO,GEO는 왜 홈페이지부터 시작할까요?
           </h2>
           <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
             홈페이지는 AI가 병원을 이해하는 가장 중요한 기준점입니다.
@@ -259,7 +259,7 @@ export default function HomePage() {
               style={{ background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)' }}
             >
               <h3 className="text-lg font-black mb-6 flex items-center gap-2">
-                <span className="text-2xl">✨</span> GEO,AEO 구조를 먼저 잡으면
+                <span className="text-2xl">✨</span> SEO,GEO 구조를 먼저 잡으면
               </h3>
               <ul className="space-y-3">
                 {[
@@ -348,7 +348,7 @@ export default function HomePage() {
               </h3>
               <p className="mb-6" style={{ color: 'rgba(255,255,255,0.82)' }}>
                 많은 병원이 아직도 SEO 중심 사고에 머물러 있습니다.
-                GEO,AEO는 지금 선점 가치가 큰 영역입니다.
+                SEO,GEO는 지금 선점 가치가 큰 영역입니다.
               </p>
               <Link
                 href="#contact"

@@ -36,7 +36,7 @@ export default function Header() {
             AI 검색최적화
           </Link>
           <Link
-            href="/geo-aeo-faq"
+            href="/seo-geo-faq"
             className="text-sm font-semibold transition-colors text-white/65 hover:text-white"
           >
             FAQ
@@ -87,7 +87,7 @@ export default function Header() {
             AI 검색최적화
           </Link>
           <Link
-            href="/geo-aeo-faq"
+            href="/seo-geo-faq"
             className="text-sm font-semibold"
             style={{ color: 'rgba(255,255,255,0.7)' }}
             onClick={() => setMenuOpen(false)}

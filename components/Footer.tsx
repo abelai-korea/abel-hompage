@@ -21,11 +21,11 @@ export default function Footer() {
             </p>
             <h2 className="text-xl font-black text-white">자주 묻는 질문 300개 이상 수록</h2>
             <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              GEO·AEO·SEO에 대한 궁금증을 한 번에 확인하세요.
+              SEO·GEO에 대한 궁금증을 한 번에 확인하세요.
             </p>
           </div>
           <Link
-            href="/geo-aeo-faq"
+            href="/seo-geo-faq"
             className="flex-shrink-0 px-8 py-3.5 rounded-full text-sm font-black text-white transition-opacity hover:opacity-90 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
           >
@@ -53,7 +53,7 @@ export default function Footer() {
               </Link>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
                 AI 마케팅 에이전시<br />
-                병원·브랜드의 GEO·AEO 구조 설계
+                병원·브랜드의 SEO·GEO 구조 설계
               </p>
             </div>
 

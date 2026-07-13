@@ -30,12 +30,12 @@ const notoSansKR = Noto_Sans_KR({
 export const metadata: Metadata = {
   metadataBase: new URL("https://abel-ai.com"),
   title: {
-    default: "ABEL | AI 마케팅 에이전시 — GEO·AEO 구조 설계",
+    default: "ABEL | AI 마케팅 에이전시 — SEO·GEO 구조 설계",
     template: "%s | ABEL",
   },
   description:
-    "SEO를 넘어 GEO·AEO까지. 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 구조를 설계하는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.",
-  keywords: ["AI 마케팅 에이전시", "GEO", "AEO", "SEO", "아벨", "ABEL", "ChatGPT 최적화"],
+    "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.",
+  keywords: ["AI 마케팅 에이전시", "GEO", "SEO", "아벨", "ABEL", "ChatGPT 최적화"],
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -74,7 +74,7 @@ const organizationJsonLd = {
       url: "https://abel-ai.com",
       logo: "https://abel-ai.com/logo.png",
       description:
-        "SEO를 넘어 GEO·AEO까지. 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 구조를 설계하는 AI 마케팅 에이전시.",
+        "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시.",
     },
     {
       "@type": "WebSite",
