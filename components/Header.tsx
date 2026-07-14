@@ -19,10 +19,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
         <Link href="/">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/logo.png"
             alt="ABEL"
+            width={168}
+            height={112}
+            priority
             style={{ height: '112px', width: 'auto', display: 'block' }}
           />
         </Link>
@@ -58,8 +60,8 @@ export default function Header() {
 
         {/* 모바일 햄버거 */}
         <button
-          className="md:hidden p-2"
-          style={{ color: 'rgba(255,255,255,0.7)' }}
+          className="md:hidden flex flex-col items-center justify-center"
+          style={{ color: 'rgba(255,255,255,0.7)', minWidth: '44px', minHeight: '44px' }}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="메뉴 열기"
         >
