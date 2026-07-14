@@ -65,17 +65,17 @@ export default function Footer() {
               >
                 바로가기
               </p>
-              <nav className="flex flex-col gap-2">
-                <Link href="/#problem" className="text-sm transition-colors text-white/40 hover:text-white">
+              <nav className="flex flex-col">
+                <Link href="/#problem" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
                   서비스
                 </Link>
-                <Link href="/#why-now" className="text-sm transition-colors text-white/40 hover:text-white">
+                <Link href="/#why-now" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
                   선점 이유
                 </Link>
-                <Link href="/#homepage-first" className="text-sm transition-colors text-white/40 hover:text-white">
+                <Link href="/#homepage-first" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
                   홈페이지 구조
                 </Link>
-                <Link href="/blog" className="text-sm transition-colors text-white/40 hover:text-white">
+                <Link href="/blog" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
                   칼럼
                 </Link>
               </nav>
@@ -97,7 +97,7 @@ export default function Footer() {
                 <p className="mt-2">
                   <a
                     href="mailto:abelai.korea@gmail.com"
-                    className="transition-colors hover:text-white"
+                    className="transition-colors hover:text-white inline-block py-1.5"
                   >
                     abelai.korea@gmail.com
                   </a>
