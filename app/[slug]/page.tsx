@@ -30,12 +30,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: yoast?.title ?? `${post.title.rendered} | ABEL`,
     description,
-    alternates: { canonical: `https://abel-ai.com/${slug}/` },
+    alternates: { canonical: `https://abel-ai.com/${slug}` },
     openGraph: {
       type: 'article',
       locale: 'ko_KR',
       siteName: 'ABEL AI',
-      url: `https://abel-ai.com/${slug}/`,
+      url: `https://abel-ai.com/${slug}`,
       title: yoast?.title ?? `${post.title.rendered} | ABEL`,
       description,
       images: [{ url: ogImage ?? '/logo.png' }],
