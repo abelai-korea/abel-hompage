@@ -5,7 +5,7 @@ import FaqClient, { type FaqCard } from './FaqClient';
 const WP_API = process.env.NEXT_PUBLIC_WP_API_URL || 'https://cms.abel-ai.com/wp-json/wp/v2';
 
 async function getFaqCards(): Promise<FaqCard[]> {
-  const res = await fetch(`${WP_API}/pages?slug=geo-aeo-faq`, { cache: 'no-store' });
+  const res = await fetch(`${WP_API}/pages?slug=geo-aeo-faq`, { next: { revalidate: 3600 } });
   if (!res.ok) return [];
   const pages = await res.json();
   const content: string = pages[0]?.content?.rendered ?? '';
