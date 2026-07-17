@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'SEO·GEO 최적화 컨설팅 | ABEL 서비스 안내',
   description:
     '지금 병원 홈페이지가 AI에게 어떻게 보이는지 진단하고, 문제점과 개선 로드맵을 처방합니다. 아벨의 SEO·GEO 최적화 컨설팅을 소개합니다.',
-  alternates: { canonical: 'https://abel-ai.com/service/consulting' },
+  alternates: { canonical: 'https://abel-ai.com/service/seo-geo-consulting' },
 };
 
 export default function ServiceConsultingPage() {

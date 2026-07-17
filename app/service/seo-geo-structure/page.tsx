@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'SEO·GEO 구조 구축 | ABEL 서비스 안내',
   description:
     'AI가 인용하기 가장 좋은 데이터 구조로 홈페이지를 처음부터 다시 짓습니다. 정보 구조 설계부터 질문형 콘텐츠, E-E-A-T 신호 배치까지 아벨의 구조 구축 서비스를 소개합니다.',
-  alternates: { canonical: 'https://abel-ai.com/service/structure' },
+  alternates: { canonical: 'https://abel-ai.com/service/seo-geo-structure' },
 };
 
 export default function ServiceStructurePage() {

@@ -10,28 +10,28 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
-    href: '/service/structure',
+    href: '/service/seo-geo-structure',
     num: '01',
     title: 'SEO·GEO 구조 구축',
     sub: '홈페이지 제작',
     desc: 'AI가 인용하기 가장 좋은 데이터 구조로 처음부터 다시 짓습니다.',
   },
   {
-    href: '/service/consulting',
+    href: '/service/seo-geo-consulting',
     num: '02',
     title: 'SEO·GEO 최적화 컨설팅',
     sub: '진단 및 처방',
     desc: '지금 우리 병원 홈페이지가 AI에게 어떻게 보이는지 진단하고, 문제점과 개선 로드맵을 처방합니다.',
   },
   {
-    href: '/service/operation',
+    href: '/service/seo-geo-management',
     num: '03',
     title: 'SEO·GEO 운영 대행',
     sub: '콘텐츠 관리',
     desc: '질문에 답하는 콘텐츠로 AI 내 병원의 권위를 지속적으로 쌓습니다.',
   },
   {
-    href: '/service/education',
+    href: '/service/seo-geo-education',
     num: '04',
     title: 'SEO·GEO 실무 교육',
     sub: '내부 역량 강화',

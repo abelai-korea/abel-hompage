@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const SERVICE_MENU = [
-  { href: '/service/structure', label: 'SEO·GEO 구조 구축' },
-  { href: '/service/consulting', label: 'SEO·GEO 최적화 컨설팅' },
-  { href: '/service/operation', label: 'SEO·GEO 운영 대행' },
-  { href: '/service/education', label: 'SEO·GEO 실무 교육' },
+  { href: '/service/seo-geo-structure', label: 'SEO·GEO 구조 구축' },
+  { href: '/service/seo-geo-consulting', label: 'SEO·GEO 최적화 컨설팅' },
+  { href: '/service/seo-geo-management', label: 'SEO·GEO 운영 대행' },
+  { href: '/service/seo-geo-education', label: 'SEO·GEO 실무 교육' },
 ];
 
 export default function Header() {
