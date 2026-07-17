@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getPosts, formatDate, stripHtml, demoteContentH1 } from '@/lib/wordpress';
+import { getPostBySlug, getPosts, formatDate, stripHtml, demoteContentH1, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
 
 export const revalidate = 3600;
@@ -52,6 +52,20 @@ export default async function PostPage({ params }: Props) {
   const category = post._embedded?.['wp:term']?.[0]?.[0];
   const date = formatDate(post.date);
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://abel-ai.com/' },
+      { '@type': 'ListItem', position: 2, name: '블로그', item: 'https://abel-ai.com/blog' },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: decodeHtmlEntities(stripHtml(post.title.rendered)),
+      },
+    ],
+  };
+
   return (
     <div className="pt-24 pb-20 min-h-screen bg-white">
       <div className="max-w-[1040px] mx-auto px-6 flex gap-10 items-start">
@@ -88,6 +102,14 @@ export default async function PostPage({ params }: Props) {
           {post.yoast_head && (
             <div dangerouslySetInnerHTML={{ __html: extractJsonLd(post.yoast_head) }} />
           )}
+
+          {/* 탐색경로(BreadcrumbList) 스키마 */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c'),
+            }}
+          />
 
           {/* 하단 CTA */}
           <div className="mt-16 bg-slate-950 rounded-3xl p-10 text-white text-center">

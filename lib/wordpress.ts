@@ -101,6 +101,32 @@ export function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, '').trim();
 }
 
+const HTML_ENTITIES: Record<string, string> = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  '#039': "'",
+  '#8216': '‘',
+  '#8217': '’',
+  '#8220': '“',
+  '#8221': '”',
+  '#8211': '–',
+  '#8212': '—',
+  '#8230': '…',
+};
+
+export function decodeHtmlEntities(text: string): string {
+  return text.replace(/&(#?\w+);/g, (match, entity) => {
+    if (HTML_ENTITIES[entity]) return HTML_ENTITIES[entity];
+    if (entity.startsWith('#')) {
+      const code = parseInt(entity.slice(1), 10);
+      return Number.isNaN(code) ? match : String.fromCharCode(code);
+    }
+    return match;
+  });
+}
+
 // post.content.rendered에 제목을 반복하는 <h1>이 포함된 경우가 있어(WP 원고 이슈),
 // 페이지의 실제 h1(post.title.rendered)과 중복되지 않도록 h2로 낮춘다.
 export function demoteContentH1(html: string): string {
