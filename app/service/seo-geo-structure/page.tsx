@@ -11,54 +11,54 @@ export const metadata: Metadata = {
 
 const PAIN_POINTS = [
   {
-    title: '통이미지 기반 제작의 맹점',
-    desc: '많은 병원 사이트가 화려한 상세 정보를 통이미지 하나로 배치합니다. 구글과 AI 크롤러에게 이 이미지는 무의미한 파일일 뿐이며, 원장님의 독보적인 의학적 전문성이 검색 필터에서 완전히 소외되는 주범입니다.',
+    title: '크롤러와 AI를 차단하는 ‘통이미지’ 도배',
+    desc: '화려하게 제작된 치료 사례, 의료진 약력, 전문 칼럼들이 통짜 이미지 파일로 업로드되어 있습니다. 검색 로봇과 AI에게 이미지는 한 조각의 그림일 뿐, 그 안의 글씨를 해독할 수 없습니다.',
   },
   {
-    title: '크롤링 환경의 병목',
-    desc: '홈페이지 내 링크 구조와 메뉴(GNB)가 무질서하게 꼬여 있으면, 검색 로봇이 읽다가 길을 잃고 중도 이탈해 버립니다. 정보 수집이 차단된 페이지는 색인(Indexing) 자체가 되지 않아 세상에 존재하지 않는 페이지가 됩니다.',
+    title: '환자의 고민을 연결하지 못하는 구조',
+    desc: '홈페이지는 거창하게 만들어 두었지만, 환자가 밤마다 절박하게 검색하는 질문(예: "어지럼증이 3일째 지속되는데 무슨 병인가요?")과 병원의 치료법을 이어주는 동선 설계가 없습니다.',
   },
   {
-    title: '메시지와 질문의 연결 유실',
-    desc: '환자들은 구글에 "울세라 부작용", "임플란트 뼈이식 통증 시기"처럼 구체적인 질문(롱테일 키워드)을 던집니다. 하지만 홈페이지가 교과서적인 정보만 일방적으로 늘어놓는다면 AI는 우리 병원을 답변의 출처로 인용할 수 없습니다.',
+    title: '이탈률만 높이는 일방적인 정보 제공',
+    desc: '유입된 환자가 참여할 만한 흥미로운 요소 없이 빽빽한 줄글과 약력만 나열되어 있어, 환자는 3초 만에 뒤로 가기를 누르고 이탈합니다.',
   },
 ];
 
 const SOLUTIONS = [
   {
     num: '1',
-    title: '크롤러 친화적 정보구조(IA) 설계',
-    desc: '홈페이지의 전체 메뉴(GNB)와 깊이(Depth)를 밀도 높은 피라미드 계층 구조로 배치합니다. 크롤러 로봇이 가장 원활하게 데이터를 가져갈 수 있도록 내부 링크 구조를 설계해 수집 속도와 크롤 버젯 효율을 극대화합니다.',
+    title: '이미지 뒤에 숨겨진 글씨를 읽게 만드는 AI 맞춤형 데이터 코딩',
+    tag: '테크니컬 SEO',
+    desc: '원장님의 독보적인 전문성과 임상 경력이 검색엔진과 AI에게 고스란히 읽히도록, 모든 콘텐츠를 텍스트 데이터화하여 코딩합니다. AI가 병원을 인용할 때 가장 먼저 우리 병원 홈페이지의 문장을 출처로 채택할 수 있는 ‘구조적 뼈대(Schema Markup)’를 기본으로 구축합니다.',
   },
   {
     num: '2',
-    title: '질문형 콘텐츠 아키텍처 구축',
-    desc: '환자가 실제로 겪는 통증과 고민, 즉 롱테일 검색 의도를 정확하게 매핑합니다. 환자가 질문하고 AI가 답변하는 구조에 맞춰 "질문–답변–근거"의 의미론적(Semantic) 질문형 칼럼 구조를 기본 탑재해 AI 답변 인용 확률을 높입니다.',
+    title: '환자의 의심을 제거하고 예약으로 이끄는 3~5단계 신뢰 안착 동선',
+    tag: '전환율 최적화',
+    desc: '고객(환자)은 홈페이지에 들어오자마자 예약을 누르지 않습니다. 최소 3~5개의 검증된 정보와 임상 사례를 소비한 뒤에야 비로소 의심을 걷어내고 예약을 결심합니다. 환자의 심리적 허들을 단계별로 무너뜨리는 최적의 정보 배치와 예약 동선(Internal Linking)을 홈페이지 설계 단계부터 이식합니다.',
   },
   {
     num: '3',
-    title: 'E-E-A-T 신뢰 신호 시스템 배치',
-    desc: '구글이 의학 정보의 전문성을 평가할 때 요구하는 E-E-A-T(경험·전문성·권위성·신뢰성) 규격을 홈페이지 뼈대에 이식합니다. 의사의 임상 경험, 사실과 근거, 실제 치료 사례를 검색 엔진이 인식할 수 있는 스키마 마크업(Schema Markup)으로 변환해 삽입합니다.',
+    title: '검색 로봇을 가장 빠르게 안내하는 고속도로 구조 설계',
+    tag: '크롤러빌리티 개선',
+    desc: '아무리 좋은 글을 써도 구글의 수집 로봇이 홈페이지에 들어오다가 길을 잃거나 시스템 에러를 만나 이탈하면 무용지물입니다. 메인 홈페이지(GNB)를 검색 로봇이 가장 중요하게 여기는 ‘뇌(Header)’ 영역 중심으로 명료하게 설계하고, 최신 글이 작성되는 즉시 AI와 검색 엔진에 1초 만에 알림을 보내는 고속 수집 엔진(RSS/ATOM 피드)을 탑재합니다.',
   },
   {
     num: '4',
-    title: '고속 수집 및 최적화 코딩',
-    desc: '무거운 플러그인과 비효율적 코딩을 배제하고 가볍고 빠른 웹 표준으로 구축합니다. 새 콘텐츠 발행 즉시 색인 요청이 이루어지는 동적 사이트맵(XML)과 고속 수집 피드를 기본 장착해 인덱싱 속도를 극대화합니다.',
+    title: '환자의 참여율과 체류 시간을 폭발적으로 늘리는 자가진단 기능 결합',
+    tag: 'CRO 자바스크립트',
+    desc: '지루하게 읽기만 하는 페이지는 이탈을 부릅니다. 환자가 직접 자신의 통증이나 증상(예: 돌발성 난청, 어지럼증)을 가볍게 체크해 볼 수 있는 ‘반응형 자가진단 모듈’을 웹페이지 내에 탑재합니다. 환자의 참여 유도를 통해 페이지 체류 시간(Dwell Time)을 극대화하고, 자연스럽게 문의하기(CTA)로 전환되도록 이끕니다.',
   },
 ];
 
 const WHY_ABEL = [
   {
-    title: '감이 아닌 철저한 데이터 기반 기획',
-    desc: '무작위 템플릿 복제가 아닌, 개원 지역과 진료과별 실제 오가닉 검색량과 환자 니즈 분석을 선행한 뒤에야 정보구조(IA)를 그리기 시작합니다.',
+    title: '감이 아닌 정량화된 가이드 문서 제공',
+    desc: '아벨은 "예쁘게 만들어 드릴게요"라는 모호한 약속을 하지 않습니다. AI와 검색 로봇이 완벽하게 정보를 긁어갈 수 있는 코딩 규칙과 환자의 전환 설계가 반영된 ‘데이터 아키텍처 가이드라인 및 우선순위 수정 지시서’를 문서 형태로 투명하게 인도합니다.',
   },
   {
-    title: '의심을 제거하는 콘텐츠 소비 퍼널',
-    desc: '환자는 단 한 번의 광고 노출만으로 내원하지 않습니다. 메인 유입부터 세부 증상 정보, 최종 결정 키워드까지 이어지는 내부 연결 동선을 정밀 설계해 환자가 스스로 설득되는 신뢰 퍼널을 형성합니다.',
-  },
-  {
-    title: '문서로 제공되는 우리 병원만의 설계 자산',
-    desc: '제작 후 방치되는 일반 홈페이지와 달리, 원장님이 직접 칼럼을 쓰거나 마케팅을 확장할 때 가이드라인이 될 [전용 콘텐츠 기획서 및 데이터 가이드]를 영구 자산으로 제공합니다.',
+    title: '자산으로서의 홈페이지 구축',
+    desc: '매달 광고비를 쏟아부어야만 유지되는 일시적인 홈페이지가 아닙니다. 시간이 흐르고 전문 칼럼이 쌓일수록 사이트 자체의 ‘신뢰 자산(E-E-A-T)’이 눈덩이처럼 불어나 오가닉 트래픽을 평생 통제할 수 있는 구조를 제공합니다.',
   },
 ];
 
@@ -109,22 +109,22 @@ export default function ServiceStructurePage() {
               className="text-4xl md:text-5xl lg:text-[3.1rem] font-black text-white leading-[1.32] mb-6"
               style={{ letterSpacing: '-0.02em' }}
             >
-              ChatGPT와 Gemini가 우리 병원을{' '}
+              디자인만 예쁜 껍데기 홈페이지는 가라.
+              <br className="hidden md:block" />
+              AI와 검색엔진이 먼저 알아보고{' '}
               <span
                 className="text-transparent bg-clip-text"
                 style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
               >
-                &lsquo;가장 먼저 추천하는 정답&rsquo;
+                환자에게 추천하는 홈페이지
               </span>
-              으로 인용하도록.
             </h1>
             <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>
-              아벨은 눈에 보이는 디자인 너머, AI 엔진이 신뢰하는 병원 데이터 구조를 설계합니다.
+              혹시 원장님의 홈페이지도 AI와 검색엔진 눈에는 ‘빈 화면’으로 보이고 있진 않나요?
             </p>
             <p className="text-sm leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.58)' }}>
-              환자는 의심이 해소될 때까지 평균 3~5개의 콘텐츠를 소비한 뒤에야 예약합니다.
-              구글 오가닉 트래픽부터 AI 인용 데이터까지, 환자의 여정 전체를 설계하는
-              아벨의 고밀도 홈페이지 제작 솔루션입니다.
+              예쁘게 만드는 것만으로는 부족합니다. AI와 검색엔진이 먼저 알아보고
+              환자에게 추천하는, ‘데이터 설계 기반’의 진짜 신환 유치 홈페이지를 만들어 드립니다.
             </p>
             <Link
               href="/contact"
@@ -145,13 +145,14 @@ export default function ServiceStructurePage() {
             className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-snug"
             style={{ letterSpacing: '-0.02em' }}
           >
-            수천만 원을 들여 예쁘게 만든 홈페이지,
+            혹시 원장님의 홈페이지도 AI와 검색엔진 눈에는
             <br className="hidden md:block" />
-            왜 AI는 한 줄도 인용하지 않을까요?
+            ‘빈 화면’으로 보이고 있진 않나요?
           </h2>
           <p className="text-gray-500 leading-relaxed mb-8">
-            검색 로봇과 AI 답변 엔진은 디자인을 보지 못합니다. 텍스트를 읽고 분류(Indexing)할 수 있는
-            구조가 없다면, 아무리 훌륭한 치료 사례와 메시지도 검색 엔진에는 &lsquo;그림의 떡&rsquo;일 뿐입니다.
+            대부분의 병원 홈페이지가 수백, 수천만 원을 들여 화려한 디자인으로 제작되지만
+            정작 검색창이나 ChatGPT, Gemini 같은 AI 답변 엔진에는 전혀 인용되지 않습니다.
+            그 이유는 무엇일까요?
           </p>
           <div
             className="bg-white rounded-2xl border border-gray-100 divide-y divide-gray-100"
@@ -173,8 +174,7 @@ export default function ServiceStructurePage() {
         <section className="mb-16">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">SOLUTION</p>
           <h2 className="text-2xl font-black text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
-            AI가 가장 먼저 찾아와 신뢰할 수밖에 없는<br className="hidden md:block" />
-            병원 홈페이지의 4가지 설계 원칙
+            아벨은 기술적 전문성을 ‘원장님의 언어’로 재설계합니다
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {SOLUTIONS.map((item) => (
@@ -183,7 +183,9 @@ export default function ServiceStructurePage() {
                 className="bg-white rounded-2xl border-t-4 border-violet-600 p-7"
                 style={{ boxShadow: CARD_SHADOW }}
               >
-                <p className="text-sm font-black text-violet-600 mb-2">{item.num}.</p>
+                <p className="text-xs font-black text-violet-600 mb-2 uppercase tracking-wider">
+                  {item.num}. {item.tag}
+                </p>
                 <h3 className="text-lg font-black text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -209,9 +211,9 @@ export default function ServiceStructurePage() {
                 WHY ABEL
               </p>
               <h2 className="text-2xl font-black mb-8" style={{ letterSpacing: '-0.02em' }}>
-                디자인이 아니라, 데이터 설계가 홈페이지의 출발점입니다
+                우리는 단순한 ‘디자이너’가 아니라 ‘데이터 아키텍트’입니다
               </h2>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 {WHY_ABEL.map((w) => (
                   <div key={w.title}>
                     <p className="font-bold mb-2">{w.title}</p>
@@ -258,22 +260,20 @@ export default function ServiceStructurePage() {
               FREE DIAGNOSIS
             </p>
             <h2 className="text-2xl md:text-3xl font-black mb-4" style={{ letterSpacing: '-0.02em' }}>
-              우리 병원 홈페이지, 지금 AI와 구글 앞에서 어떤 상태일까요?
+              원장님의 현재 홈페이지, 과연 AI가 읽을 수 있을까요?
+              <br className="hidden md:block" />
+              5분 만에 진단해 드립니다.
             </h2>
-            <p className="mb-6" style={{ color: 'rgba(255,255,255,0.82)' }}>
-              약 100여 개 테크니컬 &amp; 콘텐츠 항목을 정밀 진단합니다. 크롤링 수집 에러, 색인 누락 페이지,
-              E-E-A-T 점검 및 경쟁 병원의 AI 노출 상태를 전수 조사하여 리포트로 제공해 드립니다.
-            </p>
-            <p className="text-sm mb-8 pl-4 border-l-2" style={{ color: 'rgba(255,255,255,0.65)', borderColor: 'rgba(168,85,247,0.5)' }}>
-              현재 운영 중인 홈페이지 주소를 남겨주시면, 아벨의 기술 이사가 직접 크롤러 수집 환경과
-              데이터 누락 상태를 정밀 분석하여 1:1 맞춤형 처방 리포트를 보내드립니다.
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.82)' }}>
+              지금 바로 아벨의 정밀 진단을 신청하고, 우리 병원 사이트의 검색 수집 방해 요인과
+              AI 인용 누락 문제를 전수 점검받으세요.
             </p>
             <Link
               href="/contact"
               className="inline-block px-8 py-4 rounded-full text-white font-bold transition-all hover:opacity-90 hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
             >
-              무료 정밀 진단 및 상담 신청하기 ↗
+              지금 무료 정밀 진단 신청하고 예약 동선 개선하기 ↗
             </Link>
           </div>
         </div>
