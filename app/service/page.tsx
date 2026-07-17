@@ -4,9 +4,40 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '서비스 안내 | ABEL',
   description:
-    'ABEL은 병원과 브랜드가 AI 검색 엔진(GEO) 안에서 더 잘 이해되도록 홈페이지 구조, 질문형 콘텐츠, FAQ·사례·신뢰 구조를 설계합니다.',
+    'ABEL은 AI 답변 엔진이 병원을 정답으로 인용하도록 구조 구축, 컨설팅, 운영 대행, 실무 교육 4가지 솔루션으로 SEO·GEO를 설계합니다.',
   alternates: { canonical: 'https://abel-ai.com/service' },
 };
+
+const SERVICES = [
+  {
+    href: '/service/structure',
+    num: '01',
+    title: 'SEO·GEO 구조 구축',
+    sub: '홈페이지 제작',
+    desc: 'AI가 인용하기 가장 좋은 데이터 구조로 처음부터 다시 짓습니다.',
+  },
+  {
+    href: '/service/consulting',
+    num: '02',
+    title: 'SEO·GEO 최적화 컨설팅',
+    sub: '진단 및 처방',
+    desc: '지금 우리 병원 홈페이지가 AI에게 어떻게 보이는지 진단하고, 문제점과 개선 로드맵을 처방합니다.',
+  },
+  {
+    href: '/service/operation',
+    num: '03',
+    title: 'SEO·GEO 운영 대행',
+    sub: '콘텐츠 관리',
+    desc: '질문에 답하는 콘텐츠로 AI 내 병원의 권위를 지속적으로 쌓습니다.',
+  },
+  {
+    href: '/service/education',
+    num: '04',
+    title: 'SEO·GEO 실무 교육',
+    sub: '내부 역량 강화',
+    desc: '우리 병원만의 정답 데이터를 만드는 법, 원장님과 실무자가 직접 실행하게 합니다.',
+  },
+];
 
 export default function ServicePage() {
   return (
@@ -20,33 +51,29 @@ export default function ServicePage() {
             서비스 안내
           </h1>
           <p className="text-gray-500 text-sm max-w-xl mx-auto">
-            아벨은 병원과 브랜드가 AI 안에서 더 잘 이해되도록 구조를 설계합니다.
+            AI 답변 엔진이 병원을 정답으로 인용하도록, 아벨은 4가지 핵심 솔루션으로 구조를 설계합니다.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {[
-            {
-              num: '1',
-              title: '홈페이지 구조',
-              desc: '메인 메시지, 핵심 포지션, 카테고리 흐름, 비교 구조를 정리합니다.',
-            },
-            {
-              num: '2',
-              title: '질문형 콘텐츠',
-              desc: '환자가 실제로 묻는 질문을 증상형, 추천형, 비교형으로 나눠 설계합니다.',
-            },
-            {
-              num: '3',
-              title: 'FAQ·사례·신뢰 구조',
-              desc: '후기, 사례, 선택 기준, 자주 묻는 질문을 하나의 설명 구조로 묶습니다.',
-            },
-          ].map((item) => (
-            <div key={item.num} className="bg-white rounded-2xl border-t-4 border-violet-600 p-6 shadow-sm">
-              <p className="text-sm font-black text-violet-600 mb-2">{item.num}.</p>
-              <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-            </div>
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {SERVICES.map((s) => (
+            <Link
+              key={s.href}
+              href={s.href}
+              className="group bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:border-violet-200 transition-all"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <span className="text-sm font-black text-violet-600">{s.num}</span>
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{s.sub}</span>
+              </div>
+              <h2 className="text-xl font-black text-gray-900 mb-3 group-hover:text-violet-600 transition-colors">
+                {s.title}
+              </h2>
+              <p className="text-gray-500 leading-relaxed mb-5">{s.desc}</p>
+              <span className="text-sm font-bold text-violet-600 inline-flex items-center gap-1">
+                자세히 보기 →
+              </span>
+            </Link>
           ))}
         </div>
 
