@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm';
 export const metadata: Metadata = {
   title: '상담 문의 | ABEL',
   description:
-    'ABEL GEO 정밀 진단 신청서. 병원 홈페이지의 크롤링 환경, E-E-A-T 신호 등 17개 항목을 전수 분석합니다. 권역별 쿼터제로 상권을 보호합니다.',
+    'ABEL GEO 정밀 진단 신청서. 병원 홈페이지의 크롤링 환경, E-E-A-T 신호 등 약 100여개 항목을 전수 분석합니다. 권역별 쿼터제로 상권을 보호합니다.',
   alternates: { canonical: 'https://abel-ai.com/contact' },
 };
 
@@ -42,7 +42,7 @@ export default function ContactPage() {
               </h2>
               <p className="text-base mb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 아벨의 GEO 정밀 진단은 AI 전문가가 원장님의 홈페이지 크롤링 환경, E-E-A-T 신호 등{' '}
-                <span className="font-bold text-white">17개 항목을 전수 분석</span>하는 서비스입니다.
+                <span className="font-bold text-white">약 100여개 항목을 전수 분석</span>하는 서비스입니다.
               </p>
               <div className="p-6 bg-white/8 border border-white/15 rounded-2xl space-y-4 text-sm font-medium">
                 <div className="flex gap-2" style={{ color: 'rgba(255,255,255,0.9)' }}>

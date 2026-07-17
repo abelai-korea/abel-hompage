@@ -79,7 +79,7 @@ export default function HomePage() {
                 style={{ borderColor: 'rgba(255,255,255,0.08)' }}
               >
                 {[
-                  { num: '17', label: '진단 항목' },
+                  { num: '100+', label: '진단 항목' },
                   { num: '1', label: '구별 계약' },
                   { num: '300+', label: 'FAQ 수록' },
                   { num: '3', label: '핵심 구조' },
@@ -387,7 +387,7 @@ export default function HomePage() {
               </h2>
               <p className="text-base mb-10 leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 AI 전문가가 원장님의 홈페이지 크롤링 환경, E-E-A-T 신호 등{' '}
-                <span className="font-bold text-white">17개 항목을 전수 분석</span>합니다.
+                <span className="font-bold text-white">약 100여개 항목을 전수 분석</span>합니다.
                 권역별 쿼터제로 각 구(시)별 진료과당 딱 1개 병원만 계약합니다.
               </p>
               <Link
