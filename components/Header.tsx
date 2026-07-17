@@ -39,6 +39,12 @@ export default function Header() {
 
         {/* 데스크탑 메뉴 */}
         <nav className="hidden md:flex items-center gap-8">
+          <Link
+            href="/"
+            className="text-sm font-semibold transition-colors text-white/65 hover:text-white"
+          >
+            홈
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setServiceOpen(true)}
@@ -118,6 +124,14 @@ export default function Header() {
             borderColor: 'rgba(255,255,255,0.06)',
           }}
         >
+          <Link
+            href="/"
+            className="text-sm font-semibold"
+            style={{ color: 'rgba(255,255,255,0.7)' }}
+            onClick={() => setMenuOpen(false)}
+          >
+            홈
+          </Link>
           <Link
             href="/service"
             className="text-sm font-semibold"
