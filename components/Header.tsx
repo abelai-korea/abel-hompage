@@ -50,7 +50,7 @@ export default function Header() {
             칼럼
           </Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="px-5 py-2 rounded-full text-sm font-bold text-white transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
           >
@@ -105,7 +105,7 @@ export default function Header() {
             칼럼
           </Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="text-sm font-bold"
             style={{ color: '#a855f7' }}
             onClick={() => setMenuOpen(false)}

@@ -114,7 +114,7 @@ export default function Footer() {
               © 2026 ABEL AI. All rights reserved.
             </p>
             <Link
-              href="/#contact"
+              href="/contact"
               className="px-6 py-2.5 rounded-full text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
             >

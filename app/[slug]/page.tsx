@@ -120,7 +120,7 @@ export default async function PostPage({ params }: Props) {
               귀하의 병원도 AI 추천 목록에 오를 수 있습니다
             </h2>
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-block mt-2 px-8 py-4 rounded-full text-white font-black transition-opacity hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
             >

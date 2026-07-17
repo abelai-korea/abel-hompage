@@ -21,11 +21,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/contact',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/dental-geo-ai-recommendation',
         destination: '/dental-geo-v2',
         permanent: true,
