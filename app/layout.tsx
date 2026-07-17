@@ -110,6 +110,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${inter.variable} ${spaceGrotesk.variable} ${notoSansKR.variable}`}>
+      <head>
+        {/* Pretendard Variable — 서비스 상세 페이지 디자인 업그레이드용. 전역 기본 폰트는 유지, .pretendard 클래스로만 opt-in */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"

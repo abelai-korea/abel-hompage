@@ -62,6 +62,8 @@ const WHY_ABEL = [
   },
 ];
 
+const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
+
 function WarningIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="text-red-400 flex-shrink-0">
@@ -74,62 +76,64 @@ function WarningIcon() {
 
 export default function ServiceStructurePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* ─── HERO (다크) ─────────────────────────────── */}
+    <div className="pretendard min-h-screen bg-gray-50">
+      {/* ─── HERO (다크, 입체감 레이어) ─────────────────────────────── */}
       <section
-        className="relative pt-40 pb-24 overflow-hidden"
-        style={{ background: 'linear-gradient(150deg, #0d0020 0%, #060010 50%, #000000 100%)' }}
+        className="relative pt-40 pb-28 overflow-hidden isolate"
+        style={{ background: '#0d0020' }}
       >
+        {/* 딥 베이스 + 비대칭 광원 2점 */}
         <div
-          className="absolute pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            top: '-250px', right: '-150px',
-            width: '800px', height: '800px',
-            background: 'radial-gradient(circle, rgba(109,40,217,0.5) 0%, transparent 60%)',
-            borderRadius: '50%',
+            background:
+              'radial-gradient(680px 460px at 82% -10%, rgba(124,58,237,0.42) 0%, transparent 62%), ' +
+              'radial-gradient(560px 420px at -8% 108%, rgba(88,28,135,0.5) 0%, transparent 58%), ' +
+              '#0d0020',
           }}
         />
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            bottom: '-120px', left: '-100px',
-            width: '500px', height: '500px',
-            background: 'radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 65%)',
-            borderRadius: '50%',
-          }}
-        />
+        {/* 원근 그리드 */}
+        <div className="hero-depth-grid" />
+        {/* 그레인 노이즈 */}
+        <div className="hero-grain" />
+
         <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
-          <p
-            className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
-            style={{ color: 'rgba(255,255,255,0.65)' }}
-          >
-            SERVICE 01 · 홈페이지 제작
-          </p>
-          <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-white leading-[1.35] mb-6">
-            ChatGPT와 Gemini가 우리 병원을{' '}
-            <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
+          <div className="stagger">
+            <p
+              className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
+              style={{ color: 'rgba(196,181,253,0.85)' }}
             >
-              &lsquo;가장 먼저 추천하는 정답&rsquo;
-            </span>
-            으로 인용하도록.
-          </h1>
-          <p className="text-base leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.88)' }}>
-            아벨은 눈에 보이는 디자인 너머, AI 엔진이 신뢰하는 병원 데이터 구조를 설계합니다.
-          </p>
-          <p className="text-sm leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            환자는 의심이 해소될 때까지 평균 3~5개의 콘텐츠를 소비한 뒤에야 예약합니다.
-            구글 오가닉 트래픽부터 AI 인용 데이터까지, 환자의 여정 전체를 설계하는
-            아벨의 고밀도 홈페이지 제작 솔루션입니다.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
-          >
-            우리 병원 무료 정밀 진단 신청하기 ↗
-          </Link>
+              SERVICE 01 · 홈페이지 제작
+            </p>
+            <h1
+              className="text-4xl md:text-5xl lg:text-[3.1rem] font-black text-white leading-[1.32] mb-6"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              ChatGPT와 Gemini가 우리 병원을{' '}
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
+              >
+                &lsquo;가장 먼저 추천하는 정답&rsquo;
+              </span>
+              으로 인용하도록.
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              아벨은 눈에 보이는 디자인 너머, AI 엔진이 신뢰하는 병원 데이터 구조를 설계합니다.
+            </p>
+            <p className="text-sm leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.58)' }}>
+              환자는 의심이 해소될 때까지 평균 3~5개의 콘텐츠를 소비한 뒤에야 예약합니다.
+              구글 오가닉 트래픽부터 AI 인용 데이터까지, 환자의 여정 전체를 설계하는
+              아벨의 고밀도 홈페이지 제작 솔루션입니다.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
+              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+            >
+              우리 병원 무료 정밀 진단 신청하기 ↗
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -137,7 +141,10 @@ export default function ServiceStructurePage() {
         {/* 문제 제기 */}
         <section className="mb-16 pt-20">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">PAIN POINT</p>
-          <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-snug">
+          <h2
+            className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-snug"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             수천만 원을 들여 예쁘게 만든 홈페이지,
             <br className="hidden md:block" />
             왜 AI는 한 줄도 인용하지 않을까요?
@@ -146,7 +153,10 @@ export default function ServiceStructurePage() {
             검색 로봇과 AI 답변 엔진은 디자인을 보지 못합니다. 텍스트를 읽고 분류(Indexing)할 수 있는
             구조가 없다면, 아무리 훌륭한 치료 사례와 메시지도 검색 엔진에는 &lsquo;그림의 떡&rsquo;일 뿐입니다.
           </p>
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm divide-y divide-gray-100">
+          <div
+            className="bg-white rounded-2xl border border-gray-100 divide-y divide-gray-100"
+            style={{ boxShadow: CARD_SHADOW }}
+          >
             {PAIN_POINTS.map((p) => (
               <div key={p.title} className="flex gap-3 p-6">
                 <WarningIcon />
@@ -162,13 +172,17 @@ export default function ServiceStructurePage() {
         {/* 해결책 제시 */}
         <section className="mb-16">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">SOLUTION</p>
-          <h2 className="text-2xl font-black text-gray-900 mb-6">
+          <h2 className="text-2xl font-black text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
             AI가 가장 먼저 찾아와 신뢰할 수밖에 없는<br className="hidden md:block" />
             병원 홈페이지의 4가지 설계 원칙
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {SOLUTIONS.map((item) => (
-              <div key={item.num} className="bg-white rounded-2xl border-t-4 border-violet-600 p-6 shadow-sm">
+              <div
+                key={item.num}
+                className="bg-white rounded-2xl border-t-4 border-violet-600 p-7"
+                style={{ boxShadow: CARD_SHADOW }}
+              >
                 <p className="text-sm font-black text-violet-600 mb-2">{item.num}.</p>
                 <h3 className="text-lg font-black text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
@@ -194,7 +208,7 @@ export default function ServiceStructurePage() {
               <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4" style={{ color: '#a855f7' }}>
                 WHY ABEL
               </p>
-              <h2 className="text-2xl font-black mb-8">
+              <h2 className="text-2xl font-black mb-8" style={{ letterSpacing: '-0.02em' }}>
                 디자인이 아니라, 데이터 설계가 홈페이지의 출발점입니다
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
@@ -216,7 +230,7 @@ export default function ServiceStructurePage() {
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 text-center">
             INTERACTIVE DEMO
           </p>
-          <h2 className="text-2xl font-black text-gray-900 mb-3 text-center">
+          <h2 className="text-2xl font-black text-gray-900 mb-3 text-center" style={{ letterSpacing: '-0.02em' }}>
             체류 시간과 문의 전환율을 높이는 자가진단 인터랙션
           </h2>
           <p className="text-gray-500 leading-relaxed mb-8 text-center max-w-xl mx-auto">
@@ -243,7 +257,7 @@ export default function ServiceStructurePage() {
             <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4" style={{ color: '#a855f7' }}>
               FREE DIAGNOSIS
             </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-4">
+            <h2 className="text-2xl md:text-3xl font-black mb-4" style={{ letterSpacing: '-0.02em' }}>
               우리 병원 홈페이지, 지금 AI와 구글 앞에서 어떤 상태일까요?
             </h2>
             <p className="mb-6" style={{ color: 'rgba(255,255,255,0.82)' }}>
@@ -256,7 +270,7 @@ export default function ServiceStructurePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 rounded-full text-white font-bold transition-all hover:opacity-90 hover:scale-[1.02]"
+              className="inline-block px-8 py-4 rounded-full text-white font-bold transition-all hover:opacity-90 hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
             >
               무료 정밀 진단 및 상담 신청하기 ↗
