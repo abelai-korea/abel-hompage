@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, decodeHtmlEntities } from '@/lib/wordpress';
+import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, fixContentLinks, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
 
 export const revalidate = 3600;
@@ -95,7 +95,7 @@ export default async function PostPage({ params }: Props) {
           {/* 본문 */}
           <div
             className="wp-content"
-            dangerouslySetInnerHTML={{ __html: demoteContentH1(post.content.rendered) }}
+            dangerouslySetInnerHTML={{ __html: fixContentLinks(demoteContentH1(post.content.rendered)) }}
           />
 
           {/* JSON-LD 스키마 (Yoast SEO에서 자동 생성) */}
@@ -110,23 +110,6 @@ export default async function PostPage({ params }: Props) {
               __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c'),
             }}
           />
-
-          {/* 하단 CTA */}
-          <div className="mt-16 bg-slate-950 rounded-3xl p-10 text-white text-center">
-            <p className="text-xs font-black text-indigo-400 uppercase tracking-widest mb-3">
-              ABEL GEO 진단
-            </p>
-            <h2 className="text-2xl font-black mb-4">
-              귀하의 병원도 AI 추천 목록에 오를 수 있습니다
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-block mt-2 px-8 py-4 rounded-full text-white font-black transition-opacity hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #4338CA 0%, #6528F7 100%)' }}
-            >
-              GEO 진단 신청하기 →
-            </Link>
-          </div>
 
           {/* 칼럼 목록으로 */}
           <div className="mt-8 text-center">

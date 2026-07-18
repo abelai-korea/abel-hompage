@@ -132,3 +132,16 @@ export function decodeHtmlEntities(text: string): string {
 export function demoteContentH1(html: string): string {
   return html.replace(/<(\/?)h1(\s[^>]*)?>/gi, '<$1h2$2>');
 }
+
+// WP 원고 본문에 하드코딩된 두 링크를 고친다(64개 칼럼 전수조사로 확인한 패턴들):
+// 1) 하단 CTA 버튼(class="cta-btn")이 "#contact"(글 자체엔 없는 앵커라 아무 반응 없음) 또는
+//    "abel-ai.com/#contact"(홈 앵커, 잘못된 위치)로 가던 것을 실제 문의 페이지로 통일.
+//    이미 "abel-ai.com/contact"로 맞게 박혀 있는 원고는 아래 치환에 안 걸려 그대로 유지된다.
+// 2) "관련 글 보러가기" 목록이 노출용이 아닌 cms.abel-ai.com(헤드리스 백엔드) 도메인을
+//    그대로 링크하고 있어, 실서비스 도메인으로 바꿔준다.
+export function fixContentLinks(html: string): string {
+  return html
+    .replace(/href="#contact"/g, 'href="https://abel-ai.com/contact"')
+    .replace(/href="https:\/\/abel-ai\.com\/#contact"/g, 'href="https://abel-ai.com/contact"')
+    .replace(/https:\/\/cms\.abel-ai\.com\//g, 'https://abel-ai.com/');
+}
