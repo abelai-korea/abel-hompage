@@ -10,6 +10,7 @@ export interface FaqCard {
 
 const ALL = '전체';
 const PER_PAGE = 10;
+const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
 
 interface Props {
   items: FaqCard[];
@@ -57,11 +58,16 @@ export default function FaqClient({ items, categories }: Props) {
           <button
             key={cat}
             onClick={() => handleCat(cat)}
-            className={`px-4 py-2 rounded-full text-sm font-bold border transition-colors ${
+            className={`px-4 py-2 rounded-full text-sm font-bold border transition-all ${
               activeCat === cat
-                ? 'bg-indigo-600 text-white border-indigo-600'
-                : 'bg-white text-slate-600 border-indigo-100 hover:border-indigo-400 hover:text-indigo-600'
+                ? 'text-white border-transparent'
+                : 'bg-white text-slate-600 border-violet-100 hover:border-violet-400 hover:text-violet-600'
             }`}
+            style={
+              activeCat === cat
+                ? { background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }
+                : { boxShadow: CARD_SHADOW }
+            }
           >
             {cat}
             {cat !== ALL && (
@@ -83,14 +89,15 @@ export default function FaqClient({ items, categories }: Props) {
         {pageItems.map((item, i) => (
           <div
             key={i}
-            className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+            className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:-translate-y-0.5 transition-all duration-300"
+            style={{ boxShadow: CARD_SHADOW }}
           >
             <button
               className="w-full text-left px-6 py-5 flex items-start justify-between gap-4"
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
             >
               <div className="flex flex-col gap-1.5 min-w-0">
-                <span className="text-xs font-black text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded-md self-start">
+                <span className="text-xs font-black text-violet-600 bg-violet-50 px-2 py-0.5 rounded-md self-start">
                   {item.category}
                 </span>
                 <span className="font-bold text-slate-900 leading-snug text-sm">
@@ -98,7 +105,7 @@ export default function FaqClient({ items, categories }: Props) {
                 </span>
               </div>
               <span
-                className={`flex-shrink-0 text-indigo-500 text-base mt-1 transition-transform duration-200 ${
+                className={`flex-shrink-0 text-violet-500 text-base mt-1 transition-transform duration-200 ${
                   openIndex === i ? 'rotate-180' : ''
                 }`}
               >
@@ -120,7 +127,7 @@ export default function FaqClient({ items, categories }: Props) {
           {currentPage > 1 && (
             <button
               onClick={() => handlePage(currentPage - 1)}
-              className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+              className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-violet-400 hover:text-violet-600 transition-colors"
             >
               ← 이전
             </button>
@@ -130,7 +137,7 @@ export default function FaqClient({ items, categories }: Props) {
             <>
               <button
                 onClick={() => handlePage(1)}
-                className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-indigo-400 transition-colors"
+                className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-violet-400 transition-colors"
               >
                 1
               </button>
@@ -146,8 +153,8 @@ export default function FaqClient({ items, categories }: Props) {
               onClick={() => handlePage(p)}
               className={`px-4 py-2 rounded-xl text-sm font-bold border transition-colors ${
                 p === currentPage
-                  ? 'bg-indigo-600 text-white border-indigo-600'
-                  : 'bg-white border-gray-200 text-gray-600 hover:border-indigo-400 hover:text-indigo-600'
+                  ? 'bg-violet-600 text-white border-violet-600'
+                  : 'bg-white border-gray-200 text-gray-600 hover:border-violet-400 hover:text-violet-600'
               }`}
             >
               {p}
@@ -161,7 +168,7 @@ export default function FaqClient({ items, categories }: Props) {
               )}
               <button
                 onClick={() => handlePage(totalPages)}
-                className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-indigo-400 transition-colors"
+                className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-violet-400 transition-colors"
               >
                 {totalPages}
               </button>
@@ -171,7 +178,7 @@ export default function FaqClient({ items, categories }: Props) {
           {currentPage < totalPages && (
             <button
               onClick={() => handlePage(currentPage + 1)}
-              className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+              className="px-4 py-2 rounded-xl text-sm font-bold border bg-white border-gray-200 text-gray-600 hover:border-violet-400 hover:text-violet-600 transition-colors"
             >
               다음 →
             </button>

@@ -46,20 +46,55 @@ export default async function FaqPage() {
   const categories = Array.from(new Set(allItems.map((i) => i.category)));
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-10 pt-8">
-          <p className="text-xs font-black text-indigo-500 uppercase tracking-widest mb-2">
-            ABEL FAQ
-          </p>
-          <h1 className="text-3xl md:text-4xl font-black text-slate-950 mb-3">
-            자주 묻는 질문
-          </h1>
-          <p className="text-gray-500 text-sm">
-            SEO·GEO에 대한 궁금증 <strong>{allItems.length}개</strong> 수록
-          </p>
-        </div>
+    <div className="pretendard min-h-screen bg-gray-50">
+      {/* ─── HERO (다크, 입체감 레이어 — /service와 동일 톤) ─────────────── */}
+      <section
+        className="relative pt-40 pb-24 overflow-hidden isolate"
+        style={{ background: '#0d0020' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(680px 460px at 82% -10%, rgba(124,58,237,0.42) 0%, transparent 62%), ' +
+              'radial-gradient(560px 420px at -8% 108%, rgba(88,28,135,0.5) 0%, transparent 58%), ' +
+              '#0d0020',
+          }}
+        />
+        <div className="hero-depth-grid" />
+        <div className="hero-grain" />
 
+        <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
+          <div className="stagger">
+            <p
+              className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
+              style={{ color: 'rgba(196,181,253,0.85)' }}
+            >
+              ABEL FAQ
+            </p>
+            <h1
+              className="text-4xl md:text-5xl font-black text-white leading-[1.32] mb-6"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              자주 묻는{' '}
+              <span
+                className="text-transparent bg-clip-text"
+                style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
+              >
+                SEO·GEO
+              </span>{' '}
+              질문
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
+              병원 원장님들이 가장 궁금해하시는 질문에 아벨이 직접 답합니다.
+              <br className="hidden md:block" />
+              총 <strong className="text-white">{allItems.length}개</strong>의 질문이 수록되어 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-6 py-16">
         <FaqClient items={allItems} categories={categories} />
       </div>
     </div>

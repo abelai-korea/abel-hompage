@@ -69,8 +69,8 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="pt-24 pb-20 min-h-screen bg-white">
       <div className="max-w-[1040px] mx-auto px-6 flex gap-10 items-start">
-        <aside className="hidden min-[1180px]:block w-48 shrink-0 sticky top-40">
-          <ArticleSidenav />
+        <aside className="hidden min-[1180px]:block w-48 shrink-0 sticky top-52">
+          <ArticleSidenav category={category ? { name: category.name, slug: category.slug } : undefined} />
         </aside>
         <article className="max-w-3xl pt-10 min-w-0">
           {/* 카테고리 & 날짜 */}

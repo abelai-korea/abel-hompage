@@ -83,52 +83,58 @@ export default function AboutPage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
-        {/* 박동하는 루프 오브제 */}
-        <div
-          className="hidden lg:block absolute top-1/2 right-[7%] -translate-y-1/2 pointer-events-none"
-          style={{ width: '420px', height: '420px' }}
-        >
-          <div className="loop-pulse absolute inset-0 rounded-full border" style={{ borderColor: 'rgba(16,185,129,0.22)' }} />
-          <div
-            className="loop-pulse absolute rounded-full border"
-            style={{ inset: '60px', borderColor: 'rgba(16,185,129,0.32)', animationDelay: '0.6s' }}
-          />
-          <div
-            className="loop-pulse absolute rounded-full border"
-            style={{ inset: '130px', borderColor: 'rgba(16,185,129,0.48)', animationDelay: '1.2s' }}
-          />
-          <div
-            className="absolute rounded-full"
-            style={{ inset: '175px', background: 'radial-gradient(circle, rgba(16,185,129,0.5) 0%, transparent 70%)', filter: 'blur(6px)' }}
-          />
-        </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+            <div className="text-center lg:text-left">
+              <div className="stagger">
+                <p className="text-xs font-bold tracking-[0.4em] uppercase mb-6" style={{ color: 'rgba(52,211,153,0.85)' }}>
+                  ABEL BRAND STORY
+                </p>
+                <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-white leading-[1.3] mb-6" style={{ letterSpacing: '-0.02em' }}>
+                  ABEL : <span style={{ color: '#34d399' }}>A</span>dapted{' '}
+                  <span style={{ color: '#34d399' }}>B</span>rand{' '}
+                  <span style={{ color: '#34d399' }}>E</span>volution{' '}
+                  <span style={{ color: '#34d399' }}>L</span>oop
+                  <br />
+                  <span
+                    className="text-transparent bg-clip-text"
+                    style={{ backgroundImage: 'linear-gradient(135deg, #6ee7b7 0%, #ffffff 100%)' }}
+                  >
+                    AI가 답하는 병원 SEO·GEO 구조 설계
+                  </span>
+                </h1>
+                <p className="text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                  아벨(ABEL)은 급변하는 생성형 AI 검색 생태계에 브랜드를 완벽하게 적응시키고, 구조와 콘텐츠의
+                  유기적 순환을 통해 병원의 가치를 무한히 진화시키는 브랜드 임팩트 파트너입니다.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-block px-8 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 hover:scale-[1.02]"
+                  style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)' }}
+                >
+                  아벨의 철학에 동참하기 →
+                </Link>
+              </div>
+            </div>
 
-        <div className="max-w-3xl mx-auto px-6 relative z-10 text-center lg:text-left lg:mx-0 lg:pl-[8%]">
-          <div className="stagger">
-            <p className="text-xs font-bold tracking-[0.4em] uppercase mb-6" style={{ color: 'rgba(52,211,153,0.85)' }}>
-              ABEL BRAND STORY
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-black text-white leading-[1.3] mb-6" style={{ letterSpacing: '-0.02em' }}>
-              ABEL : Adapted Brand Evolution Loop
-              <br />
-              <span
-                className="text-transparent bg-clip-text"
-                style={{ backgroundImage: 'linear-gradient(135deg, #6ee7b7 0%, #ffffff 100%)' }}
-              >
-                AI가 답하는 병원 SEO·GEO 구조 설계
-              </span>
-            </h1>
-            <p className="text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(255,255,255,0.72)' }}>
-              아벨(ABEL)은 급변하는 생성형 AI 검색 생태계에 브랜드를 완벽하게 적응시키고, 구조와 콘텐츠의
-              유기적 순환을 통해 병원의 가치를 무한히 진화시키는 브랜드 임팩트 파트너입니다.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-4 rounded-full text-white font-bold text-sm transition-all hover:opacity-90 hover:scale-[1.02]"
-              style={{ background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)' }}
-            >
-              아벨의 철학에 동참하기 →
-            </Link>
+            {/* 박동하는 루프 오브제 */}
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="relative" style={{ width: '420px', height: '420px' }}>
+                <div className="loop-pulse absolute inset-0 rounded-full border" style={{ borderColor: 'rgba(16,185,129,0.22)' }} />
+                <div
+                  className="loop-pulse absolute rounded-full border"
+                  style={{ inset: '60px', borderColor: 'rgba(16,185,129,0.32)', animationDelay: '0.6s' }}
+                />
+                <div
+                  className="loop-pulse absolute rounded-full border"
+                  style={{ inset: '130px', borderColor: 'rgba(16,185,129,0.48)', animationDelay: '1.2s' }}
+                />
+                <div
+                  className="absolute rounded-full"
+                  style={{ inset: '175px', background: 'radial-gradient(circle, rgba(16,185,129,0.5) 0%, transparent 70%)', filter: 'blur(6px)' }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

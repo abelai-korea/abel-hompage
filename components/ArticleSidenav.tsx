@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 interface TocItem {
   href: string;
@@ -8,7 +9,12 @@ interface TocItem {
   sub: string;
 }
 
-export default function ArticleSidenav() {
+interface Category {
+  name: string;
+  slug: string;
+}
+
+export default function ArticleSidenav({ category }: { category?: Category }) {
   const [items, setItems] = useState<TocItem[]>([]);
   const [activeIdx, setActiveIdx] = useState(0);
   const targetsRef = useRef<HTMLElement[]>([]);
@@ -64,6 +70,11 @@ export default function ArticleSidenav() {
 
   return (
     <nav className="ap-sidenav" aria-label="글 목차 네비게이션">
+      {category && (
+        <Link href={`/blog?blog_cat=${category.slug}`} className="ap-sidenav-cat">
+          {category.name}
+        </Link>
+      )}
       <p className="ap-sidenav-title">목차</p>
       <ul>
         {items.map((item, i) => (
