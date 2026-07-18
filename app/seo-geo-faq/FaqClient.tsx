@@ -21,9 +21,25 @@ export default function FaqClient({ items, categories }: Props) {
   const [activeCat, setActiveCat] = useState(ALL);
   const [currentPage, setCurrentPage] = useState(1);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [query, setQuery] = useState('');
 
-  const filtered =
-    activeCat === ALL ? items : items.filter((i) => i.category === activeCat);
+  const isSearching = query.trim().length > 0;
+
+  // 정확한 문구 매칭 대신, 입력한 단어들이 질문/답변/카테고리 어딘가에
+  // 흩어져 있어도 걸리도록 — 토큰 단위 부분일치로 느슨하게 찾는다.
+  const searchTokens = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const searched = isSearching
+    ? items.filter((i) => {
+        const haystack = `${i.category} ${i.question} ${i.answer}`.toLowerCase();
+        return searchTokens.every((t) => haystack.includes(t));
+      })
+    : items;
+
+  const filtered = isSearching
+    ? searched
+    : activeCat === ALL
+      ? items
+      : items.filter((i) => i.category === activeCat);
   const totalPages = Math.ceil(filtered.length / PER_PAGE);
   const pageItems = filtered.slice(
     (currentPage - 1) * PER_PAGE,
@@ -52,37 +68,75 @@ export default function FaqClient({ items, categories }: Props) {
 
   return (
     <>
-      {/* 카테고리 필터 */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {[ALL, ...categories].map((cat) => (
+      {/* 검색 */}
+      <div className="relative mb-6">
+        <span className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-300 text-lg pointer-events-none">
+          🔍
+        </span>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setCurrentPage(1);
+            setOpenIndex(null);
+          }}
+          placeholder="궁금한 내용을 입력해보세요 (예: AI 검색 노출, 병원 후기)"
+          className="w-full pl-12 pr-5 py-4 rounded-2xl border border-gray-100 bg-white text-sm font-medium text-slate-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-300"
+          style={{ boxShadow: CARD_SHADOW }}
+        />
+        {isSearching && (
           <button
-            key={cat}
-            onClick={() => handleCat(cat)}
-            className={`px-4 py-2 rounded-full text-sm font-bold border transition-all ${
-              activeCat === cat
-                ? 'text-white border-transparent'
-                : 'bg-white text-slate-600 border-violet-100 hover:border-violet-400 hover:text-violet-600'
-            }`}
-            style={
-              activeCat === cat
-                ? { background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }
-                : { boxShadow: CARD_SHADOW }
-            }
+            onClick={() => { setQuery(''); setCurrentPage(1); setOpenIndex(null); }}
+            className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500 text-sm font-bold"
+            aria-label="검색어 지우기"
           >
-            {cat}
-            {cat !== ALL && (
-              <span className="ml-1.5 text-xs opacity-70">
-                {items.filter((i) => i.category === cat).length}
-              </span>
-            )}
+            ✕
           </button>
-        ))}
+        )}
       </div>
+
+      {/* 카테고리 필터 — 검색 중에는 숨김(검색은 전체 카테고리 대상) */}
+      {!isSearching && (
+        <div className="flex flex-wrap gap-2 mb-8">
+          {[ALL, ...categories].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => handleCat(cat)}
+              className={`px-4 py-2 rounded-full text-sm font-bold border transition-all ${
+                activeCat === cat
+                  ? 'text-white border-transparent'
+                  : 'bg-white text-slate-600 border-violet-100 hover:border-violet-400 hover:text-violet-600'
+              }`}
+              style={
+                activeCat === cat
+                  ? { background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }
+                  : { boxShadow: CARD_SHADOW }
+              }
+            >
+              {cat}
+              {cat !== ALL && (
+                <span className="ml-1.5 text-xs opacity-70">
+                  {items.filter((i) => i.category === cat).length}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* 결과 건수 */}
       <p className="text-sm text-gray-400 mb-4">
-        {filtered.length}개 질문 · {currentPage}/{totalPages} 페이지
+        {isSearching
+          ? `"${query}" 검색 결과 ${filtered.length}개`
+          : `${filtered.length}개 질문 · ${currentPage}/${totalPages || 1} 페이지`}
       </p>
+
+      {isSearching && filtered.length === 0 && (
+        <p className="text-sm text-gray-400 py-10 text-center">
+          검색 결과가 없습니다. 다른 단어로 다시 검색해보세요.
+        </p>
+      )}
 
       {/* 아코디언 */}
       <div className="space-y-3">

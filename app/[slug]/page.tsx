@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getPosts, formatDate, stripHtml, demoteContentH1, decodeHtmlEntities } from '@/lib/wordpress';
+import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
 
 export const revalidate = 3600;
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const [post, categories] = await Promise.all([getPostBySlug(slug), getCategories()]);
 
   if (!post) notFound();
 
@@ -68,9 +68,9 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-white">
-      <div className="max-w-[1040px] mx-auto px-6 flex gap-10 items-start">
-        <aside className="hidden min-[1180px]:block w-48 shrink-0 sticky top-52">
-          <ArticleSidenav category={category ? { name: category.name, slug: category.slug } : undefined} />
+      <div className="max-w-[1320px] mx-auto px-6 flex gap-10 items-start">
+        <aside className="hidden min-[1300px]:block w-96 shrink-0 sticky top-52">
+          <ArticleSidenav categories={categories} currentSlug={category?.slug} />
         </aside>
         <article className="max-w-3xl pt-10 min-w-0">
           {/* 카테고리 & 날짜 */}

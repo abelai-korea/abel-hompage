@@ -14,7 +14,13 @@ interface Category {
   slug: string;
 }
 
-export default function ArticleSidenav({ category }: { category?: Category }) {
+export default function ArticleSidenav({
+  categories,
+  currentSlug,
+}: {
+  categories?: Category[];
+  currentSlug?: string;
+}) {
   const [items, setItems] = useState<TocItem[]>([]);
   const [activeIdx, setActiveIdx] = useState(0);
   const targetsRef = useRef<HTMLElement[]>([]);
@@ -70,10 +76,18 @@ export default function ArticleSidenav({ category }: { category?: Category }) {
 
   return (
     <nav className="ap-sidenav" aria-label="글 목차 네비게이션">
-      {category && (
-        <Link href={`/blog?blog_cat=${category.slug}`} className="ap-sidenav-cat">
-          {category.name}
-        </Link>
+      {categories && categories.length > 0 && (
+        <div className="ap-sidenav-cats">
+          {categories.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/blog?blog_cat=${cat.slug}`}
+              className={`ap-sidenav-cat${cat.slug === currentSlug ? ' is-active' : ''}`}
+            >
+              {cat.name}
+            </Link>
+          ))}
+        </div>
       )}
       <p className="ap-sidenav-title">목차</p>
       <ul>
