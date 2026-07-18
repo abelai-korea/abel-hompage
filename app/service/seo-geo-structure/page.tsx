@@ -66,19 +66,21 @@ const COMPARISON = [
   { label: '환자 행동 전환', them: '일방적인 병원 인테리어 홍보 동선', us: '3~5단계 의심 해소 연결 고리 및 자가진단(CRO) 이식' },
 ];
 
+const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
+
 function DemoFunnel() {
   return (
-    <div className="bg-black/40 rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center">
-      <div className="text-[11px] text-white/35 mb-3">// Patient Doubt Resolution Funnel Path</div>
-      <div className="flex items-center justify-between text-xs font-semibold py-2.5 px-3 bg-white/5 border border-white/10 rounded-lg text-white/70">
+    <div className="rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center" style={{ background: '#0a0a0f' }}>
+      <div className="text-xs text-white/40 mb-3">// Patient Doubt Resolution Funnel Path</div>
+      <div className="flex items-center justify-between text-sm font-semibold py-2.5 px-3 bg-white/5 border border-white/10 rounded-lg text-white/75">
         <span>Step 1. &ldquo;돌발성 난청 자가진단&rdquo; 검색 유입</span>
       </div>
-      <div className="text-center text-white/20 py-1 text-xs">↓ 의심 해소 내부 링크 연결</div>
-      <div className="flex items-center justify-between text-xs font-semibold py-2.5 px-3 bg-white/5 border border-white/10 rounded-lg text-white/70">
+      <div className="text-center text-white/25 py-1 text-xs">↓ 의심 해소 내부 링크 연결</div>
+      <div className="flex items-center justify-between text-sm font-semibold py-2.5 px-3 bg-white/5 border border-white/10 rounded-lg text-white/75">
         <span>Step 2. &ldquo;난청 예방 및 정석 치료 가이드&rdquo; 확인</span>
       </div>
-      <div className="text-center text-white/20 py-1 text-xs">↓ 결정적 설득 장치 전환</div>
-      <div className="flex items-center justify-between text-xs font-semibold py-2.5 px-3 bg-violet-500/15 border border-violet-400/30 rounded-lg text-violet-300">
+      <div className="text-center text-white/25 py-1 text-xs">↓ 결정적 설득 장치 전환</div>
+      <div className="flex items-center justify-between text-sm font-semibold py-2.5 px-3 bg-violet-500/15 border border-violet-400/30 rounded-lg text-violet-300">
         <span>Step 3. 정밀 진단 예약 신청</span>
       </div>
     </div>
@@ -87,13 +89,13 @@ function DemoFunnel() {
 
 function DemoQA() {
   return (
-    <div className="bg-black/40 rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center gap-3">
-      <div className="text-[11px] text-white/35">// Structured QA Markup Format</div>
-      <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white/80">
+    <div className="rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center gap-3" style={{ background: '#0a0a0f' }}>
+      <div className="text-xs text-white/40">// Structured QA Markup Format</div>
+      <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-white/85">
         <span className="text-violet-300 font-bold">Q. </span>
         어지럼증 치료 시 주사 치료와 물리 치료의 차이는 무엇인가요?
       </div>
-      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-3 text-xs text-white/50">
+      <div className="bg-white/[0.03] border border-white/10 rounded-lg p-3 text-sm text-white/60">
         <span className="text-purple-300 font-bold">A. </span>
         [원장님 전문 처방 구체적 기술] — 기계가 1초 만에 해독할 수 있는 구조적 텍스트 설계.
       </div>
@@ -103,9 +105,9 @@ function DemoQA() {
 
 function DemoSchema() {
   return (
-    <div className="bg-black/40 rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center">
-      <div className="text-[11px] text-white/35 mb-2">// Applied Medical Business Schema JSON-LD</div>
-      <pre className="bg-white/5 border border-white/10 rounded-lg p-3 text-[10px] text-violet-300 overflow-x-auto leading-relaxed">
+    <div className="rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center" style={{ background: '#0a0a0f' }}>
+      <div className="text-xs text-white/40 mb-2">// Applied Medical Business Schema JSON-LD</div>
+      <pre className="bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-violet-300 overflow-x-auto leading-relaxed">
 {`{
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
@@ -120,18 +122,18 @@ function DemoSchema() {
 
 function DemoRSS() {
   return (
-    <div className="bg-black/40 rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center gap-2">
-      <div className="text-[11px] text-white/35 mb-1">// Real-time Fast Indexing Pipeline</div>
+    <div className="rounded-xl p-6 border border-white/10 h-full flex flex-col justify-center gap-2" style={{ background: '#0a0a0f' }}>
+      <div className="text-xs text-white/40 mb-1">// Real-time Fast Indexing Pipeline</div>
       <div className="flex items-center gap-2">
-        <div className="bg-white/5 border border-white/10 px-2.5 py-2 rounded text-center text-[11px] w-full text-white/70">
+        <div className="bg-white/5 border border-white/10 px-2.5 py-2 rounded text-center text-xs w-full text-white/75">
           새 칼럼 발행
         </div>
         <div className="text-violet-400 text-xs">→</div>
-        <div className="bg-violet-500/15 border border-violet-400/30 px-2.5 py-2 rounded text-center text-[11px] w-full text-violet-300">
+        <div className="bg-violet-500/15 border border-violet-400/30 px-2.5 py-2 rounded text-center text-xs w-full text-violet-300">
           RSS 고속 피드 송출
         </div>
         <div className="text-violet-400 text-xs">→</div>
-        <div className="bg-white/5 border border-white/10 px-2.5 py-2 rounded text-center text-[11px] w-full text-white/70">
+        <div className="bg-white/5 border border-white/10 px-2.5 py-2 rounded text-center text-xs w-full text-white/75">
           구글 즉시 수집 색인
         </div>
       </div>
@@ -143,9 +145,9 @@ const DEMO_COMPONENTS = { funnel: DemoFunnel, qa: DemoQA, schema: DemoSchema, rs
 
 export default function ServiceStructurePage() {
   return (
-    <div className="pretendard min-h-screen" style={{ background: '#0a0a0f' }}>
+    <div className="pretendard min-h-screen bg-white">
       {/* ─── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-32 pb-20 px-6 border-b border-white/5">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-32 pb-20 px-6" style={{ background: '#0a0a0f' }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -177,7 +179,7 @@ export default function ServiceStructurePage() {
               </span>
               가 병원 홈페이지의 출발점입니다.
             </h1>
-            <p className="text-base leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <p className="text-base md:text-lg leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.65)' }}>
               화려한 디자인 뒤에 숨겨진 이미지 한 장의 홈페이지는 AI에게 무의미한 빈 백지입니다.
               아벨은 검색 로봇과 ChatGPT가 원장님의 독보적 전문성을 100% 읽어가는
               ‘데이터 구조화 뼈대’ 위에 홈페이지를 다시 짓습니다.
@@ -240,16 +242,16 @@ export default function ServiceStructurePage() {
       </section>
 
       {/* ─── PAIN POINT ───────────────────────────────────────────── */}
-      <section id="problem" className="py-24 px-6 relative">
+      <section id="problem" className="py-24 px-6 relative bg-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <p className="text-xs font-semibold text-violet-300 tracking-widest uppercase">THE COLD FACT</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+            <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">THE COLD FACT</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
               겉만 화려한 홈페이지는 왜 AI 답변과{' '}
               <br className="hidden md:block" />
               구글 검색에서 철저하게 버림받을까요?
             </h2>
-            <p className="text-base" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-base md:text-lg text-gray-500">
               디자인이 아무리 세련되어도, 검색 엔진의 수집 로봇과 AI가 사이트를 해독하지 못한다면
               신환을 데려오지 못하는 ‘죽은 페이지’입니다.
             </p>
@@ -259,13 +261,14 @@ export default function ServiceStructurePage() {
             {PAIN_POINTS.map((p, i) => (
               <div
                 key={p.title}
-                className="group bg-white/[0.03] border border-white/10 rounded-2xl p-8 hover:border-violet-400/30 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-100 p-8 hover:border-violet-300 transition-all duration-300"
+                style={{ boxShadow: CARD_SHADOW }}
               >
-                <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6 text-red-400 font-bold text-lg border border-red-500/20">
+                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-red-500 font-bold text-lg border border-red-100">
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{p.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{p.title}</h3>
+                <p className="text-base leading-relaxed text-gray-500">
                   {p.desc}
                 </p>
               </div>
@@ -275,20 +278,16 @@ export default function ServiceStructurePage() {
       </section>
 
       {/* ─── SOLUTION ─────────────────────────────────────────────── */}
-      <section className="py-24 px-6 relative border-t border-white/5">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, rgba(124,58,237,0.05), transparent)' }}
-        />
+      <section className="py-24 px-6 relative bg-gray-50">
         <div className="max-w-7xl mx-auto space-y-16 relative z-10">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <p className="text-xs font-semibold text-violet-300 tracking-widest uppercase">ABEL&apos;S FRAMEWORK</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+            <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">ABEL&apos;S FRAMEWORK</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
               아벨은 AI 검색 엔진이 병원을 정답으로 인용하도록,{' '}
               <br className="hidden md:block" />
               4가지 핵심 솔루션으로 뼈대를 재설계합니다.
             </h2>
-            <p className="text-base" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-base md:text-lg text-gray-500">
               웹 에이전시의 예쁘기만 한 템플릿 제작 방식에서 탈피하여, 병원의 고유한 자산 데이터를
               검색 엔진에 직접 매핑합니다.
             </p>
@@ -301,20 +300,21 @@ export default function ServiceStructurePage() {
               return (
                 <div
                   key={s.num}
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white/[0.02] border border-white/10 p-8 md:p-10 rounded-2xl hover:border-white/20 transition-all duration-300"
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white border border-gray-100 p-8 md:p-10 rounded-2xl hover:border-violet-200 transition-all duration-300"
+                  style={{ boxShadow: CARD_SHADOW }}
                 >
                   <div className={`space-y-4 ${reversed ? 'lg:order-2' : ''}`}>
-                    <p className="text-xs font-bold text-violet-300 tracking-wider">
+                    <p className="text-xs font-bold text-violet-600 tracking-wider">
                       SOLUTION {s.num}. {s.tag}
                     </p>
-                    <h3 className="text-2xl font-bold text-white">{s.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <h3 className="text-2xl font-bold text-gray-900">{s.title}</h3>
+                    <p className="text-base leading-relaxed text-gray-500">
                       {s.desc}
                     </p>
-                    <ul className="text-xs space-y-2" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                    <ul className="text-sm space-y-2 text-gray-500">
                       {s.points.map((pt) => (
                         <li key={pt} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-violet-400 rounded-full flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 bg-violet-500 rounded-full flex-shrink-0" />
                           {pt}
                         </li>
                       ))}
@@ -331,35 +331,35 @@ export default function ServiceStructurePage() {
       </section>
 
       {/* ─── WHY ABEL: 비교표 ─────────────────────────────────────── */}
-      <section className="py-24 px-6 relative border-t border-white/5">
+      <section className="py-24 px-6 relative bg-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <p className="text-xs font-semibold text-violet-300 tracking-widest uppercase">WHY ABEL FIRST</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+            <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">WHY ABEL FIRST</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
               &ldquo;디자인이 아니라, 데이터 설계가 홈페이지의 가치를 결정합니다.&rdquo;
             </h2>
-            <p className="text-base" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p className="text-base md:text-lg text-gray-500">
               일반 에이전시의 템플릿 복사 제작과 아벨의 오리지널 기술 설계는 환자 매출 상승 폭이
               완전히 다릅니다.
             </p>
           </div>
 
-          <div className="border border-white/10 rounded-2xl overflow-hidden bg-white/[0.02] max-w-4xl mx-auto">
-            <div className="hidden sm:grid grid-cols-3 bg-white/[0.04] border-b border-white/10 text-xs md:text-sm font-bold text-white/70 py-4 px-4 md:px-6">
+          <div className="border border-gray-100 rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto" style={{ boxShadow: CARD_SHADOW }}>
+            <div className="hidden sm:grid grid-cols-3 bg-gray-50 border-b border-gray-100 text-sm md:text-base font-bold text-gray-700 py-4 px-4 md:px-6">
               <div>진단 항목</div>
-              <div className="text-white/35">일반 디자인 웹 에이전시</div>
-              <div className="text-violet-300">아벨(ABEL)의 구조 설계</div>
+              <div className="text-gray-400">일반 디자인 웹 에이전시</div>
+              <div className="text-violet-600">아벨(ABEL)의 구조 설계</div>
             </div>
-            <div className="divide-y divide-white/10">
+            <div className="divide-y divide-gray-100">
               {COMPARISON.map((row) => (
-                <div key={row.label} className="py-5 px-5 md:px-6 space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:items-center text-sm">
-                  <div className="font-semibold text-white mb-1 sm:mb-0">{row.label}</div>
-                  <div className="text-white/35 text-xs sm:text-sm">
-                    <span className="sm:hidden text-white/25">일반 에이전시 · </span>
+                <div key={row.label} className="py-5 px-5 md:px-6 space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:items-center text-base">
+                  <div className="font-semibold text-gray-900 mb-1 sm:mb-0">{row.label}</div>
+                  <div className="text-gray-400 text-sm sm:text-base">
+                    <span className="sm:hidden text-gray-300">일반 에이전시 · </span>
                     {row.them}
                   </div>
-                  <div className="text-violet-300 font-semibold text-xs sm:text-sm">
-                    <span className="sm:hidden text-violet-400/60">아벨 · </span>
+                  <div className="text-violet-600 font-semibold text-sm sm:text-base">
+                    <span className="sm:hidden text-violet-400">아벨 · </span>
                     {row.us}
                   </div>
                 </div>
@@ -370,13 +370,13 @@ export default function ServiceStructurePage() {
       </section>
 
       {/* ─── 자가진단 인터랙션 데모 ───────────────────────────────── */}
-      <section className="py-24 px-6 relative border-t border-white/5">
+      <section className="py-24 px-6 relative bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-semibold text-violet-300 tracking-widest uppercase mb-3">INTERACTIVE DEMO</p>
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-4">
+          <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase mb-3">INTERACTIVE DEMO</p>
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">
             체류 시간과 문의 전환율을 높이는 자가진단 인터랙션
           </h2>
-          <p className="mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="mb-10 max-w-xl mx-auto text-base md:text-lg text-gray-500">
             글과 이미지만 나열된 페이지는 이탈이 빠릅니다. 환자가 직접 선택하며 참여하는 인터랙션
             장치를 홈페이지에 심어, 자연스럽게 관련 정보와 상담 신청으로 연결합니다. 아래에서 직접
             체험해 보세요.
@@ -385,43 +385,48 @@ export default function ServiceStructurePage() {
         </div>
       </section>
 
-      {/* ─── CTA ──────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 relative border-t border-white/5 overflow-hidden">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/20 px-3 py-1.5 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-            <span className="text-xs font-semibold text-violet-300 tracking-wider">LIMITED QUOTA SYSTEM</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
-            우리 병원 홈페이지는 과연
-            <br />
-            AI 답변 엔진의 선택을 받을 수 있을까요?
-          </h2>
-          <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            아벨의 AI 전문가들이 원장님의 기존 병원 홈페이지 크롤링 차단 병목 현상, 이미지 텍스트
-            누락 비율, 신뢰 시그널 코딩 상태 등 약 100여 개 항목을 촘촘히 진단해 드립니다.
-          </p>
-
-          <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl max-w-xl mx-auto text-sm text-left space-y-2">
-            <div className="font-bold text-white mb-2 flex items-center gap-2">
-              <span className="text-violet-300">🛡️</span> 권역별 쿼터제 운영 정책 안내
+      {/* ─── CTA (다크 포인트 박스) ───────────────────────────────── */}
+      <section className="py-24 px-6 bg-white">
+        <div
+          className="max-w-4xl mx-auto rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          style={{ background: '#0a0a0f' }}
+        >
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 space-y-8">
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/20 px-3 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+              <span className="text-xs font-semibold text-violet-300 tracking-wider">LIMITED QUOTA SYSTEM</span>
             </div>
-            <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              원장님의 독점 상권을 보호하기 위해, 아벨은 각 구(시)별 진료과당 단 1개의 병원하고만
-              파트너십을 맺습니다. 경쟁 병원이 먼저 정밀 진단을 완료하여 상권을 선점하기 전에
-              홈페이지 자산을 구축해 보십시오.
+            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
+              우리 병원 홈페이지는 과연
+              <br />
+              AI 답변 엔진의 선택을 받을 수 있을까요?
+            </h2>
+            <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              아벨의 AI 전문가들이 원장님의 기존 병원 홈페이지 크롤링 차단 병목 현상, 이미지 텍스트
+              누락 비율, 신뢰 시그널 코딩 상태 등 약 100여 개 항목을 촘촘히 진단해 드립니다.
             </p>
-          </div>
 
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="inline-block px-10 py-5 rounded-xl text-white font-black transition-all hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
-              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
-            >
-              병원 홈페이지 AI 정밀 진단 신청하기 (출처 선점하기) →
-            </Link>
+            <div className="bg-white/[0.05] border border-white/10 p-6 rounded-2xl max-w-xl mx-auto text-base text-left space-y-2">
+              <div className="font-bold text-white mb-2 flex items-center gap-2">
+                <span className="text-violet-300">🛡️</span> 권역별 쿼터제 운영 정책 안내
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                원장님의 독점 상권을 보호하기 위해, 아벨은 각 구(시)별 진료과당 단 1개의 병원하고만
+                파트너십을 맺습니다. 경쟁 병원이 먼저 정밀 진단을 완료하여 상권을 선점하기 전에
+                홈페이지 자산을 구축해 보십시오.
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-block px-10 py-5 rounded-xl text-white font-black transition-all hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
+                style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+              >
+                병원 홈페이지 AI 정밀 진단 신청하기 (출처 선점하기) →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
