@@ -179,6 +179,28 @@ h1, h2, h3, h4, h5, h6 {
   .stagger > * { animation: none; opacity: 1; }
 }
 
+/* ------------------------------------------------------------
+   /about 브랜드 스토리 페이지 — 다크 슬레이트 + 에메랄드 전용
+   ------------------------------------------------------------ */
+.grid-pattern-slate {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(51, 65, 85, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.35) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+@keyframes loop-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.06); }
+}
+.loop-pulse { animation: loop-pulse 4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .loop-pulse { animation: none; }
+}
+
 /* 칼럼 좌측 목차 네비게이터 — 본문 옆 사이드바, 전체 항목 펼침형 */
 .ap-sidenav-title { font-size: 15px; font-weight: 800; letter-spacing: .02em; color: #1a1145; margin: 0 0 14px; }
 .ap-sidenav ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid #e2e4f0; }

@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://abel-ai.com/' },
 };
 
+const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
+
 export default function HomePage() {
   return (
     <>
@@ -101,23 +103,29 @@ export default function HomePage() {
       </section>
 
       {/* ─── THE SHIFT (화이트) ───────────────────────────────── */}
-      <section id="problem" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center text-violet-600">
+      <section id="problem" className="py-24 md:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 text-center">
             THE SHIFT
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4 leading-snug"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             이제 병원은<br />네이버 안에서만 경쟁하지 않습니다
           </h2>
-          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">
+          <p className="text-gray-500 text-base md:text-lg text-center mb-14 max-w-xl mx-auto leading-relaxed">
             환자들은 검색 결과만 보는 것이 아니라,<br />
             AI 답변, 지도, 후기, 블로그, 유튜브까지 함께 참고합니다.
           </p>
 
           {/* Before / 지금 */}
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16">
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">이전</p>
+            <div
+              className="bg-white rounded-2xl p-8 border border-gray-100"
+              style={{ boxShadow: CARD_SHADOW }}
+            >
+              <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-4">이전</p>
               <div className="text-gray-700 font-medium space-y-2">
                 {['네이버 검색', '홈페이지 방문', '상담'].map((item, i) => (
                   <p key={item} className="flex items-center gap-2">
@@ -128,9 +136,12 @@ export default function HomePage() {
             </div>
             <div
               className="rounded-2xl p-8 text-white"
-              style={{ background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)' }}
+              style={{
+                background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)',
+                boxShadow: '0 8px 24px rgba(124,58,237,0.25)',
+              }}
             >
-              <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#c084fc' }}>지금</p>
+              <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: '#c084fc' }}>지금</p>
               <div className="space-y-2 font-medium">
                 <p>검색 + AI 질문 + 지도</p>
                 <p>후기 + 비교 콘텐츠</p>
@@ -160,7 +171,11 @@ export default function HomePage() {
                 desc: 'AI가 이해하기 쉬운 구조를 먼저 만든 병원이 추천과 비교의 출발점이 될 가능성이 커집니다.',
               },
             ].map((item) => (
-              <div key={item.num} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+              <div
+                key={item.num}
+                className="bg-white rounded-2xl p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: CARD_SHADOW }}
+              >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-sm mb-4"
                   style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
@@ -176,17 +191,20 @@ export default function HomePage() {
       </section>
 
       {/* ─── WHY NOW (라이트 그레이) ──────────────────────────── */}
-      <section id="why-now" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center text-violet-600">WHY NOW</p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
+      <section id="why-now" className="py-24 md:py-28 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 text-center">WHY NOW</p>
+          <h2
+            className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4 leading-snug"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             왜 지금 SEO,GEO를 선점해야 할까요?
           </h2>
-          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+          <p className="text-gray-500 text-base md:text-lg text-center mb-14 max-w-xl mx-auto leading-relaxed">
             고객의 질문 방식과 AI의 답변 방식이 동시에 바뀌고 있습니다.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 num: '1',
@@ -204,15 +222,19 @@ export default function HomePage() {
                 desc: '고객은 홈페이지에 들어오기 전에 AI 답변, 지도, 후기, 리뷰를 먼저 봅니다. 먼저 보이는 병원이 더 유리해질 수 있습니다.',
               },
             ].map((item) => (
-              <div key={item.num} className="pt-6 border-t-2 border-violet-200">
-                <div className="text-5xl font-black text-violet-100 mb-4">{item.num}.</div>
+              <div
+                key={item.num}
+                className="bg-white rounded-2xl border-t-4 border-violet-600 p-8 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: CARD_SHADOW }}
+              >
+                <div className="text-4xl font-black text-violet-100 mb-4">{item.num}.</div>
                 <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-14 text-center">
             <p className="text-base font-bold text-gray-800 bg-violet-50 inline-block px-8 py-4 rounded-2xl border border-violet-100">
               먼저 구조를 잡은 병원이 AI 답변 안에서 더 유리한 출발점을 만들 수 있습니다.
             </p>
@@ -221,20 +243,26 @@ export default function HomePage() {
       </section>
 
       {/* ─── WHY HOMEPAGE FIRST (바이올렛 틴트) ─────────────── */}
-      <section id="homepage-first" className="py-24" style={{ background: '#f5f3ff' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center text-violet-600">
+      <section id="homepage-first" className="py-24 md:py-28" style={{ background: '#f5f3ff' }}>
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs font-black text-violet-600 uppercase tracking-widest mb-3 text-center">
             WHY HOMEPAGE FIRST
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4 leading-snug"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             SEO,GEO는 왜 홈페이지부터 시작할까요?
           </h2>
-          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+          <p className="text-gray-500 text-base md:text-lg text-center mb-14 max-w-xl mx-auto leading-relaxed">
             홈페이지는 AI가 병원을 이해하는 가장 중요한 기준점입니다.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm">
+            <div
+              className="bg-white rounded-3xl p-10 border border-gray-100"
+              style={{ boxShadow: CARD_SHADOW }}
+            >
               <h3 className="text-lg font-black text-gray-900 mb-6 flex items-center gap-2">
                 <span className="text-2xl">😔</span> 지금 대부분의 병원 홈페이지
               </h3>
@@ -255,7 +283,10 @@ export default function HomePage() {
 
             <div
               className="rounded-3xl p-10 text-white"
-              style={{ background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)' }}
+              style={{
+                background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)',
+                boxShadow: '0 8px 24px rgba(124,58,237,0.25)',
+              }}
             >
               <h3 className="text-lg font-black mb-6 flex items-center gap-2">
                 <span className="text-2xl">✨</span> SEO,GEO 구조를 먼저 잡으면
@@ -285,19 +316,22 @@ export default function HomePage() {
       </section>
 
       {/* ─── WHAT ABEL DOES (화이트) ──────────────────────────── */}
-      <section id="what-abel" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center text-violet-600">
+      <section id="what-abel" className="py-24 md:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 text-center">
             WHAT ABEL DOES
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-950 text-center mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-4 leading-snug"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             아벨은 무엇을 정리하나요?
           </h2>
-          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+          <p className="text-gray-500 text-base md:text-lg text-center mb-14 max-w-xl mx-auto leading-relaxed">
             아벨은 병원과 브랜드가 AI 안에서 더 잘 이해되도록 구조를 설계합니다.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               {
                 num: '1',
@@ -315,7 +349,11 @@ export default function HomePage() {
                 desc: '후기, 사례, 선택 기준, 자주 묻는 질문을 하나의 설명 구조로 묶습니다.',
               },
             ].map((item) => (
-              <div key={item.num} className="border-t-4 border-violet-600 pt-6">
+              <div
+                key={item.num}
+                className="bg-white rounded-2xl border-t-4 border-violet-600 p-8 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: CARD_SHADOW }}
+              >
                 <p className="text-sm font-black text-violet-600 mb-2">{item.num}.</p>
                 <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{item.desc}</p>
@@ -325,7 +363,7 @@ export default function HomePage() {
 
           {/* Market Gap — 다크 강조 박스 */}
           <div
-            className="rounded-3xl p-10 text-white relative overflow-hidden"
+            className="rounded-3xl p-10 md:p-14 text-white relative overflow-hidden"
             style={{ background: '#0f0f0f' }}
           >
             <div
@@ -342,16 +380,16 @@ export default function HomePage() {
               >
                 MARKET GAP
               </p>
-              <h3 className="text-2xl font-black mb-4">
+              <h3 className="text-2xl md:text-3xl font-black mb-4 leading-snug" style={{ letterSpacing: '-0.02em' }}>
                 현재 시장 공백: 경쟁사들은 아직 구조를 제대로 못 잡았습니다
               </h3>
-              <p className="mb-6" style={{ color: 'rgba(255,255,255,0.82)' }}>
+              <p className="mb-8 text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.82)' }}>
                 많은 병원이 아직도 SEO 중심 사고에 머물러 있습니다.
                 SEO,GEO는 지금 선점 가치가 큰 영역입니다.
               </p>
               <Link
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-full text-white font-bold transition-all hover:opacity-90"
+                className="inline-block px-8 py-4 rounded-full text-white font-bold transition-all hover:opacity-90 hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
                 style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
               >
                 지금 선점 신청하기 →
@@ -362,8 +400,8 @@ export default function HomePage() {
       </section>
 
       {/* ─── CONTACT CTA 배너 (라이트 그레이) ──────────────────── */}
-      <section id="contact" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="contact" className="py-24 md:py-28 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6">
           <div
             className="rounded-[40px] p-12 lg:p-20 text-white text-center relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #1e0a3c 0%, #4c1d95 100%)' }}
@@ -385,14 +423,14 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
                 아벨의 GEO 정밀 진단, 지금 신청하세요
               </h2>
-              <p className="text-base mb-10 leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.88)' }}>
+              <p className="text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 AI 전문가가 원장님의 홈페이지 크롤링 환경, E-E-A-T 신호 등{' '}
                 <span className="font-bold text-white">약 100여개 항목을 전수 분석</span>합니다.
                 권역별 쿼터제로 각 구(시)별 진료과당 딱 1개 병원만 계약합니다.
               </p>
               <Link
                 href="/contact"
-                className="inline-block px-8 py-4 rounded-full text-white font-black transition-opacity hover:opacity-90"
+                className="inline-block px-8 py-4 rounded-full text-white font-black transition-all hover:opacity-90 hover:scale-[1.02] shadow-[0_8px_24px_rgba(124,58,237,0.35)] hover:shadow-[0_10px_30px_rgba(124,58,237,0.45)]"
                 style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
               >
                 상담 문의 페이지로 이동 →

@@ -45,6 +45,12 @@ export default function Header() {
           >
             홈
           </Link>
+          <Link
+            href="/about"
+            className="text-sm font-semibold transition-colors text-white/65 hover:text-white"
+          >
+            회사소개
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setServiceOpen(true)}
@@ -131,6 +137,14 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           >
             홈
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm font-semibold"
+            style={{ color: 'rgba(255,255,255,0.7)' }}
+            onClick={() => setMenuOpen(false)}
+          >
+            회사소개
           </Link>
           <Link
             href="/service"
