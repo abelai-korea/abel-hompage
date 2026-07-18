@@ -5,7 +5,7 @@ import { getPosts, getCategories, formatDate, stripHtml } from '@/lib/wordpress'
 
 export const metadata: Metadata = {
   title: '칼럼 | ABEL',
-  description: 'AI 마케팅, SEO·GEO 전략에 관한 아벨의 칼럼 모음',
+  description: 'SEO·GEO 전략에 관한 아벨의 칼럼 모음',
   alternates: { canonical: 'https://abel-ai.com/blog' },
 };
 
@@ -36,7 +36,7 @@ export default async function BlogPage({ searchParams }: Props) {
           </p>
           <h1 className="text-4xl font-black text-slate-950 mb-4">최신 인사이트</h1>
           <p className="text-gray-500">
-            AI 마케팅, SEO·GEO 전략에 관한 최신 칼럼 {total}편
+            SEO·GEO 전략에 관한 최신 칼럼 {total}편
           </p>
         </div>
 

@@ -59,7 +59,7 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-  <title>ABEL | AI 마케팅 에이전시 칼럼</title>
+  <title>ABEL | AI 에이전시 칼럼</title>
   <link>${BASE}</link>
   <description>SEO, GEO 관련 최신 칼럼</description>
   <language>ko</language>

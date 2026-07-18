@@ -3,9 +3,9 @@ import Link from 'next/link';
 import ChatAnimation from '@/components/ChatAnimation';
 
 export const metadata: Metadata = {
-  title: 'ABEL | AI 마케팅 에이전시 — SEO·GEO 구조 설계',
+  title: 'ABEL | AI 에이전시 — SEO·GEO 구조 설계',
   description:
-    'SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
+    'SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
   alternates: { canonical: 'https://abel-ai.com/' },
 };
 
@@ -56,7 +56,7 @@ export default function HomePage() {
                   className="text-transparent bg-clip-text"
                   style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd 0%, #ffffff 100%)' }}
                 >
-                  SEO·GEO AI 마케팅 에이전시
+                  SEO·GEO AI 에이전시
                 </span>
               </h1>
 

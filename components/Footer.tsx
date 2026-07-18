@@ -52,7 +52,7 @@ export default function Footer() {
                 ABEL AI
               </Link>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                AI 마케팅 에이전시<br />
+                AI 에이전시<br />
                 병원·브랜드의 SEO·GEO 구조 설계
               </p>
             </div>
@@ -96,10 +96,10 @@ export default function Footer() {
                 <p>본점: 대전광역시 유성구 은구비남로33번길 13-8, 3층</p>
                 <p className="mt-2">
                   <a
-                    href="mailto:abelai.korea@gmail.com"
+                    href="mailto:abel.aikorea@gmail.com"
                     className="transition-colors hover:text-white inline-block py-1.5"
                   >
-                    abelai.korea@gmail.com
+                    abel.aikorea@gmail.com
                   </a>
                 </p>
               </div>

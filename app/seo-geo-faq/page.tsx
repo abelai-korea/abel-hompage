@@ -32,7 +32,7 @@ async function getFaqCards(): Promise<FaqCard[]> {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'AI 마케팅 FAQ 백과사전 | ABEL',
+    title: 'SEO·GEO FAQ 백과사전 | ABEL',
     description: 'SEO·GEO 관련 자주 묻는 질문 모음. 아벨이 직접 답변합니다.',
     alternates: { canonical: 'https://abel-ai.com/seo-geo-faq' },
   };

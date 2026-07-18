@@ -67,8 +67,8 @@ export default function ContactPage() {
                 <span className="text-white font-bold">주식회사 아벨(ABEL)</span>
               </div>
               <div>
-                <a href="mailto:abelai.korea@gmail.com" className="hover:text-white transition-colors">
-                  abelai.korea@gmail.com
+                <a href="mailto:abel.aikorea@gmail.com" className="hover:text-white transition-colors">
+                  abel.aikorea@gmail.com
                 </a>
               </div>
             </div>

@@ -4,14 +4,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'SEO·GEO 실무 교육 | ABEL 서비스 안내',
   description:
-    '대행사에 질질 끌려다니지 않고, 원장님과 실무진이 직접 홈페이지 마케팅 통제권을 쥘 수 있도록 돕는 아벨의 SEO·GEO 실무 교육 서비스를 소개합니다.',
+    '대행사에 질질 끌려다니지 않고, 원장님과 실무진이 직접 홈페이지 SEO·GEO 통제권을 쥘 수 있도록 돕는 아벨의 SEO·GEO 실무 교육 서비스를 소개합니다.',
   alternates: { canonical: 'https://abel-ai.com/service/seo-geo-education' },
 };
 
 const PAIN_POINTS = [
   {
     title: '대행사 의존, 계약이 끝나면 남는 노하우가 없다',
-    desc: '외부 마케팅 대행사에만 전적으로 의존하다 보니 매달 비싼 비용을 지불하지만, 계약이 만료되는 순간 내부에 축적되는 마케팅 노하우는 단 하나도 남지 않아 답답합니다.',
+    desc: '외부 대행사에만 전적으로 의존하다 보니 매달 비싼 비용을 지불하지만, 계약이 만료되는 순간 내부에 축적되는 운영 노하우는 단 하나도 남지 않아 답답합니다.',
   },
   {
     title: '"기술적으로 안 된다"는 핑계에 질질 끌려다니는 답답함',
@@ -19,7 +19,7 @@ const PAIN_POINTS = [
   },
   {
     title: '남의 나라 이론 강의, 우리 병원엔 와닿지 않는 교육',
-    desc: '큰돈을 내고 마케팅 교육을 들어보아도 뻔한 남의 나라 대형 커머스 성공 이론만 떠들 뿐, 당장 내일부터 우리 병원 홈페이지에 무엇을 고치고 적용해야 하는지 실무에 와닿지 않습니다.',
+    desc: '큰돈을 내고 SEO·GEO 교육을 들어보아도 뻔한 남의 나라 대형 커머스 성공 이론만 떠들 뿐, 당장 내일부터 우리 병원 홈페이지에 무엇을 고치고 적용해야 하는지 실무에 와닿지 않습니다.',
   },
 ];
 
@@ -57,7 +57,7 @@ const SOLUTIONS = [
 const WHY_ABEL = [
   {
     title: '뻔한 일반론이 아닌, 내일부터 당장 홈페이지 통제권을 쥐어주는 실전형 가치',
-    desc: '기존의 이론 위주 마케팅 강의들은 수강하고 나면 정작 어떻게 실행해야 할지 막막합니다. 아벨의 교육은 다음 날 출근해서 즉시 홈페이지의 불합리한 수집 장벽을 진단하고, 대행사에 당당하게 지시를 내려 마케팅 통제권을 100% 장악할 수 있는 실질적인 마케팅 실전 전투력을 제공합니다.',
+    desc: '기존의 이론 위주 강의들은 수강하고 나면 정작 어떻게 실행해야 할지 막막합니다. 아벨의 교육은 다음 날 출근해서 즉시 홈페이지의 불합리한 수집 장벽을 진단하고, 대행사에 당당하게 지시를 내려 SEO·GEO 통제권을 100% 장악할 수 있는 실질적인 SEO·GEO 실전 전투력을 제공합니다.',
   },
   {
     title: '원장님도 실무자도 단번에 고개를 끄덕이는 명쾌하고 직관적인 눈높이 설계',
@@ -199,7 +199,7 @@ export default function ServiceEducationPage() {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.25]">
-              더 이상 마케팅 대행사에{' '}
+              더 이상 대행사에{' '}
               <br className="hidden md:block" />
               질질 휘둘리며{' '}
               <span
@@ -271,7 +271,7 @@ export default function ServiceEducationPage() {
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">THE REAL PAIN POINTS</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-              혹시, 마케팅 대행에{' '}
+              혹시, 홈페이지 운영 대행에{' '}
               <br className="hidden md:block" />
               이런 답답함을 느끼고 계신가요?
             </h2>
@@ -303,7 +303,7 @@ export default function ServiceEducationPage() {
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
               아벨은 4가지 핵심 솔루션으로{' '}
               <br className="hidden md:block" />
-              병원의 마케팅 통제권을 원장님께 되돌려 드립니다.
+              병원의 SEO·GEO 통제권을 원장님께 되돌려 드립니다.
             </h2>
           </div>
 
@@ -374,11 +374,11 @@ export default function ServiceEducationPage() {
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 space-y-8">
             <h2 className="text-2xl md:text-4xl font-black text-white leading-tight">
-              수동적인 대행사 의존 마케팅에서 완전히 탈피하여,{' '}
+              수동적인 대행사 의존에서 완전히 탈피하여,{' '}
               <br className="hidden md:block" />
               내부 인력이 홈페이지 트래픽 성장을 전적으로 리드하고 통제할 수 있는{' '}
               <br className="hidden md:block" />
-              강력한 마케팅 내재화 솔루션을 구축하십시오.
+              강력한 SEO·GEO 내재화 솔루션을 구축하십시오.
             </h2>
             <div className="pt-2">
               <Link

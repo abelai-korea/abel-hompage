@@ -42,7 +42,7 @@ const SERVICES = [
     title: 'SEO·GEO 운영 대행',
     sub: '콘텐츠 관리',
     problems: [
-      '무의미한 글자 수 채우기용 블로그 대행으로 마케팅 예산만 낭비하는 상황',
+      '무의미한 글자 수 채우기용 블로그 대행으로 광고 예산만 낭비하는 상황',
       '다른 사이트의 글을 기계처럼 복사해 붙여넣어 구글에서 저품질로 자동 차단당한 경우',
     ],
     solution:
@@ -50,7 +50,7 @@ const SERVICES = [
   },
   {
     href: '/service/seo-geo-education',
-    step: 'STEP 4 · 마케팅 주도권 자립',
+    step: 'STEP 4 · SEO·GEO 주도권 자립',
     num: '04',
     title: 'SEO·GEO 실무 교육',
     sub: '내부 역량 강화',

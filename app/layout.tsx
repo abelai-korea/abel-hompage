@@ -30,12 +30,12 @@ const notoSansKR = Noto_Sans_KR({
 export const metadata: Metadata = {
   metadataBase: new URL("https://abel-ai.com"),
   title: {
-    default: "ABEL | AI 마케팅 에이전시 — SEO·GEO 구조 설계",
+    default: "ABEL | AI 에이전시 — SEO·GEO 구조 설계",
     template: "%s | ABEL",
   },
   description:
-    "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.",
-  keywords: ["AI 마케팅 에이전시", "GEO", "SEO", "아벨", "ABEL", "ChatGPT 최적화"],
+    "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.",
+  keywords: ["AI 에이전시", "GEO", "SEO", "아벨", "ABEL", "ChatGPT 최적화"],
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1536,
         height: 1024,
-        alt: "ABEL | AI 마케팅 에이전시",
+        alt: "ABEL | AI 에이전시",
       },
     ],
   },
@@ -75,8 +75,8 @@ const organizationJsonLd = {
       url: "https://abel-ai.com",
       logo: "https://abel-ai.com/logo.png",
       description:
-        "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 마케팅 에이전시.",
-      email: "abelai.korea@gmail.com",
+        "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 에이전시.",
+      email: "abel.aikorea@gmail.com",
       taxID: "732-81-04102",
       founder: { "@type": "Person", name: "강은구" },
       address: {
@@ -89,7 +89,7 @@ const organizationJsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "abelai.korea@gmail.com",
+        email: "abel.aikorea@gmail.com",
       },
     },
     {
