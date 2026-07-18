@@ -108,7 +108,7 @@ export default function ServicePage() {
               </span>
               에 올립니다.
             </h1>
-            <p className="text-sm leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            <p className="text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.72)' }}>
               ChatGPT, Gemini 등 AI 답변 엔진이 우리 병원을 가장 신뢰할 수 있는 출처로 인용하도록,
               아벨은 4가지 핵심 솔루션으로 병원의 디지털 자산을 설계하고 성장시킵니다.
             </p>
@@ -116,17 +116,17 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         {/* 도입부 — 통증 자극 */}
-        <section className="mb-16 pt-20">
+        <section className="mb-20 pt-20">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">WHY ABEL</p>
           <h2
-            className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-snug"
+            className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug"
             style={{ letterSpacing: '-0.02em' }}
           >
             매달 광고비를 쓸 때만 환자가 오나요?
           </h2>
-          <div className="text-gray-500 leading-relaxed space-y-4">
+          <div className="text-gray-500 text-base md:text-lg leading-relaxed space-y-4 max-w-3xl">
             <p>
               원장님, 매달 포털 사이트 광고판에 비싼 통행료를 내야만 겨우 신환이 유지되는
               악순환을 겪고 계시진 않습니까?
@@ -144,9 +144,9 @@ export default function ServicePage() {
         </section>
 
         {/* 4대 서비스 — 유기적 연결 */}
-        <section className="mb-16">
+        <section className="mb-20">
           <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">4 SOLUTIONS</p>
-          <h2 className="text-2xl font-black text-gray-900 mb-8" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 leading-snug" style={{ letterSpacing: '-0.02em' }}>
             구조 설계 → 문제 진단 → 콘텐츠 축적 → 내부 내재화,
             <br className="hidden md:block" />
             하나로 이어지는 4단계 솔루션
@@ -155,37 +155,47 @@ export default function ServicePage() {
             {SERVICES.map((s) => (
               <div
                 key={s.href}
-                className="bg-white rounded-2xl border-t-4 border-violet-600 p-7 md:p-8"
+                className="group bg-white rounded-2xl border-t-4 border-violet-600 p-7 md:p-10 transition-all duration-300 hover:-translate-y-1"
                 style={{ boxShadow: CARD_SHADOW }}
               >
-                <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
-                  <p className="text-xs font-black text-violet-600 uppercase tracking-wider">{s.step}</p>
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{s.sub}</span>
+                <div className="flex items-start gap-5 mb-6">
+                  <div
+                    className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-white font-black text-xl"
+                    style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+                  >
+                    {s.num}
+                  </div>
+                  <div className="pt-1">
+                    <div className="flex items-center flex-wrap gap-x-3 gap-y-1 mb-1.5">
+                      <p className="text-xs font-black text-violet-600 uppercase tracking-wider">{s.step}</p>
+                      <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{s.sub}</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900">{s.title}</h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-black text-gray-900 mb-4">
-                  {s.num}. {s.title}
-                </h3>
-                <div className="mb-4">
+                <div className="mb-5 md:pl-[4.75rem]">
                   <p className="text-xs font-black text-gray-400 uppercase tracking-wider mb-2">해결하는 문제</p>
                   <ul className="space-y-1.5">
                     {s.problems.map((p) => (
-                      <li key={p} className="text-gray-500 text-sm leading-relaxed pl-4 relative">
+                      <li key={p} className="text-gray-500 text-base leading-relaxed pl-4 relative">
                         <span className="absolute left-0 text-gray-300">·</span>
                         {p}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="mb-5">
+                <div className="mb-6 md:pl-[4.75rem]">
                   <p className="text-xs font-black text-violet-600 uppercase tracking-wider mb-2">아벨의 해결책</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.solution}</p>
+                  <p className="text-gray-600 text-base leading-relaxed">{s.solution}</p>
                 </div>
-                <Link
-                  href={s.href}
-                  className="text-sm font-bold text-violet-600 inline-flex items-center gap-1 hover:gap-2 transition-all"
-                >
-                  더 알아보기 →
-                </Link>
+                <div className="md:pl-[4.75rem]">
+                  <Link
+                    href={s.href}
+                    className="text-base font-bold text-violet-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                  >
+                    더 알아보기 →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -210,10 +220,10 @@ export default function ServicePage() {
             >
               GEO DIAGNOSIS
             </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-3xl md:text-4xl font-black mb-4 leading-snug" style={{ letterSpacing: '-0.02em' }}>
               우리 병원 홈페이지는 과연 AI의 정답지가 될 자격이 있을까요?
             </h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.82)' }}>
+            <p className="mb-8 text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.82)' }}>
               아벨은 검색 로봇 수집성, 데이터 구조화 수준, 환자 이탈 경로 등 약 100여 개 항목에
               걸친 정밀 진단 시스템을 갖추고 있습니다. 지금 신청하시면 우리 병원 사이트의 숨겨진
               유입 병목 현상과 AI 추천 가능성 진단 결과를 처방해 드립니다.
