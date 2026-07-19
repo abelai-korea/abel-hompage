@@ -64,45 +64,6 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://abel-ai.com/#organization",
-      name: "ABEL",
-      legalName: "주식회사 아벨",
-      url: "https://abel-ai.com",
-      logo: "https://abel-ai.com/logo.png",
-      description:
-        "SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 에이전시.",
-      email: "abel.aikorea@gmail.com",
-      taxID: "732-81-04102",
-      founder: { "@type": "Person", name: "강은구" },
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "은구비남로33번길 13-8, 3층",
-        addressLocality: "유성구",
-        addressRegion: "대전광역시",
-        addressCountry: "KR",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        email: "abel.aikorea@gmail.com",
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://abel-ai.com/#website",
-      name: "ABEL",
-      url: "https://abel-ai.com",
-      publisher: { "@id": "https://abel-ai.com/#organization" },
-      inLanguage: "ko-KR",
-    },
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -126,12 +87,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
         <Header />
         <main>{children}</main>
         <Footer />
