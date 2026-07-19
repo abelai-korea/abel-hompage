@@ -93,7 +93,19 @@ export default function Footer() {
                 <p>주식회사 아벨(ABEL)</p>
                 <p>대표: 강은구</p>
                 <p>사업자등록번호: 732-81-04102</p>
-                <p>본점: 대전광역시 유성구 은구비남로33번길 13-8, 3층</p>
+                <p>
+                  본점: 대전광역시 유성구 은구비남로33번길 13-8, 3층{' '}
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      '대전광역시 유성구 은구비남로33번길 13-8'
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline transition-colors hover:text-white"
+                  >
+                    (지도)
+                  </a>
+                </p>
                 <p className="mt-2">
                   <a
                     href="mailto:abel.aikorea@gmail.com"
