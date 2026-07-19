@@ -97,8 +97,8 @@ export default function Footer() {
                   본점: 대전광역시 유성구 은구비남로33번길 13-8, 3층{' '}
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      '대전광역시 유성구 은구비남로33번길 13-8'
-                    )}`}
+                      '(주)아벨'
+                    )}&query_place_id=ChIJPV_z3DVLZTURVc0iXy27Ijo`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline transition-colors hover:text-white"
