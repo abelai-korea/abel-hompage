@@ -116,6 +116,14 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
+        {/* 각 페이지가 자체 alternates.canonical을 지정하면 Metadata API가 layout의
+            alternates를 통째로 덮어써서 여기 RSS 링크가 사라지므로, 직접 head에 박아둔다. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="ABEL 칼럼"
+          href="https://abel-ai.com/feed.xml"
+        />
       </head>
       <body>
         <script

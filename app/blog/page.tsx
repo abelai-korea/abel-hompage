@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPosts, getCategories, formatDate, stripHtml } from '@/lib/wordpress';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: '칼럼 | ABEL',
@@ -28,6 +29,12 @@ export default async function BlogPage({ searchParams }: Props) {
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-gray-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', url: 'https://abel-ai.com/' },
+          { name: '블로그', url: 'https://abel-ai.com/blog' },
+        ]}
+      />
       <div className="max-w-7xl mx-auto px-6">
         {/* 헤더 */}
         <div className="mb-12 pt-8">

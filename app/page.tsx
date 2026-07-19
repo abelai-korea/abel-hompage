@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ChatAnimation from '@/components/ChatAnimation';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'ABEL | AI 에이전시 — SEO·GEO 구조 설계',
@@ -14,6 +15,8 @@ const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
 export default function HomePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: '홈', url: 'https://abel-ai.com/' }]} />
+
       {/* ─── HERO (다크) ──────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex items-center pt-36 pb-20 overflow-hidden"

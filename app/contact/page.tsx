@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: '상담 문의 | ABEL',
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="pt-24 pb-24 bg-gray-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', url: 'https://abel-ai.com/' },
+          { name: '상담 문의', url: 'https://abel-ai.com/contact' },
+        ]}
+      />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 pt-8">
           <p className="text-xs font-black text-violet-600 uppercase tracking-widest mb-2">

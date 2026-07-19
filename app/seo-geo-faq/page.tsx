@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import FaqClient, { type FaqCard } from './FaqClient';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 const WP_API = process.env.NEXT_PUBLIC_WP_API_URL || 'https://cms.abel-ai.com/wp-json/wp/v2';
 
@@ -47,6 +48,12 @@ export default async function FaqPage() {
 
   return (
     <div className="pretendard min-h-screen bg-gray-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', url: 'https://abel-ai.com/' },
+          { name: 'SEO·GEO FAQ', url: 'https://abel-ai.com/seo-geo-faq' },
+        ]}
+      />
       {/* ─── HERO (다크, 입체감 레이어 — /service와 동일 톤) ─────────────── */}
       <section
         className="relative pt-40 pb-24 overflow-hidden isolate"

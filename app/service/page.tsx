@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: '서비스 안내 | ABEL',
@@ -68,6 +69,12 @@ const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
 export default function ServicePage() {
   return (
     <div className="pretendard min-h-screen bg-gray-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', url: 'https://abel-ai.com/' },
+          { name: '서비스 안내', url: 'https://abel-ai.com/service' },
+        ]}
+      />
       {/* ─── HERO (다크, 입체감 레이어) ─────────────────────────────── */}
       <section
         className="relative pt-40 pb-28 overflow-hidden isolate"

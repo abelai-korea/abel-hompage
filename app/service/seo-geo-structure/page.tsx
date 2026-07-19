@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SelfDiagnosisDemo from '@/components/SelfDiagnosisDemo';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'SEO·GEO 구조 구축 | ABEL 서비스 안내',
@@ -146,6 +147,13 @@ const DEMO_COMPONENTS = { funnel: DemoFunnel, qa: DemoQA, schema: DemoSchema, rs
 export default function ServiceStructurePage() {
   return (
     <div className="pretendard min-h-screen bg-white">
+      <BreadcrumbJsonLd
+        items={[
+          { name: '홈', url: 'https://abel-ai.com/' },
+          { name: '서비스 안내', url: 'https://abel-ai.com/service' },
+          { name: 'SEO·GEO 구조 구축', url: 'https://abel-ai.com/service/seo-geo-structure' },
+        ]}
+      />
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-32 pb-20 px-6" style={{ background: '#0a0a0f' }}>
         <div
