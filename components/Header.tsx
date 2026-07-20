@@ -30,10 +30,10 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="ABEL"
-            width={168}
-            height={112}
+            width={769}
+            height={240}
             priority
-            style={{ height: '112px', width: 'auto', display: 'block' }}
+            style={{ height: '64px', width: 'auto', display: 'block' }}
           />
         </Link>
 

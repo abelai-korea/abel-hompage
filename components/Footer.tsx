@@ -44,8 +44,8 @@ export default function Footer() {
                 <Image
                   src="/logo.png"
                   alt="ABEL"
-                  width={168}
-                  height={112}
+                  width={769}
+                  height={240}
                   style={{ height: '32px', width: 'auto', display: 'block' }}
                 />
               </Link>
