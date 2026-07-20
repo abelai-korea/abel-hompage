@@ -55,15 +55,11 @@ const SOLUTIONS = [
   },
 ];
 
-const WHY_ABEL = [
-  {
-    title: "매달 버려지는 소모성 광고가 아닌, 영구히 축적되는 병원의 '자산형 콘텐츠'",
-    desc: '네이버 키워드 광고 등은 돈을 내지 않는 순간 즉시 증발하는 부채성 광고입니다. 하지만 아벨이 대행하여 구축하는 오가닉 칼럼들은 한 번 업로드되면 구글과 AI 답변 엔진에 영구히 꽂혀 쌓이는 병원의 독보적인 디지털 권위이자 자산이 됩니다.',
-  },
-  {
-    title: '원장님이 1분 만에 이해할 수 있는 실질 성과 중심의 브리핑 리포트',
-    desc: '전문가들만 아는 테크니컬 약어나 은어 보고서로 속이지 않습니다. 매달 실제 일어난 순수 오가닉 잠재 고객의 유입 증가량과 최종 예약 문의 건수의 증가 추이 등 가장 핵심적인 비즈니스 성장 지표 위주로 정기 브리핑을 제공합니다.',
-  },
+const COMPARISON = [
+  { label: '콘텐츠 목적 설계', them: '단순 글자 수 맞추기, 인테리어·장비 소개 위주 나열', us: '환자의 불안과 의심을 지우는 3~5단계 의심 해소 퍼널 설계' },
+  { label: '키워드 포지셔닝', them: '조회수만 높고 병원 매출에 도움 안 되는 뜬구름 단어', us: '80% 통증 탐색어와 20% 결정어의 정교한 8:2 검색 퍼널 배치' },
+  { label: '독창성 필터 극복', them: '기존 보도자료 무조건 미러링, 구글 색인 대거 누락 초래', us: '독창성 70% 보장하는 고유 저널리스트 편집으로 노출 안정성 획득' },
+  { label: '사용자 이탈 제어', them: '지루하고 빽빽한 줄글 배열로 10초 내 폭발적 이탈 발생', us: '자가진단 반응형 모듈 내장으로 체류 시간 극대화' },
 ];
 
 const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
@@ -328,33 +324,43 @@ export default function ServiceOperationPage() {
         </div>
       </section>
 
-      {/* ─── WHY ABEL ─────────────────────────────────────────────── */}
+      {/* ─── WHY ABEL: 비교표 ─────────────────────────────────────── */}
       <section className="py-24 px-6 relative bg-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">WHY ABEL FIRST</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-              사라지는 광고가 아니라, 쌓이는 자산을 만듭니다.
+              무자비한 글자 수 채우기 대행과, 아벨의 확실한 격차입니다.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {WHY_ABEL.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl border-t-4 border-violet-600 p-8 md:p-10"
-                style={{ boxShadow: CARD_SHADOW }}
-              >
+          <div
+            className="border border-gray-100 rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto"
+            style={{ boxShadow: CARD_SHADOW }}
+          >
+            <div className="hidden sm:grid grid-cols-3 bg-gray-50 border-b border-gray-100 text-sm md:text-base font-bold text-gray-700 py-4 px-4 md:px-6">
+              <div>분석 및 설계 영역</div>
+              <div className="text-gray-400">일반 원고 작성형 대행사</div>
+              <div className="text-violet-600">아벨(ABEL)의 콘텐츠 설계</div>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {COMPARISON.map((row) => (
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-white font-black text-lg"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
+                  key={row.label}
+                  className="py-5 px-5 md:px-6 space-y-2 sm:space-y-0 sm:grid sm:grid-cols-3 sm:items-center text-base"
                 >
-                  {String(i + 1).padStart(2, '0')}
+                  <div className="font-semibold text-gray-900 mb-1 sm:mb-0">{row.label}</div>
+                  <div className="text-gray-400 text-sm sm:text-base">
+                    <span className="sm:hidden text-gray-300">일반 에이전시 · </span>
+                    {row.them}
+                  </div>
+                  <div className="text-violet-600 font-semibold text-sm sm:text-base">
+                    <span className="sm:hidden text-violet-400">아벨 · </span>
+                    {row.us}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 leading-snug">{item.title}</h3>
-                <p className="text-base leading-relaxed text-gray-500">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -382,6 +388,16 @@ export default function ServiceOperationPage() {
               >
                 우리 병원 정밀 진단 신청하기 →
               </Link>
+            </div>
+            <div className="bg-white/[0.05] border border-white/10 p-6 rounded-2xl max-w-xl mx-auto text-base text-left space-y-2">
+              <div className="font-bold text-white mb-2 flex items-center gap-2">
+                <span className="text-violet-300">🛡️</span> 권역별 쿼터제 운영 정책 안내
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                원장님의 독점 상권을 보호하기 위해, 아벨은 각 구(시)별 진료과당 단 1개의 병원하고만
+                파트너십을 맺습니다. 경쟁 병원이 먼저 정밀 진단을 완료하여 상권을 선점하기 전에
+                병원의 디지털 자산을 구축해 보십시오.
+              </p>
             </div>
           </div>
         </div>

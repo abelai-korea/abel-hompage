@@ -55,17 +55,6 @@ const SOLUTIONS = [
   },
 ];
 
-const WHY_ABEL = [
-  {
-    title: '뻔한 일반론이 아닌, 내일부터 당장 홈페이지 통제권을 쥐어주는 실전형 가치',
-    desc: '기존의 이론 위주 강의들은 수강하고 나면 정작 어떻게 실행해야 할지 막막합니다. 아벨의 교육은 다음 날 출근해서 즉시 홈페이지의 불합리한 수집 장벽을 진단하고, 대행사에 당당하게 지시를 내려 SEO·GEO 통제권을 100% 장악할 수 있는 실질적인 SEO·GEO 실전 전투력을 제공합니다.',
-  },
-  {
-    title: '원장님도 실무자도 단번에 고개를 끄덕이는 명쾌하고 직관적인 눈높이 설계',
-    desc: '원장님이 환자들에게 어려운 전문 의학 용어 대신 쉬운 말로 수술 과정을 해설하듯, 아벨은 테크니컬 SEO의 복잡한 로직을 원장님과 실무진이 비즈니스 매출 성장에 바로 직결할 수 있도록 명확하고 쉬운 일상의 언어로 통역하여 주입합니다.',
-  },
-];
-
 const CARD_SHADOW = '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04)';
 
 function DemoLiveData() {
@@ -342,33 +331,73 @@ export default function ServiceEducationPage() {
         </div>
       </section>
 
-      {/* ─── WHY ABEL ─────────────────────────────────────────────── */}
+      {/* ─── WHY ABEL: 대조 비교 카드 ─────────────────────────────── */}
       <section className="py-24 px-6 relative bg-white">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <p className="text-xs font-semibold text-violet-600 tracking-widest uppercase">WHY ABEL FIRST</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-              뻔한 이론이 아닌, 내일부터 실행 가능한 통제권을 드립니다.
+              이론 암기식 교육과 아벨의 실전형 교육은 무엇이 다를까요?
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {WHY_ABEL.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-2xl border-t-4 border-violet-600 p-8 md:p-10"
-                style={{ boxShadow: CARD_SHADOW }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-white font-black text-lg"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 leading-snug">{item.title}</h3>
-                <p className="text-base leading-relaxed text-gray-500">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+            <div
+              className="rounded-2xl border border-gray-100 p-8 md:p-10 flex flex-col"
+              style={{ boxShadow: CARD_SHADOW }}
+            >
+              <h3 className="text-lg font-bold text-gray-400 mb-6">시중의 일반 마케팅 이론 교육</h3>
+              <ul className="space-y-4 text-sm text-gray-500 leading-relaxed flex-1">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold mt-0.5">✕</span>
+                  <span>우리 병원에 당장 대입할 수 없는 해외·타 업종 성공 사례 위주 강의</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold mt-0.5">✕</span>
+                  <span>복잡한 기술 용어 중심 강의로, 수료 후에도 머리만 아픈 상태로 회귀</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold mt-0.5">✕</span>
+                  <span>실무 지침 양식 없이 개념만 이해해, 홈페이지에 단 1%도 수정 적용 못 함</span>
+                </li>
+              </ul>
+              <p className="text-xs text-gray-400 pt-6 mt-6 border-t border-gray-100">
+                결과: 수료 후 실무 적용 불가로 기존 대행사 의존 방식 답습
+              </p>
+            </div>
+
+            <div
+              className="rounded-2xl border-2 border-violet-200 bg-violet-50/40 p-8 md:p-10 flex flex-col"
+              style={{ boxShadow: CARD_SHADOW }}
+            >
+              <h3 className="text-lg font-bold text-violet-600 mb-6">아벨(ABEL) 1:1 라이브 밀착 워크샵</h3>
+              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed flex-1">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-violet-600 font-bold mt-0.5">✓</span>
+                  <span>
+                    <strong className="text-gray-900">우리 병원의 실제 실시간 유입·이탈 데이터</strong>를
+                    화면에 띄우고 직접 원인을 짚으며 분석
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-violet-600 font-bold mt-0.5">✓</span>
+                  <span>
+                    어려운 기술 용어를 <strong className="text-gray-900">원장님·실무진의 눈높이 언어</strong>
+                    (신환, 예약 이탈, 콘텐츠 자산화)로 통역해 설명
+                  </span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-violet-600 font-bold mt-0.5">✓</span>
+                  <span>
+                    수료 당일 개발사에 바로 보낼 수 있는{' '}
+                    <strong className="text-gray-900">[테크니컬 수정 요청서]</strong>를 실제로 작성 완료
+                  </span>
+                </li>
+              </ul>
+              <p className="text-xs font-semibold text-violet-600 pt-6 mt-6 border-t border-violet-100">
+                결과: 내부 역량 100% 내재화로 대행사·제작사 의존에서 탈피
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -396,6 +425,16 @@ export default function ServiceEducationPage() {
               >
                 우리 병원 정밀 진단 신청하기 →
               </Link>
+            </div>
+            <div className="bg-white/[0.05] border border-white/10 p-6 rounded-2xl max-w-xl mx-auto text-base text-left space-y-2">
+              <div className="font-bold text-white mb-2 flex items-center gap-2">
+                <span className="text-violet-300">🛡️</span> 권역별 쿼터제 운영 정책 안내
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                교육 과정 중 노출되는 병원의 실제 데이터를 다루는 특성상, 아벨은 각 구(시)별
+                진료과당 단 1개의 병원하고만 교육 파트너십을 맺습니다. 경쟁 병원이 먼저 선점하기
+                전에 내부 SEO·GEO 실전 역량을 갖춰 보십시오.
+              </p>
             </div>
           </div>
         </div>
