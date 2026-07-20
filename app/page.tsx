@@ -266,18 +266,17 @@ export default function HomePage() {
               className="bg-white rounded-3xl p-10 border border-gray-100"
               style={{ boxShadow: CARD_SHADOW }}
             >
-              <h3 className="text-lg font-black text-gray-900 mb-6 flex items-center gap-2">
-                <span className="text-2xl">😔</span> 지금 대부분의 병원 홈페이지
-              </h3>
-              <ul className="space-y-3">
+              <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-5">지금</p>
+              <h3 className="text-lg font-black text-gray-900 mb-6">대부분의 병원 홈페이지</h3>
+              <ul className="space-y-3.5">
                 {[
                   '병원 소개는 있지만 질문에 대한 답이 부족합니다',
                   '진료 항목은 있지만 비교 설명이 약합니다',
                   '후기와 사례가 흩어져 있어 AI가 읽기 어렵습니다',
                   'FAQ와 핵심 정보 구조가 부족해 인용 기회가 줄어듭니다',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="text-red-400 flex-shrink-0 mt-0.5">✕</span>
+                  <li key={item} className="flex items-start gap-3 text-gray-500 text-sm leading-relaxed">
+                    <span className="w-1 h-1 rounded-full bg-gray-300 flex-shrink-0 mt-2" />
                     {item}
                   </li>
                 ))}
@@ -285,16 +284,12 @@ export default function HomePage() {
             </div>
 
             <div
-              className="rounded-3xl p-10 text-white"
-              style={{
-                background: 'linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)',
-                boxShadow: '0 8px 24px rgba(124,58,237,0.25)',
-              }}
+              className="bg-white rounded-3xl p-10 border-x border-b border-gray-100"
+              style={{ boxShadow: CARD_SHADOW, borderTop: '4px solid #7c3aed' }}
             >
-              <h3 className="text-lg font-black mb-6 flex items-center gap-2">
-                <span className="text-2xl">✨</span> SEO,GEO 구조를 먼저 잡으면
-              </h3>
-              <ul className="space-y-3">
+              <p className="text-xs font-black text-violet-600 uppercase tracking-widest mb-5">정리 후</p>
+              <h3 className="text-lg font-black text-gray-900 mb-6">SEO,GEO 구조를 먼저 잡으면</h3>
+              <ul className="space-y-3.5">
                 {[
                   '질문에 바로 답하는 병원으로 보일 수 있습니다',
                   'AI가 인용하기 쉬운 설명 구조를 만듭니다',
@@ -302,8 +297,8 @@ export default function HomePage() {
                   '비교와 추천 질문에서 더 유리해질 수 있습니다',
                   '환자 선택 직전 질문에 미리 답할 준비를 하게 됩니다',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-purple-100">
-                    <span className="text-purple-300 flex-shrink-0 mt-0.5">✓</span>
+                  <li key={item} className="flex items-start gap-3 text-gray-700 text-sm leading-relaxed font-medium">
+                    <span className="w-1 h-1 rounded-full bg-violet-500 flex-shrink-0 mt-2" />
                     {item}
                   </li>
                 ))}
