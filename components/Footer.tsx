@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -39,17 +40,14 @@ export default function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* 로고 & 회사 소개 */}
             <div>
-              <Link
-                href="/"
-                className="flex items-center gap-2 font-black text-white text-lg tracking-tight mb-3"
-              >
-                <span
-                  className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-black"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)' }}
-                >
-                  A
-                </span>
-                ABEL AI
+              <Link href="/" className="inline-flex items-center mb-3">
+                <Image
+                  src="/logo.png"
+                  alt="ABEL"
+                  width={168}
+                  height={112}
+                  style={{ height: '32px', width: 'auto', display: 'block' }}
+                />
               </Link>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
                 AI 에이전시<br />
