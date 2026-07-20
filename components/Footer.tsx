@@ -104,6 +104,14 @@ export default function Footer() {
                     (지도)
                   </a>
                 </p>
+                <p>
+                  <a
+                    href="tel:01030098204"
+                    className="transition-colors hover:text-white inline-block py-1.5"
+                  >
+                    010-3009-8204
+                  </a>
+                </p>
                 <p className="mt-2">
                   <a
                     href="mailto:abel.aikorea@gmail.com"
