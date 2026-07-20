@@ -9,6 +9,21 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://abel-ai.com/service' },
 };
 
+const PAIN_POINTS = [
+  {
+    title: '독이 되는 ‘통이미지’ 도배',
+    desc: '수백만 원 들인 화려한 홈페이지의 칼럼과 설명이 모두 사진 파일(통이미지)로 도배되어 있습니다. 구글과 AI 답변 로봇은 사진 안의 글씨를 읽지 못해, 텅 빈 페이지로 무시해버립니다.',
+  },
+  {
+    title: '이탈을 막는 ‘동선 설계 부재’',
+    desc: '검색으로 들어온 환자가 진짜 겪는 통증에 답을 주는 3~5회 의심 해소 연결 링크가 모두 끊겨 있습니다. 신뢰를 쌓기 전에 답답함을 느끼고 경쟁 병원으로 빠져나갑니다.',
+  },
+  {
+    title: '생색내기용 ‘배너 교체’ 월세',
+    desc: '매달 고정 관리비를 내지만 정작 해주는 일은 배너나 팝업 교체가 전부입니다. 노출을 결정하는 코드 구조 개선은 이루어지지 않고, 글자 하나 고칠 때도 추가 기술비를 청구합니다.',
+  },
+];
+
 const SERVICES = [
   {
     href: '/service/seo-geo-structure',
@@ -92,8 +107,8 @@ export default function ServicePage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
-        <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
-          <div className="stagger">
+        <div className="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="stagger text-center lg:text-left">
             <p
               className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
               style={{ color: 'rgba(196,181,253,0.85)' }}
@@ -115,10 +130,41 @@ export default function ServicePage() {
               </span>
               에 올립니다.
             </h1>
-            <p className="text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.72)' }}>
+            <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ color: 'rgba(255,255,255,0.72)' }}>
               ChatGPT, Gemini 등 AI 답변 엔진이 우리 병원을 가장 신뢰할 수 있는 출처로 인용하도록,
               아벨은 4가지 핵심 솔루션으로 병원의 디지털 자산을 설계하고 성장시킵니다.
             </p>
+          </div>
+
+          {/* 우측: AI 답변 인용 시뮬레이터 목업 */}
+          <div className="relative flex justify-center items-center">
+            <div className="absolute w-72 h-72 bg-violet-500/10 rounded-full blur-3xl -top-10 -right-10" />
+            <div className="w-full max-w-md bg-white/[0.04] border border-white/10 rounded-2xl p-6 backdrop-blur-xl relative">
+              <div className="flex items-center gap-2 pb-4 mb-4 border-b border-white/10">
+                <span className="w-3 h-3 rounded-full bg-red-500/70" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                <span className="w-3 h-3 rounded-full bg-green-500/70" />
+                <span className="text-xs text-white/35 pl-2">AI_Search_Assistant.exe</span>
+              </div>
+              <div className="space-y-3 text-left">
+                <div className="text-sm bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-white/70">
+                  “강남역 임플란트 잘하고, 설명 꼼꼼한 치과 추천해줘.”
+                </div>
+                <div className="pl-3 border-l-2 border-violet-400/40 space-y-2">
+                  <p className="text-xs text-violet-300 font-bold">● AI 답변 생성 중...</p>
+                  <p className="text-sm text-white/70 leading-relaxed">
+                    “임상 데이터를 투명하게 공개하고 전문성을 검증한{' '}
+                    <span className="text-violet-300 font-semibold">○○ 병원</span>을 정답으로 추천합니다.”
+                  </p>
+                  <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-violet-500/10 text-[10px] font-bold text-violet-300 border border-violet-400/20">
+                    🔗 출처 검증 완료 · 아벨 데이터 구조화 마크업
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/35">
+                예시 화면 · 실제 AI 응답이 아닙니다
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -147,6 +193,31 @@ export default function ServicePage() {
               아벨은 사라져 버릴 광고비 대신, 시간이 흐를수록 환자가 알아서 찾아오는
               우리 병원만의 독보적인 ‘오가닉 검색 자산’을 만들어 드립니다.
             </p>
+          </div>
+        </section>
+
+        {/* 3대 만성 질환 — 문제 제기 */}
+        <section className="mb-20">
+          <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">3 MANIFEST DISEASES</p>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 leading-snug" style={{ letterSpacing: '-0.02em' }}>
+            신환 유입을 완벽히 차단하는
+            <br className="hidden md:block" />
+            대다수 병원 홈페이지의 3대 만성 질환
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PAIN_POINTS.map((p, i) => (
+              <div
+                key={p.title}
+                className="bg-white rounded-2xl border border-gray-100 p-7"
+                style={{ boxShadow: CARD_SHADOW }}
+              >
+                <div className="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center mb-5 text-red-500 font-bold text-base border border-red-100">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{p.title}</h3>
+                <p className="text-base leading-relaxed text-gray-500">{p.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -242,6 +313,17 @@ export default function ServicePage() {
             >
               우리 병원 홈페이지 정밀 진단 신청하기 ↗
             </Link>
+
+            <div className="mt-8 bg-white/[0.05] border border-white/10 p-6 rounded-2xl max-w-xl text-base text-left space-y-2">
+              <div className="font-bold text-white mb-2 flex items-center gap-2">
+                <span className="text-violet-300">🛡️</span> 권역별 쿼터제 운영 정책 안내
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                원장님의 독점 상권을 보호하기 위해, 아벨은 각 구(시)별 진료과당 단 1개의 병원하고만
+                파트너십을 맺습니다. 경쟁 병원이 먼저 정밀 진단을 완료하여 상권을 선점하기 전에
+                병원의 디지털 자산을 구축해 보십시오.
+              </p>
+            </div>
           </div>
         </div>
       </div>
