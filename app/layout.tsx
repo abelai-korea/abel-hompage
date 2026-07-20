@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import KakaoChatButton from "@/components/KakaoChatButton";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
@@ -90,6 +91,11 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <KakaoChatButton />
+        <Script
+          src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js"
+          strategy="afterInteractive"
+        />
         <Script id="clarity-analytics" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
