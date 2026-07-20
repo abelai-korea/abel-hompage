@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://abel-ai.com/${slug}`,
       title: yoast?.title ?? `${post.title.rendered} | ABEL`,
       description,
-      images: [{ url: ogImage ?? '/logo.png' }],
+      images: [{ url: ogImage ?? '/og-image.png' }],
     },
   };
 }

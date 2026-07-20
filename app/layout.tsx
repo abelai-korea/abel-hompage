@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "ABEL AI",
     images: [
       {
-        url: "/logo.png",
+        url: "/og-image.png",
         width: 1536,
         height: 1024,
         alt: "ABEL | AI 에이전시",
