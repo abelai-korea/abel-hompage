@@ -76,7 +76,7 @@ export default async function BlogPage({ searchParams }: Props) {
               <p className="text-gray-400">아직 칼럼이 없습니다.</p>
             ) : (
               <>
-                <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 gap-6">
                   {posts.map((post) => {
                     const category = post._embedded?.['wp:term']?.[0]?.[0];
                     const date = formatDate(post.date);
@@ -98,7 +98,7 @@ export default async function BlogPage({ searchParams }: Props) {
                               alt={post.title.rendered}
                               fill
                               className="object-cover group-hover:scale-105 transition-transform duration-300"
-                              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                              sizes="(max-width: 640px) 100vw, 50vw"
                             />
                           </div>
                         ) : (
@@ -110,19 +110,20 @@ export default async function BlogPage({ searchParams }: Props) {
                           </div>
                         )}
 
-                        {/* 콘텐츠 */}
-                        <div className="p-5">
+                        {/* 콘텐츠 — 제목은 썸네일 이미지에 이미 표시되므로 시각적으로는
+                            생략하고 sr-only로만 남겨 접근성/SEO 텍스트를 유지 */}
+                        <div className="p-6">
                           {category && (
                             <span className="text-xs font-black text-indigo-600 uppercase tracking-widest mb-2 block">
                               {category.name}
                             </span>
                           )}
                           <h2
-                            className="font-black text-slate-900 text-base leading-snug mb-2 group-hover:text-indigo-700 transition-colors"
+                            className="sr-only"
                             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                           />
                           {excerpt && (
-                            <p className="text-gray-500 text-sm leading-relaxed mb-3 line-clamp-2">{excerpt}…</p>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3">{excerpt}…</p>
                           )}
                           <div className="flex items-center justify-between text-xs text-gray-400">
                             <span>{date}</span>
