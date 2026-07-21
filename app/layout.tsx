@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       {
         url: "/og-image.png",
         width: 1536,
-        height: 1024,
+        height: 864,
         alt: "ABEL | AI 에이전시",
       },
     ],
