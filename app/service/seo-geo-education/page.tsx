@@ -196,19 +196,18 @@ export default function ServiceEducationPage() {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.25]">
-              더 이상 대행사에{' '}
+              그동안 들인 비용은,{' '}
               <br className="hidden md:block" />
-              질질 휘둘리며{' '}
               <span
                 className="text-transparent bg-clip-text"
                 style={{ backgroundImage: 'linear-gradient(135deg, #a78bfa 0%, #e9d5ff 100%)' }}
               >
-                비싼 비용을 낭비
+                병원 안에 남아있습니까
               </span>
-              하지 마십시오.
+              ?
             </h1>
             <p className="text-base md:text-lg leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.65)' }}>
-              대행사 의존을 벗어나 원장님과 실무진이 직접 홈페이지 트래픽 성장을 리드할 수 있도록,
+              계약이 끝나도 사라지지 않는 노하우를 원장님과 실무진이 직접 쌓아갈 수 있도록,
               아벨은 우리 병원 데이터를 기반으로 한 실전형 SEO·GEO 교육을 제공합니다.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
