@@ -6,7 +6,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 export const metadata: Metadata = {
   title: 'SEO·GEO 구조 구축 | ABEL 서비스 안내',
   description:
-    'AI가 인용하기 가장 좋은 데이터 구조로 홈페이지를 처음부터 다시 짓습니다. 정보 구조 설계부터 질문형 콘텐츠, E-E-A-T 신호 배치까지 아벨의 구조 구축 서비스를 소개합니다.',
+    '병원 홈페이지 제작, AI가 인용하기 가장 좋은 데이터 구조로 처음부터 다시 짓습니다. 정보 구조 설계부터 질문형 콘텐츠, E-E-A-T 신호 배치까지 아벨의 구조 구축 서비스를 소개합니다.',
   alternates: { canonical: 'https://abel-ai.com/service/seo-geo-structure' },
 };
 
@@ -189,8 +189,8 @@ export default function ServiceStructurePage() {
             </h1>
             <p className="text-base md:text-lg leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.65)' }}>
               화려한 디자인 뒤에 숨겨진 이미지 한 장의 홈페이지는 AI에게 무의미한 빈 백지입니다.
-              아벨은 검색 로봇과 ChatGPT가 원장님의 독보적 전문성을 100% 읽어가는
-              ‘데이터 구조화 뼈대’ 위에 홈페이지를 다시 짓습니다.
+              아벨의 병원 홈페이지 제작은 검색 로봇과 ChatGPT가 원장님의 독보적 전문성을 100% 읽어가는
+              ‘데이터 구조화 뼈대’ 위에서 시작합니다.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
               <Link
