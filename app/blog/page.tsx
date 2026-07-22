@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getPosts, getCategories, formatDate, stripHtml } from '@/lib/wordpress';
+import { getPosts, getCategories, formatDate } from '@/lib/wordpress';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default async function BlogPage({ searchParams }: Props) {
   const blogCategories = categories.filter((c) => c.count > 0);
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-gray-50">
+    <div className="pretendard pt-24 pb-20 min-h-screen bg-gray-50">
       <BreadcrumbJsonLd
         items={[
           { name: '홈', url: 'https://abel-ai.com/' },
@@ -80,7 +80,6 @@ export default async function BlogPage({ searchParams }: Props) {
                   {posts.map((post) => {
                     const category = post._embedded?.['wp:term']?.[0]?.[0];
                     const date = formatDate(post.date);
-                    const excerpt = stripHtml(post.excerpt.rendered).slice(0, 80);
                     const slug = new URL(post.link).pathname.replace(/\//g, '');
                     const thumbnail = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
@@ -110,22 +109,15 @@ export default async function BlogPage({ searchParams }: Props) {
                           </div>
                         )}
 
-                        <div className="p-6">
+                        <div className="p-5">
                           <h2
-                            className="text-lg font-bold text-slate-900 leading-snug mb-2 line-clamp-2"
+                            className="text-base font-bold text-slate-900 leading-snug line-clamp-2"
                             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                           />
-                          {category && (
-                            <span className="text-xs font-black text-indigo-600 uppercase tracking-widest mb-2 block">
-                              {category.name}
-                            </span>
-                          )}
-                          {excerpt && (
-                            <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3">{excerpt}…</p>
-                          )}
-                          <div className="flex items-center justify-between text-xs text-gray-400">
+                          <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">
+                            {category && <span className="font-medium text-gray-500">{category.name}</span>}
+                            {category && <span>·</span>}
                             <span>{date}</span>
-                            <span className="text-indigo-500 group-hover:translate-x-1 transition-transform font-bold">→</span>
                           </div>
                         </div>
                       </Link>
