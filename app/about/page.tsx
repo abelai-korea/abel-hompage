@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: '회사소개 | ABEL — Adapted Brand Evolution Loop',
@@ -91,6 +92,15 @@ export default function AboutPage() {
         <div className="hero-grain" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="flex justify-center lg:justify-start mb-6">
+            <Breadcrumb
+              tone="dark-emerald"
+              items={[
+                { name: '홈', url: 'https://abel-ai.com/' },
+                { name: '회사소개' },
+              ]}
+            />
+          </div>
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
             <div className="text-center lg:text-left">
               <div className="stagger">

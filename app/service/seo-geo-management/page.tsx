@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
 import ServiceStepper from '@/components/ServiceStepper';
 
 export const metadata: Metadata = {
@@ -180,6 +181,16 @@ export default function ServiceOperationPage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
+        <div className="max-w-7xl mx-auto relative z-10 mb-6">
+          <Breadcrumb
+            tone="dark"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: '서비스 안내', url: 'https://abel-ai.com/service' },
+              { name: 'SEO·GEO 운영 대행' },
+            ]}
+          />
+        </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center relative z-10 w-full">
           <div className="stagger space-y-6">
             <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/20 px-3 py-1.5 rounded-full">

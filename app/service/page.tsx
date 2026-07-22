@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: '서비스 안내 | ABEL',
@@ -107,6 +108,17 @@ export default function ServicePage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="flex justify-center lg:justify-start mb-6">
+            <Breadcrumb
+              tone="dark"
+              items={[
+                { name: '홈', url: 'https://abel-ai.com/' },
+                { name: '서비스 안내' },
+              ]}
+            />
+          </div>
+        </div>
         <div className="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <div className="stagger text-center lg:text-left">
             <p

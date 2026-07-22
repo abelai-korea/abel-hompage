@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, fixContentLinks, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
+import type { BreadcrumbEntry } from '@/lib/seo';
 
 export const revalidate = 3600;
 
@@ -59,27 +62,21 @@ export default async function PostPage({ params }: Props) {
         .slice(0, 4)
     : [];
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '홈', item: 'https://abel-ai.com/' },
-      { '@type': 'ListItem', position: 2, name: '블로그', item: 'https://abel-ai.com/blog' },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: decodeHtmlEntities(stripHtml(post.title.rendered)),
-      },
-    ],
-  };
+  const breadcrumbItems: BreadcrumbEntry[] = [
+    { name: '홈', url: 'https://abel-ai.com/' },
+    { name: '블로그', url: 'https://abel-ai.com/blog' },
+    { name: decodeHtmlEntities(stripHtml(post.title.rendered)) },
+  ];
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-white">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="max-w-[1320px] mx-auto px-6 flex gap-10 items-start">
         <aside className="hidden min-[1300px]:block w-96 shrink-0 sticky top-52">
           <ArticleSidenav categories={categories} currentSlug={category?.slug} />
         </aside>
         <article className="max-w-3xl pt-10 min-w-0">
+          <Breadcrumb tone="light" items={breadcrumbItems} className="mb-5" />
           {/* 카테고리 & 날짜 */}
           <div className="flex items-center gap-3 mb-6">
             {category && (
@@ -109,14 +106,6 @@ export default async function PostPage({ params }: Props) {
           {post.yoast_head && (
             <div dangerouslySetInnerHTML={{ __html: extractJsonLd(post.yoast_head) }} />
           )}
-
-          {/* 탐색경로(BreadcrumbList) 스키마 */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c'),
-            }}
-          />
 
           {/* 관련 글 */}
           {relatedPosts.length > 0 && (

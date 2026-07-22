@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getPosts, getCategories, formatDate } from '@/lib/wordpress';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
 import BlogFeaturedHero from './BlogFeaturedHero';
 
 export const metadata: Metadata = {
@@ -50,8 +51,17 @@ export default async function BlogPage({ searchParams }: Props) {
         ]}
       />
       <div className="max-w-7xl mx-auto px-6">
+        <div className="pt-8 mb-4">
+          <Breadcrumb
+            tone="light"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: '블로그' },
+            ]}
+          />
+        </div>
         {/* 헤더 */}
-        <div className="mb-12 pt-8">
+        <div className="mb-12">
           <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-3">
             ABEL INSIGHT
           </p>

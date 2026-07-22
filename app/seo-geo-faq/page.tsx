@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import FaqClient, { type FaqCard } from './FaqClient';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import Breadcrumb from '@/components/Breadcrumb';
 
 const WP_API = process.env.NEXT_PUBLIC_WP_API_URL || 'https://cms.abel-ai.com/wp-json/wp/v2';
 
@@ -72,6 +73,15 @@ export default async function FaqPage() {
         <div className="hero-grain" />
 
         <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
+          <div className="flex justify-center mb-6">
+            <Breadcrumb
+              tone="dark"
+              items={[
+                { name: '홈', url: 'https://abel-ai.com/' },
+                { name: 'SEO·GEO FAQ' },
+              ]}
+            />
+          </div>
           <div className="stagger">
             <p
               className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
