@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getPosts, getCategories, formatDate } from '@/lib/wordpress';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import BlogFeaturedHero from './BlogFeaturedHero';
 
 export const metadata: Metadata = {
   title: '칼럼 | ABEL',
@@ -27,6 +28,19 @@ export default async function BlogPage({ searchParams }: Props) {
 
   const blogCategories = categories.filter((c) => c.count > 0);
 
+  const featuredPosts =
+    currentPage === 1
+      ? posts.slice(0, 5).map((post) => ({
+          id: post.id,
+          slug: new URL(post.link).pathname.replace(/\//g, ''),
+          titleHtml: post.title.rendered,
+          titleText: post.title.rendered.replace(/<[^>]+>/g, ''),
+          category: post._embedded?.['wp:term']?.[0]?.[0]?.name,
+          date: formatDate(post.date),
+          thumbnail: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+        }))
+      : [];
+
   return (
     <div className="pretendard pt-24 pb-20 min-h-screen bg-gray-50">
       <BreadcrumbJsonLd
@@ -46,6 +60,8 @@ export default async function BlogPage({ searchParams }: Props) {
             SEO·GEO 전략에 관한 최신 칼럼 {total}편
           </p>
         </div>
+
+        {featuredPosts.length > 0 && <BlogFeaturedHero posts={featuredPosts} />}
 
         <div className="flex flex-col lg:flex-row gap-10">
           {/* 사이드바: 카테고리 */}
