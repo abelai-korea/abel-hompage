@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
+    <>
     <section className="pt-24 pb-24 bg-gray-50">
       <BreadcrumbJsonLd
         items={[
@@ -20,16 +21,7 @@ export default function ContactPage() {
         ]}
       />
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-center mb-6 pt-8">
-          <Breadcrumb
-            tone="light"
-            items={[
-              { name: '홈', url: 'https://abel-ai.com/' },
-              { name: '상담 문의' },
-            ]}
-          />
-        </div>
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 pt-8">
           <p className="text-xs font-black text-violet-600 uppercase tracking-widest mb-2">
             ABEL GEO REGISTRATION
           </p>
@@ -98,5 +90,17 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+    <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <Breadcrumb
+          tone="dark"
+          items={[
+            { name: '홈', url: 'https://abel-ai.com/' },
+            { name: '상담 문의' },
+          ]}
+        />
+      </div>
+    </div>
+    </>
   );
 }

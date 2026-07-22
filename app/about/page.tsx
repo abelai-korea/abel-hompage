@@ -92,15 +92,6 @@ export default function AboutPage() {
         <div className="hero-grain" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-          <div className="flex justify-center lg:justify-start mb-6">
-            <Breadcrumb
-              tone="dark-emerald"
-              items={[
-                { name: '홈', url: 'https://abel-ai.com/' },
-                { name: '회사소개' },
-              ]}
-            />
-          </div>
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
             <div className="text-center lg:text-left">
               <div className="stagger">
@@ -339,6 +330,18 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+      </div>
+
+      <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <Breadcrumb
+            tone="dark"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: '회사소개' },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );

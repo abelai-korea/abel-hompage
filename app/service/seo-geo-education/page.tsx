@@ -189,16 +189,6 @@ export default function ServiceEducationPage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
-        <div className="max-w-7xl mx-auto relative z-10 mb-6">
-          <Breadcrumb
-            tone="dark"
-            items={[
-              { name: '홈', url: 'https://abel-ai.com/' },
-              { name: '서비스 안내', url: 'https://abel-ai.com/service' },
-              { name: 'SEO·GEO 1:1 교육' },
-            ]}
-          />
-        </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center relative z-10 w-full">
           <div className="stagger space-y-6">
             <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/20 px-3 py-1.5 rounded-full">
@@ -452,6 +442,19 @@ export default function ServiceEducationPage() {
       </section>
 
       <ServiceStepper current={3} />
+
+      <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <Breadcrumb
+            tone="dark"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: '서비스 안내', url: 'https://abel-ai.com/service' },
+              { name: 'SEO·GEO 1:1 교육' },
+            ]}
+          />
+        </div>
+      </div>
     </div>
   );
 }

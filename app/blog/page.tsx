@@ -42,7 +42,13 @@ export default async function BlogPage({ searchParams }: Props) {
         }))
       : [];
 
+  const breadcrumbItems = [
+    { name: '홈', url: 'https://abel-ai.com/' },
+    { name: '블로그' },
+  ];
+
   return (
+    <>
     <div className="pretendard pt-24 pb-20 min-h-screen bg-gray-50">
       <BreadcrumbJsonLd
         items={[
@@ -50,16 +56,7 @@ export default async function BlogPage({ searchParams }: Props) {
           { name: '블로그', url: 'https://abel-ai.com/blog' },
         ]}
       />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="pt-8 mb-4">
-          <Breadcrumb
-            tone="light"
-            items={[
-              { name: '홈', url: 'https://abel-ai.com/' },
-              { name: '블로그' },
-            ]}
-          />
-        </div>
+      <div className="max-w-7xl mx-auto px-6 pt-8">
         {/* 헤더 */}
         <div className="mb-12">
           <p className="text-xs font-black tracking-widest uppercase text-indigo-600 mb-3">
@@ -175,5 +172,11 @@ export default async function BlogPage({ searchParams }: Props) {
         </div>
       </div>
     </div>
+    <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <Breadcrumb tone="dark" items={breadcrumbItems} />
+      </div>
+    </div>
+    </>
   );
 }

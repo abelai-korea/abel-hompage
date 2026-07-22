@@ -108,17 +108,6 @@ export default function ServicePage() {
         <div className="hero-depth-grid" />
         <div className="hero-grain" />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="flex justify-center lg:justify-start mb-6">
-            <Breadcrumb
-              tone="dark"
-              items={[
-                { name: '홈', url: 'https://abel-ai.com/' },
-                { name: '서비스 안내' },
-              ]}
-            />
-          </div>
-        </div>
         <div className="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <div className="stagger text-center lg:text-left">
             <p
@@ -337,6 +326,18 @@ export default function ServicePage() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <Breadcrumb
+            tone="dark"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: '서비스 안내' },
+            ]}
+          />
         </div>
       </div>
     </div>

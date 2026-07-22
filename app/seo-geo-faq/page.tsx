@@ -73,15 +73,6 @@ export default async function FaqPage() {
         <div className="hero-grain" />
 
         <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
-          <div className="flex justify-center mb-6">
-            <Breadcrumb
-              tone="dark"
-              items={[
-                { name: '홈', url: 'https://abel-ai.com/' },
-                { name: 'SEO·GEO FAQ' },
-              ]}
-            />
-          </div>
           <div className="stagger">
             <p
               className="text-xs font-bold tracking-[0.4em] uppercase mb-6"
@@ -113,6 +104,18 @@ export default async function FaqPage() {
 
       <div className="max-w-3xl mx-auto px-6 py-16">
         <FaqClient items={allItems} categories={categories} />
+      </div>
+
+      <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <Breadcrumb
+            tone="dark"
+            items={[
+              { name: '홈', url: 'https://abel-ai.com/' },
+              { name: 'SEO·GEO FAQ' },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );

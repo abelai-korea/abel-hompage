@@ -69,6 +69,7 @@ export default async function PostPage({ params }: Props) {
   ];
 
   return (
+    <>
     <div className="pt-24 pb-20 min-h-screen bg-white">
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="max-w-[1320px] mx-auto px-6 flex gap-10 items-start">
@@ -76,7 +77,6 @@ export default async function PostPage({ params }: Props) {
           <ArticleSidenav categories={categories} currentSlug={category?.slug} />
         </aside>
         <article className="max-w-3xl pt-10 min-w-0">
-          <Breadcrumb tone="light" items={breadcrumbItems} className="mb-5" />
           {/* 카테고리 & 날짜 */}
           <div className="flex items-center gap-3 mb-6">
             {category && (
@@ -162,6 +162,12 @@ export default async function PostPage({ params }: Props) {
         </article>
       </div>
     </div>
+    <div className="border-t" style={{ background: '#09090b', borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <Breadcrumb tone="dark" items={breadcrumbItems} />
+      </div>
+    </div>
+    </>
   );
 }
 
