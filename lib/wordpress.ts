@@ -7,6 +7,7 @@ export interface WPPost {
   excerpt: { rendered: string };
   content: { rendered: string };
   date: string;
+  modified: string;
   link: string;
   yoast_head?: string;
   yoast_head_json?: {
