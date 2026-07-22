@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, fixContentLinks, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
 
@@ -51,6 +52,12 @@ export default async function PostPage({ params }: Props) {
 
   const category = post._embedded?.['wp:term']?.[0]?.[0];
   const date = formatDate(post.date);
+
+  const relatedPosts = category
+    ? (await getPosts({ categories: [category.id], per_page: 5 })).posts
+        .filter((p) => p.id !== post.id)
+        .slice(0, 4)
+    : [];
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -110,6 +117,52 @@ export default async function PostPage({ params }: Props) {
               __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c'),
             }}
           />
+
+          {/* 관련 글 */}
+          {relatedPosts.length > 0 && (
+            <div className="mt-16 pt-10 border-t border-gray-100">
+              <h2 className="text-lg font-black text-slate-950 mb-6">관련 글</h2>
+              <div className="grid sm:grid-cols-2 gap-5">
+                {relatedPosts.map((rp) => {
+                  const rpSlug = new URL(rp.link).pathname.replace(/\//g, '');
+                  const rpThumb = rp._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+                  return (
+                    <Link
+                      key={rp.id}
+                      href={`/${rpSlug}`}
+                      className="group flex gap-4 items-start rounded-xl p-3 -m-3 hover:bg-gray-50 transition-colors"
+                    >
+                      {rpThumb ? (
+                        <div className="relative w-24 aspect-video shrink-0 rounded-lg overflow-hidden bg-gray-100">
+                          <Image
+                            src={rpThumb}
+                            alt={stripHtml(rp.title.rendered)}
+                            fill
+                            className="object-cover"
+                            sizes="96px"
+                          />
+                        </div>
+                      ) : (
+                        <div
+                          className="w-24 aspect-video shrink-0 rounded-lg flex items-center justify-center text-white text-lg font-black"
+                          style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #4338CA 100%)' }}
+                        >
+                          A
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <h3
+                          className="text-sm font-bold text-slate-800 leading-snug line-clamp-2 group-hover:text-indigo-600 transition-colors"
+                          dangerouslySetInnerHTML={{ __html: rp.title.rendered }}
+                        />
+                        <p className="text-xs text-gray-400 mt-1.5">{formatDate(rp.date)}</p>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* 칼럼 목록으로 */}
           <div className="mt-8 text-center">

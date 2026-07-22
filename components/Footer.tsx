@@ -37,7 +37,7 @@ export default function Footer() {
 
       <footer style={{ background: '#09090b', color: '#ffffff' }}>
         <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* 로고 & 회사 소개 */}
             <div>
               <Link href="/" className="inline-flex items-center mb-3">
@@ -64,17 +64,44 @@ export default function Footer() {
                 바로가기
               </p>
               <nav className="flex flex-col">
-                <Link href="/#problem" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
-                  서비스
+                <Link href="/about" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  회사소개
                 </Link>
-                <Link href="/#why-now" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
-                  선점 이유
+                <Link href="/service" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  서비스 안내
                 </Link>
-                <Link href="/#homepage-first" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
-                  홈페이지 구조
+                <Link href="/seo-geo-faq" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  자주 묻는 질문
                 </Link>
                 <Link href="/blog" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
                   칼럼
+                </Link>
+                <Link href="/contact" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  상담 신청
+                </Link>
+              </nav>
+            </div>
+
+            {/* 서비스 */}
+            <div>
+              <p
+                className="font-bold text-sm mb-4 uppercase tracking-wider"
+                style={{ color: 'rgba(255,255,255,0.5)' }}
+              >
+                서비스
+              </p>
+              <nav className="flex flex-col">
+                <Link href="/service/seo-geo-structure" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  SEO·GEO 구조 구축
+                </Link>
+                <Link href="/service/seo-geo-consulting" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  SEO·GEO 최적화 컨설팅
+                </Link>
+                <Link href="/service/seo-geo-management" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  SEO·GEO 운영 대행
+                </Link>
+                <Link href="/service/seo-geo-education" className="text-sm transition-colors text-white/40 hover:text-white inline-block py-1.5">
+                  SEO·GEO 1:1 교육
                 </Link>
               </nav>
             </div>

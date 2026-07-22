@@ -335,27 +335,33 @@ export default function HomePage() {
                 num: '1',
                 title: '홈페이지 구조',
                 desc: '메인 메시지, 핵심 포지션, 카테고리 흐름, 비교 구조를 정리합니다.',
+                href: '/service/seo-geo-structure',
               },
               {
                 num: '2',
                 title: '질문형 콘텐츠',
                 desc: '환자가 실제로 묻는 질문을 증상형, 추천형, 비교형으로 나눠 설계합니다.',
+                href: '/service/seo-geo-management',
               },
               {
                 num: '3',
                 title: 'FAQ·사례·신뢰 구조',
                 desc: '후기, 사례, 선택 기준, 자주 묻는 질문을 하나의 설명 구조로 묶습니다.',
+                href: '/seo-geo-faq',
               },
             ].map((item) => (
-              <div
+              <Link
                 key={item.num}
-                className="bg-white rounded-2xl border-t-4 border-violet-600 p-8 transition-all duration-300 hover:-translate-y-1"
+                href={item.href}
+                className="group block bg-white rounded-2xl border-t-4 border-violet-600 p-8 transition-all duration-300 hover:-translate-y-1"
                 style={{ boxShadow: CARD_SHADOW }}
               >
                 <p className="text-sm font-black text-violet-600 mb-2">{item.num}.</p>
-                <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-black text-gray-900 mb-3 group-hover:text-violet-700 transition-colors">
+                  {item.title}
+                </h3>
                 <p className="text-gray-500 leading-relaxed">{item.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
 

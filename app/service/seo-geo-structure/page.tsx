@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SelfDiagnosisDemo from '@/components/SelfDiagnosisDemo';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import ServiceStepper from '@/components/ServiceStepper';
 
 export const metadata: Metadata = {
   title: 'SEO·GEO 구조 구축 | ABEL 서비스 안내',
@@ -438,6 +439,8 @@ export default function ServiceStructurePage() {
           </div>
         </div>
       </section>
+
+      <ServiceStepper current={0} />
     </div>
   );
 }

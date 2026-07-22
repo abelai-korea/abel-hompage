@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import ServiceStepper from '@/components/ServiceStepper';
 
 export const metadata: Metadata = {
   title: 'SEO·GEO 최적화 컨설팅 | ABEL 서비스 안내',
@@ -380,6 +381,8 @@ export default function ServiceConsultingPage() {
           </div>
         </div>
       </section>
+
+      <ServiceStepper current={1} />
     </div>
   );
 }
