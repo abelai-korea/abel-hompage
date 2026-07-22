@@ -68,10 +68,10 @@ const SERVICES = [
     href: '/service/seo-geo-education',
     step: 'STEP 4 · SEO·GEO 주도권 자립',
     num: '04',
-    title: 'SEO·GEO 실무 교육',
+    title: 'SEO·GEO 1:1 교육',
     sub: '내부 역량 강화',
     problems: [
-      '대행사나 홈페이지 제작사에 매번 “개발 구조상 수정이 불가하다”는 핑계를 들으며 끌려다닐 때',
+      '홈페이지 제작사에 매번 “개발 구조상 수정이 불가하다”는 핑계를 들으며 끌려다닐 때',
       '남의 병원 이론 위주 교육을 듣고 정작 우리 병원 데이터는 1도 손대지 못하는 답답함',
     ],
     solution:

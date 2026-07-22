@@ -171,7 +171,7 @@ export default function ServiceEducationPage() {
         items={[
           { name: '홈', url: 'https://abel-ai.com/' },
           { name: '서비스 안내', url: 'https://abel-ai.com/service' },
-          { name: 'SEO·GEO 실무 교육', url: 'https://abel-ai.com/service/seo-geo-education' },
+          { name: 'SEO·GEO 1:1 교육', url: 'https://abel-ai.com/service/seo-geo-education' },
         ]}
       />
       {/* ─── HERO ─────────────────────────────────────────────────── */}
