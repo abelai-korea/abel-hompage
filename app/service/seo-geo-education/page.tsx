@@ -3,9 +3,9 @@ import Link from 'next/link';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'SEO·GEO 실무 교육 | ABEL 서비스 안내',
+  title: 'SEO·GEO 1:1 교육 | ABEL 서비스 안내',
   description:
-    '대행사에 질질 끌려다니지 않고, 원장님과 실무진이 직접 홈페이지 SEO·GEO 통제권을 쥘 수 있도록 돕는 아벨의 SEO·GEO 실무 교육 서비스를 소개합니다.',
+    '원장님과 실무진이 직접 홈페이지 SEO·GEO 통제권을 쥘 수 있도록 돕는 아벨의 SEO·GEO 1:1 교육 서비스를 소개합니다.',
   alternates: { canonical: 'https://abel-ai.com/service/seo-geo-education' },
 };
 
@@ -192,19 +192,19 @@ export default function ServiceEducationPage() {
             <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/20 px-3 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
               <span className="text-xs font-semibold text-violet-300 tracking-wider uppercase">
-                SERVICE 04 · SEO·GEO 실무 교육
+                SERVICE 04 · SEO·GEO 1:1 교육
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.25]">
-              그동안 들인 비용은,{' '}
+              SEO·GEO 1:1 교육으로,{' '}
               <br className="hidden md:block" />
               <span
                 className="text-transparent bg-clip-text"
                 style={{ backgroundImage: 'linear-gradient(135deg, #a78bfa 0%, #e9d5ff 100%)' }}
               >
-                병원 안에 남아있습니까
+                병원에 남는 노하우
               </span>
-              ?
+              를 만드십시오.
             </h1>
             <p className="text-base md:text-lg leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.65)' }}>
               계약이 끝나도 사라지지 않는 노하우를 원장님과 실무진이 직접 쌓아갈 수 있도록,
