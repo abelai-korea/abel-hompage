@@ -51,8 +51,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/geo-content',
-        destination: '/abel-column-67-geo-content-diy-vs-agency-1',
+        source: '/abel-column-67-geo-content-diy-vs-agency-1',
+        destination: '/geo-content',
         permanent: true,
       },
     ];
