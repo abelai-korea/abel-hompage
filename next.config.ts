@@ -32,7 +32,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/abel-column-85-new-hospital-geo-90days-2',
-        destination: '/abel-column-85-new-hospital-geo-90days',
+        destination: '/geo-hospital-85',
+        permanent: true,
+      },
+      {
+        source: '/abel-column-85-new-hospital-geo-90days',
+        destination: '/geo-hospital-85',
+        permanent: true,
+      },
+      {
+        source: '/abel-column-26-dental-marketing-geo-strategy',
+        destination: '/marketing-26',
+        permanent: true,
+      },
+      {
+        source: '/abel-column-89-dermatology-marketing-geo-case',
+        destination: '/geo-marketing-89',
+        permanent: true,
+      },
+      {
+        source: '/geo-content',
+        destination: '/abel-column-67-geo-content-diy-vs-agency-1',
         permanent: true,
       },
     ];
