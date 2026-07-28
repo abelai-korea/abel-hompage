@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ConsultFloatingButton from "@/components/ConsultFloatingButton";
 // import KakaoChatButton from "@/components/KakaoChatButton"; // 카카오 비즈니스 심사 완료 전까지 비활성화
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ConsultFloatingButton />
         {/* 카카오 비즈니스 심사(채널 연결) 완료 전까지 비활성화 — 심사 끝나면 주석 해제 */}
         {/* <KakaoChatButton /> */}
         {/* <Script
