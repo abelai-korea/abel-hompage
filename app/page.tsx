@@ -4,9 +4,9 @@ import ChatAnimation from '@/components/ChatAnimation';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
-  title: 'ABEL | AI 에이전시 — SEO·GEO 구조 설계',
+  title: '병원 전문 SEO·GEO 에이전시 | ABEL 아벨',
   description:
-    'SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 답변에 인용되도록 만드는 AI 에이전시 아벨(ABEL). 권역별 쿼터제로 상권을 보호합니다.',
+    '아벨(ABEL)은 병원 전문 SEO·GEO·AEO 에이전시입니다. AI 답변 엔진이 병원을 인용하도록 구조를 설계합니다. 권역별 쿼터제 운영.',
   alternates: { canonical: 'https://abel-ai.com/' },
 };
 
@@ -64,6 +64,10 @@ export default function HomePage() {
                   SEO·GEO AI 에이전시
                 </span>
               </h1>
+
+              <p className="text-base lg:text-lg font-bold text-white mb-4">
+                아벨(ABEL)은 병원 전문 SEO·GEO·AEO 에이전시입니다.
+              </p>
 
               <p className="text-base lg:text-lg leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 네이버 상위 노출에 매달려도, ChatGPT에 우리 병원이 안 나오는 진짜 이유.
