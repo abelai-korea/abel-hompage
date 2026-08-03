@@ -1,0 +1,23 @@
+# ABEL
+
+> ABEL(에이블)은 SEO·GEO 구조 설계로 병원과 브랜드가 ChatGPT·Gemini·Perplexity 같은 AI 답변에 인용되도록 만드는 AI 에이전시입니다. 권역별 쿼터제로 상권을 보호하며, 광고 의존 없이 오가닉 성장 구조를 구축합니다.
+
+ABEL은 크롤러빌리티(검색엔진·AI 크롤러가 사이트를 제대로 읽을 수 있는 구조)부터 AI 인용 최적화 코딩, 구조화 데이터(스키마) 이식, 성과 추적까지 병원·브랜드 홈페이지의 SEO(검색엔진 최적화)·GEO(생성형 AI 노출 최적화)를 함께 다룹니다.
+
+## 회사 소개
+
+- [회사소개](https://abel-ai.com/about): ABEL의 철학(Adapted Brand Evolution Loop) — 소유권 보장, 권역별 상권 독점 쿼터제, 결과 투명화
+- [SEO·GEO FAQ 백과사전](https://abel-ai.com/seo-geo-faq): SEO·GEO 관련 자주 묻는 질문과 답변
+- [칼럼](https://abel-ai.com/blog): SEO·GEO 전략에 관한 아벨의 칼럼 모음
+
+## 서비스
+
+- [서비스 안내](https://abel-ai.com/service): 전체 서비스 개요
+- [SEO·GEO 구조 구축](https://abel-ai.com/service/seo-geo-structure): 홈페이지 구조 설계·재구축
+- [SEO·GEO 최적화 컨설팅](https://abel-ai.com/service/seo-geo-consulting): 크롤링 장벽·E-E-A-T·키워드 노출 진단
+- [SEO·GEO 운영 대행](https://abel-ai.com/service/seo-geo-management): 홈페이지 지속 운영 대행
+- [SEO·GEO 1:1 교육](https://abel-ai.com/service/seo-geo-education): 병원 실무자 대상 기술 교육
+
+## 문의
+
+- [상담 문의](https://abel-ai.com/contact): 상담 신청
