@@ -27,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: '페이지를 찾을 수 없습니다' };
 
   const yoast = post.yoast_head_json;
-  const ogImage = yoast?.og_image?.[0]?.url;
+  const ogImage =
+    yoast?.og_image?.[0]?.url ?? post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
   const description =
     yoast?.description || stripHtml(post.excerpt.rendered).slice(0, 150);
 
