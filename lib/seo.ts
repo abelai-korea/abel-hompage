@@ -42,6 +42,38 @@ export const organizationGraph = [
   },
 ];
 
+export interface ArticleSeoInput {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+}
+
+// RankMath REST API가 yoast_head_json 같은 미리 만들어진 head 데이터를 안 주기 때문에,
+// 워드프레스 핵심 필드(title/excerpt/featured media/date)만으로 직접 Article 스키마를 만든다.
+// 어떤 SEO 플러그인을 쓰든(또는 REST 노출 설정이 꺼져있든) 흔들리지 않도록 하기 위함.
+export function articleJsonLd(input: ArticleSeoInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: input.headline,
+    description: input.description,
+    ...(input.image ? { image: [input.image] } : {}),
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': input.url },
+    author: { '@type': 'Organization', name: 'ABEL', url: 'https://abel-ai.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ABEL',
+      url: 'https://abel-ai.com',
+      logo: { '@type': 'ImageObject', url: 'https://abel-ai.com/logo.png' },
+    },
+  };
+}
+
 export function breadcrumbJsonLd(items: BreadcrumbEntry[]) {
   return {
     '@context': 'https://schema.org',

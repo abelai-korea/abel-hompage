@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { getPostBySlug, getPosts, getCategories, formatDate, stripHtml, demoteContentH1, fixContentLinks, decodeHtmlEntities } from '@/lib/wordpress';
 import ArticleSidenav from '@/components/ArticleSidenav';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import ArticleJsonLd from '@/components/ArticleJsonLd';
 import Breadcrumb from '@/components/Breadcrumb';
 import type { BreadcrumbEntry } from '@/lib/seo';
 
@@ -56,6 +57,9 @@ export default async function PostPage({ params }: Props) {
 
   const category = post._embedded?.['wp:term']?.[0]?.[0];
   const date = formatDate(post.date);
+  const headline = decodeHtmlEntities(stripHtml(post.title.rendered));
+  const description = stripHtml(post.excerpt.rendered).slice(0, 150);
+  const ogImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
   const relatedPosts = category
     ? (await getPosts({ categories: [category.id], per_page: 5 })).posts
@@ -73,6 +77,14 @@ export default async function PostPage({ params }: Props) {
     <>
     <div className="pt-24 pb-20 min-h-screen bg-white">
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      <ArticleJsonLd
+        headline={headline}
+        description={description}
+        url={`https://abel-ai.com/${slug}`}
+        datePublished={post.date}
+        dateModified={post.modified}
+        image={ogImage}
+      />
       <div className="max-w-[1320px] mx-auto px-6 flex gap-10 items-start">
         <aside className="hidden min-[1300px]:block w-96 shrink-0 sticky top-52">
           <ArticleSidenav categories={categories} currentSlug={category?.slug} />
@@ -102,11 +114,6 @@ export default async function PostPage({ params }: Props) {
             className="wp-content"
             dangerouslySetInnerHTML={{ __html: fixContentLinks(demoteContentH1(post.content.rendered)) }}
           />
-
-          {/* JSON-LD 스키마 (Yoast SEO에서 자동 생성) */}
-          {post.yoast_head && (
-            <div dangerouslySetInnerHTML={{ __html: extractJsonLd(post.yoast_head) }} />
-          )}
 
           {/* 관련 글 */}
           {relatedPosts.length > 0 && (
@@ -170,9 +177,4 @@ export default async function PostPage({ params }: Props) {
     </div>
     </>
   );
-}
-
-function extractJsonLd(yoastHead: string): string {
-  const match = yoastHead.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
-  return match ? match.join('') : '';
 }
