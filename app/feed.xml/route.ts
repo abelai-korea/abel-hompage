@@ -34,7 +34,10 @@ function xmlEscape(str: string): string {
 
 export async function GET() {
   const BASE = 'https://abel-ai.com';
-  const { posts } = await getPosts({ per_page: 50 });
+  const { posts } = await getPosts({
+    per_page: 50,
+    fields: ['link', 'title', 'excerpt', 'date'],
+  });
 
   const items = posts
     .map((post) => {

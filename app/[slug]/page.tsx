@@ -16,7 +16,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const { posts } = await getPosts({ per_page: 50 });
+  const { posts } = await getPosts({ per_page: 50, fields: ['link'] });
   return posts.map((post) => ({
     slug: new URL(post.link).pathname.replace(/\//g, ''),
   }));
@@ -62,7 +62,13 @@ export default async function PostPage({ params }: Props) {
   const ogImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
   const relatedPosts = category
-    ? (await getPosts({ categories: [category.id], per_page: 5 })).posts
+    ? (
+        await getPosts({
+          categories: [category.id],
+          per_page: 5,
+          fields: ['id', 'link', 'title', 'date', '_links', '_embedded'],
+        })
+      ).posts
         .filter((p) => p.id !== post.id)
         .slice(0, 4)
     : [];

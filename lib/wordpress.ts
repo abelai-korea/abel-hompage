@@ -33,6 +33,7 @@ export async function getPosts(params: {
   page?: number;
   categories?: number[];
   slug?: string;
+  fields?: string[];
 } = {}): Promise<{ posts: WPPost[]; total: number; totalPages: number }> {
   const searchParams = new URLSearchParams({
     per_page: String(params.per_page ?? 12),
@@ -44,6 +45,12 @@ export async function getPosts(params: {
   }
   if (params.slug) {
     searchParams.set('slug', params.slug);
+  }
+  // content.rendered(글 전체 HTML)까지 매번 받아오면 응답이 커져(글 12개당 ~550KB)
+  // Next.js Data Cache 상한(2MB)을 넘기는 요청도 생겨 캐시가 안 먹고 매번 워드프레스에
+  // 직접 붙게 됨 — 목록/관련글처럼 본문이 필요 없는 곳은 fields로 필요한 필드만 받는다.
+  if (params.fields?.length) {
+    searchParams.set('_fields', params.fields.join(','));
   }
 
   const res = await fetch(`${WP_API}/posts?${searchParams}`, {

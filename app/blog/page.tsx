@@ -23,7 +23,11 @@ export default async function BlogPage({ searchParams }: Props) {
   const currentPage = parseInt(params.page ?? '1');
 
   const [{ posts, total, totalPages }, categories] = await Promise.all([
-    getPosts({ per_page: 12, page: currentPage }),
+    getPosts({
+      per_page: 12,
+      page: currentPage,
+      fields: ['id', 'slug', 'link', 'date', 'title', '_links', '_embedded'],
+    }),
     getCategories(),
   ]);
 
